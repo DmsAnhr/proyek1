@@ -42,7 +42,7 @@
 
     @include('user.template.header')
     
-	@yield('user')
+	@yield('content')
 	
 	@include('user.template.footer')
 

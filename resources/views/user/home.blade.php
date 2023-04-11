@@ -20,13 +20,14 @@
                     </div>
                     <div class="slide-img-cover">
                         <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img"><img src="assets/img/bike-info-slide.jpg" alt="img"></div>
+                            <div class="lable-bike-img">
+                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
                             <div class="lable-bike-item">
                                 <div class="model">model SX-200</div>
                                 <div class="price">$1399</div>
                             </div>
                         </a>
-                        <img src="assets/img/img-slider.png" alt="img" class="slide-img">
+                        <img src="{{asset ('assets/user/img/img-slider.png')}}" alt="img" class="slide-img">
                     </div>
                 </div>
             </div>
@@ -40,13 +41,14 @@
                     </div>
                     <div class="slide-img-cover">
                         <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img"><img src="assets/img/bike-info-slide.jpg" alt="img"></div>
+                            <div class="lable-bike-img">
+                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
                             <div class="lable-bike-item">
                                 <div class="model">model M-300</div>
                                 <div class="price">$1199</div>
                             </div>
                         </a>
-                        <img src="assets/img/img-slider-2.png" alt="img" class="slide-img">
+                        <img src="{{asset ('assets/user/img/img-slider-2.png')}}" alt="img" class="slide-img">
                     </div>
                 </div>
             </div>
@@ -60,13 +62,14 @@
                     </div>
                     <div class="slide-img-cover">
                         <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img"><img src="assets/img/bike-info-slide.jpg" alt="img"></div>
+                            <div class="lable-bike-img">
+                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
                             <div class="lable-bike-item">
                                 <div class="model">model X-230</div>
                                 <div class="price">$1099</div>
                             </div>
                         </a>
-                        <img src="assets/img/img-slider-3.png" alt="img" class="slide-img">
+                        <img src="{{asset ('assets/user/img/img-slider-3.png')}}" alt="img" class="slide-img">
                     </div>
                 </div>
             </div>
@@ -80,13 +83,14 @@
                     </div>
                     <div class="slide-img-cover">
                         <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img"><img src="assets/img/bike-info-slide.jpg" alt="img"></div>
+                            <div class="lable-bike-img">
+                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
                             <div class="lable-bike-item">
                                 <div class="model">model SX-200</div>
                                 <div class="price">$1399</div>
                             </div>
                         </a>
-                        <img src="assets/img/img-slider.png" alt="img" class="slide-img">
+                        <img src="{{asset ('assets/user/img/img-slider.png')}}" alt="img" class="slide-img">
                     </div>
                 </div>
             </div>
@@ -100,13 +104,14 @@
                     </div>
                     <div class="slide-img-cover">
                         <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img"><img src="assets/img/bike-info-slide.jpg" alt="img"></div>
+                            <div class="lable-bike-img">
+                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
                             <div class="lable-bike-item">
                                 <div class="model">model M-300</div>
                                 <div class="price">$1199</div>
                             </div>
                         </a>
-                        <img src="assets/img/img-slider-2.png" alt="img" class="slide-img">
+                        <img src="{{asset ('assets/user/img/img-slider-2.png')}}" alt="img" class="slide-img">
                     </div>
                 </div>
             </div>
@@ -166,7 +171,7 @@
             <div class="slider-categ-bicycle">
                 <div class="slide-categ-bicycle">
                     <div class="categ-bicycle-item">
-                        <img src="assets/img/categ-2.png" alt="category">
+                        <img src="{{asset ('assets/user/img/categ-2.png')}}" alt="category">
                         <div class="categ-bicycle-info">
                             <h4 class="title">Tenda</h4>
                             <a href="shop.html" class="btn"><span>view more</span></a>
@@ -175,7 +180,7 @@
                 </div>
                 <div class="slide-categ-bicycle">
                     <div class="categ-bicycle-item">
-                        <img src="assets/img/categ-1.png" alt="category">
+                        <img src="{{asset ('assets/user/img/categ-1.png')}}" alt="category">
                         <div class="categ-bicycle-info">
                             <h4 class="title">Cooking Set</h4>
                             <a href="shop.html" class="btn"><span>view more</span></a>
@@ -184,7 +189,7 @@
                 </div>
                 <div class="slide-categ-bicycle">
                     <div class="categ-bicycle-item">
-                        <img src="assets/img/categ-3.png" alt="category">
+                        <img src="{{asset ('assets/user/img/categ-3.png')}}" alt="category">
                         <div class="categ-bicycle-info">
                             <h4 class="title">Compliment</h4>
                             <a href="shop.html" class="btn"><span>view more</span></a>
@@ -193,7 +198,7 @@
                 </div>
                 <!-- <div class="slide-categ-bicycle">
                     <div class="categ-bicycle-item">
-                        <img src="assets/img/categ-3.png" alt="category">
+                        <img src="{{asset ('assets/user/img/categ-3.png')}}" alt="category">
                         <div class="categ-bicycle-info">
                             <h4 class="title">bicycle <br>spare parts</h4>
                             <a href="shop.html" class="btn"><span>view more</span></a>
@@ -254,7 +259,8 @@
                         <div class="row product-cover">
                             <div class="col-6 col-md-3 prod-item-col">
                                 <div class="product-item">
-                                    <a href="single-shop.html" class="product-img"><img src="assets/img/new.png"
+                                    <a href="single-shop.html" class="product-img">
+                                        <img src="assets/img/new.png"
                                             alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
@@ -288,7 +294,8 @@
                             </div>
                             <div class="col-6 col-md-3 prod-item-col">
                                 <div class="product-item">
-                                    <a href="single-shop.html" class="product-img"><img src="assets/img/new.png"
+                                    <a href="single-shop.html" class="product-img">
+                                        <img src="assets/img/new.png"
                                             alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
@@ -322,7 +329,8 @@
                             </div>
                             <div class="col-6 col-md-3 prod-item-col">
                                 <div class="product-item">
-                                    <a href="single-shop.html" class="product-img"><img src="assets/img/new.png"
+                                    <a href="single-shop.html" class="product-img">
+                                        <img src="assets/img/new.png"
                                             alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
@@ -356,7 +364,8 @@
                             </div>
                             <div class="col-6 col-md-3 prod-item-col">
                                 <div class="product-item">
-                                    <a href="single-shop.html" class="product-img"><img src="assets/img/new.png"
+                                    <a href="single-shop.html" class="product-img">
+                                        <img src="assets/img/new.png"
                                             alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
@@ -1140,7 +1149,7 @@
                                 ut magna aliqua dolor sit amet, consectetur adipiscing elit magna”</p>
                         </div>
                         <div class="feedback-item-top">
-                            <img src="assets/img/feedback-photo-1.png" alt="photo">
+                            <img src="{{asset ('assets/user/img/feedback-photo-1.png')}}" alt="photo">
                             <div class="feedback-title">
                                 <h5 class="title"><span>Li piters</span></h5>
                                 <ul class="rating">
@@ -1161,7 +1170,7 @@
                                 ut magna aliqua dolor sit amet, consectetur adipiscing elit magna”</p>
                         </div>
                         <div class="feedback-item-top">
-                            <img src="assets/img/feedback-photo-2.png" alt="photo">
+                            <img src="{{asset ('assets/user/img/feedback-photo-2.png')}}" alt="photo">
                             <div class="feedback-title">
                                 <h5 class="title"><span>Sam Barton</span></h5>
                                 <ul class="rating">
@@ -1182,7 +1191,7 @@
                                 ut magna aliqua dolor sit amet, consectetur adipiscing elit magna”</p>
                         </div>
                         <div class="feedback-item-top">
-                            <img src="assets/img/feedback-photo-3.png" alt="photo">
+                            <img src="{{asset ('assets/user/img/feedback-photo-3.png')}}" alt="photo">
                             <div class="feedback-title">
                                 <h5 class="title"><span>Zoe Tyler</span></h5>
                                 <ul class="rating">
@@ -1203,7 +1212,7 @@
                                 ut magna aliqua dolor sit amet, consectetur adipiscing elit magna”</p>
                         </div>
                         <div class="feedback-item-top">
-                            <img src="assets/img/feedback-photo-2.png" alt="photo">
+                            <img src="{{asset ('assets/user/img/feedback-photo-2.png')}}" alt="photo">
                             <div class="feedback-title">
                                 <h5 class="title"><span>Sam Barton</span></h5>
                                 <ul class="rating">
@@ -1233,7 +1242,7 @@
                                 quae</a></h6>
                         <div class="news-post-thumbnail">
                             <a href="news.html"><img class="lazy" src="assets/img/placeholder-all.png"
-                                    data-src="assets/img/news-1.jpg" alt="news"></a>
+                                    data-src="{{asset ('assets/user/img/news-1.jpg')}}" alt="news"></a>
                         </div>
                         <div class="meta">
                             <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> Dec 26,2019</span>
@@ -1253,7 +1262,7 @@
                                 ducim</a></h6>
                         <div class="news-post-thumbnail">
                             <a href="single-news.html"><img class="lazy" src="assets/img/placeholder-all.png"
-                                    data-src="assets/img/news-2.jpg" alt="news"></a>
+                                    data-src="{{asset ('assets/user/img/news-2.jpg')}}" alt="news"></a>
                         </div>
                         <div class="meta">
                             <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> Dec 26,2019</span>
@@ -1273,7 +1282,7 @@
                                 a</a></h6>
                         <div class="news-post-thumbnail">
                             <a href="news.html"><img class="lazy" src="assets/img/placeholder-all.png"
-                                    data-src="assets/img/news-3.jpg" alt="news"></a>
+                                    data-src="{{asset ('assets/user/img/news-3.jpg')}}" alt="news"></a>
                         </div>
                         <div class="meta">
                             <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> Dec 26,2019</span>
@@ -1300,27 +1309,27 @@
             <div class="clients-cover">
                 <div class="client-slide">
                     <div class="client-slide-cover">
-                        <img src="assets/img/client-1.svg" alt="img">
+                        <img src="{{asset ('assets/user/img/client-1.svg')}}" alt="img">
                     </div>
                 </div>
                 <div class="client-slide">
                     <div class="client-slide-cover">
-                        <img src="assets/img/client-2.svg" alt="img">
+                        <img src="{{asset ('assets/user/img/client-2.svg')}}" alt="img">
                     </div>
                 </div>
                 <div class="client-slide">
                     <div class="client-slide-cover">
-                        <img src="assets/img/client-4.svg" alt="img">
+                        <img src="{{asset ('assets/user/img/client-4.svg')}}" alt="img">
                     </div>
                 </div>
                 <div class="client-slide">
                     <div class="client-slide-cover">
-                        <img src="assets/img/client-5.svg" alt="img">
+                        <img src="{{asset ('assets/user/img/client-5.svg')}}" alt="img">
                     </div>
                 </div>
                 <div class="client-slide">
                     <div class="client-slide-cover">
-                        <img src="assets/img/client-6.svg" alt="img">
+                        <img src="{{asset ('assets/user/img/client-6.svg')}}" alt="img">
                     </div>
                 </div>
             </div>
