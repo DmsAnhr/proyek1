@@ -1,0 +1,46 @@
+.nav-chart{
+    display: none;
+    z-index: 99;
+    position: fixed;
+    right: 0;
+    width: 40vw;
+    height: 100vh;
+    background-color: blue;
+}
+
+.product-name{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.product-name a{
+    width: 100%;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+.product-img img {
+    /* object-fit: cover; */
+    width: 97%;
+    height: auto;
+}
+
+.btn-chart{
+    /* margin: 0 auto; */
+}
+
+@media only screen and (min-width: 768px) {
+    .con-sticky{
+        z-index: 90;
+        position: sticky;
+        top: 30px;
+    }
+}
+
+/* CorelDRAW Graphics Suite X7
+Purchase serial number: DR17R25-AVK9Y5Z-8YM8N54-9WEQRE4
+Activation Code:87CC-0F84-8FBD-57FD-A71E */
