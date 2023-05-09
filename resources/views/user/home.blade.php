@@ -11,10 +11,10 @@
         </ul>
         <div class="main-slider">
             <div class="main-slide">
-                <div class="main-slide-bg" style="background-image: url(assets/img/bg-slider.svg);"></div>
+                <div class="main-slide-bg" style="background-image: {{ asset('assets/user/img/bg-slider.svg') }};"></div>
                 <div class="container">
                     <div class="main-slide-info">
-                        <h2 class="title">Ciliwunng Camp</h2>
+                        <h2 class="title">Ciliwung Camp</h2>
                         <p style="color: #ffd910;">Go far beyond the expectation</p>
                         <a href="single-shop.html" class="btn"><span>Rent Now</span></a>
                     </div>

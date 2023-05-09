@@ -37,23 +37,23 @@
     </div>
     <div class="header-menu">
         <div class="container">
-            <a href="index.html" class="logo"><img src="assets/img/new.png" alt="logo"></a>
+            <a href="{{url('/')}}" class="logo"><img src="{{ asset('assets/user/img/new.png') }}" alt="logo"></a>
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <!-- <li><a href="#">Home</a></li> -->
                     <!-- <li><a href="services.html">Services</a></li> -->
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="{{url('about')}}">About</a></li>
                     <li class="dropdown">
                         <a href="#">Produk <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul>
-                            <li><a href="shop.html">Rental</a></li>
+                            <li><a href="{{url('shop')}}">Rental</a></li>
                             <li><a href="404.html">Outbond</a></li>
                             <li><a href="404.html">Tour</a></li>
                         </ul>
                     </li>
-                    <li><a href="shop.html">rental</a></li>
-                    <li><a href="gallery.html">Galeri</a></li>
-                    <li><a href="news.html">Berita</a></li>
+                    <li><a href="{{url('shop')}}">rental</a></li>
+                    <li><a href="{{url('galery')}}">Galeri</a></li>
+                    <li><a href="{{url('news')}}">Berita</a></li>
                     <!-- <li class="dropdown">
                                     <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul>
@@ -62,7 +62,7 @@
                                         <li><a href="404.html">Page error 404</a></li>
                                     </ul>
                                 </li> -->
-                    <li><a href="contacts.html">Kontak</a></li>
+                    <li><a href="{{url('contact')}}">Kontak</a></li>
                 </ul>
             </nav>
         </div>

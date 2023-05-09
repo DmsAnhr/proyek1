@@ -35,10 +35,10 @@
                 <div class="footer-copyright"><a target="_blank" href="https://rovadex.com">Ciliwung Camp</a> ©
                     2023. Developed By : <a href="https://saener.gy">Team Kawan</a></div>
                 <ul class="footer-pay">
-                    <li><a href="#"><img src="assets/img/footer-pay-1.png" alt="img"></a></li>
-                    <li><a href="#"><img src="assets/img/footer-pay-2.png" alt="img"></a></li>
-                    <li><a href="#"><img src="assets/img/footer-pay-3.png" alt="img"></a></li>
-                    <li><a href="#"><img src="assets/img/footer-pay-4.png" alt="img"></a></li>
+                    <li><a href="#"><img src="{{ asset('assets/user/img/footer-pay-1.png') }}" alt="img"></a></li>
+                    <li><a href="#"><img src="{{ asset('assets/user/img/footer-pay-2.png') }}" alt="img"></a></li>
+                    <li><a href="#"><img src="{{ asset('assets/user/img/footer-pay-3.png') }}" alt="img"></a></li>
+                    <li><a href="#"><img src="{{ asset('assets/user/img/footer-pay-4.png') }}" alt="img"></a></li>
                 </ul>
             </div>
         </div>
