@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,31 +16,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/shop', function() {
-    return view('user.shop');
-});;
-
-Route::get('/shop/single_shop', function() {
-    return view('user.single_shop');
-});;
+Auth::routes();
 
 Route::get('/about', function() {
     return view('user.about');
 });;
 
-Route::get('/galery', function() {
-    return view('user.galery');
-});;
+Route::middleware(['auth'])->group(function()
+{
+    Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/news', function() {
-    return view('user.news');
-});;
+    Route::get('/shop', function() {
+        return view('user.shop');
+    });;
 
-Route::get('/contact', function() {
-    return view('user.contact');
-});;
+    Route::get('/about', function() {
+        return view('user.about');
+    });;
 
-Auth::routes();
+    Route::get('/gallery', function() {
+        return view('user.gallery');
+    });;
 
+    Route::get('/news', function() {
+        return view('user.news');
+    });;
+
+    Route::get('/contact', function() {
+        return view('user.contact');
+    });;
+
+    Route::get('/shop/single_shop', function() {
+        return view('user.single_shop');
+    });;
+
+});

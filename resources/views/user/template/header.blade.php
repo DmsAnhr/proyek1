@@ -47,12 +47,12 @@
                         <a href="#">Produk <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul>
                             <li><a href="{{url('shop')}}">Rental</a></li>
-                            <li><a href="404.html">Outbond</a></li>
-                            <li><a href="404.html">Tour</a></li>
+                            <li><a href="{{url('shop')}}">Outbond</a></li>
+                            <li><a href="{{url('404')}}">Tour</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url('shop')}}">rental</a></li>
-                    <li><a href="{{url('galery')}}">Galeri</a></li>
+                    <li><a href="{{url('gallery')}}">Galeri</a></li>
                     <li><a href="{{url('news')}}">Berita</a></li>
                     <!-- <li class="dropdown">
                                     <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
