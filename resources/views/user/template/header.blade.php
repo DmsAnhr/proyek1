@@ -52,7 +52,7 @@
                         </ul>
                     </li>
                     <li><a href="{{url('shop')}}">rental</a></li>
-                    <li><a href="{{url('galery')}}">Galeri</a></li>
+                    <li><a href="{{url('gallery')}}">Galeri</a></li>
                     <li><a href="{{url('news')}}">Berita</a></li>
                     <!-- <li class="dropdown">
                                     <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
