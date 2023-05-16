@@ -157,11 +157,11 @@
                         <div class="row product-cover block">
                             <div class="col-12 col-sm-4 prod-item-col">
                                 <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
+                                    <a href="{{url('shop/single_shop')}}" class="product-img">
                                         <img src="{{asset ('assets/user/img/new.png')}}"alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Hyper E-Ride
+                                            <h6 class="prod-title product-name"><a href="{{url('shop/single_shop')}}">Hyper E-Ride
                                                     Bike 700C
                                                     <br>20+ Mile Range</a></h6>
                                             <div class="price-cover">

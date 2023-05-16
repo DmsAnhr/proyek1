@@ -21,6 +21,10 @@ Route::get('/shop', function() {
     return view('user.shop');
 });;
 
+Route::get('/shop/single_shop', function() {
+    return view('user.single_shop');
+});;
+
 Route::get('/about', function() {
     return view('user.about');
 });;
