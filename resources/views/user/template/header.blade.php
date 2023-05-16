@@ -27,7 +27,7 @@
                     <!-- <li><a class="header-like" href="#"><i class="fa fa-heart"
                                         aria-hidden="true"></i><span>6</span></a>
                             </li> -->
-                    <li><a class="header-user" href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    <li><a class="header-user" href="{{url('/logout')}}"><i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}</a></li>
                     <li><a class="header-cart" href="#"><i class="fa fa-shopping-cart"
                                 aria-hidden="true"></i><span>6</span></a>
                     </li>

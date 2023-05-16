@@ -8,17 +8,16 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{asset ('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{asset ('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{asset ('assets/admin/dist/css/adminlte.min.css') }}">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    {{-- <img src="{{ asset('assets/images/favicon/company.png') }}" style="opacity: .7" width="200px"> --}}
-    <a href="#"><b>Admin</b>LTE</a>
+    <img src="{{ asset('assets/user/img/new.png') }}" style="opacity: .7" width="200px">
   </div>
 
   <div class="card">
@@ -31,7 +30,7 @@
           <input name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-user" style="color: #1e3050;"></span>
+              <span class="fas fa-user" style="color: #ffd910;"></span>
             </div>
           </div>
           @error('username')
@@ -43,7 +42,7 @@
           <input name="password" type="password" class="form-control @error('password') is-invalid @enderror required" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock" style="color: #1e3050;"></span>
+              <span class="fas fa-lock" style="color: #ffd910;"></span>
             </div>
           </div>
           @error('password')
@@ -52,12 +51,12 @@
         </div>
 
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Login</button>
+          <button class="btn btn-warning btn-block"><b>Login</b></button>
         </div>
       </form>
 
       <p class="mb-0">
-        <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
+        <a href="{{ url('/register') }}" class="text-center" >Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
@@ -66,10 +65,10 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('assets/admin/dist/js/adminlte.min.js') }}"></script>
 </body>
 </html>

@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/about', function() {
-    return view('user.about');
-});;
+Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function()
 {

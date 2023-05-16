@@ -51,25 +51,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => ['required', 'string', 'max:255', 'unique:users'],
             'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
         ]);
     }
 
@@ -81,21 +66,20 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:4'],
         ]);
-    
-    $hashedPassword = Hash::make($request -> input('password'));
 
-    User::create([
-        'name' => $request -> input('name'),
-        'username' => $request -> input('username'),
-        'email' => $request -> input('email'),
-        'password' => $hashedPassword
-    ]);
-    return redirect('login') -> with('success', 'User Berhasil Ditambahkan');
+        $hashedPassword = Hash::make($request->input('password'));
+        User::create([
+            'username' => $request->input('username'),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $hashedPassword,
+        ]);
 
+        return redirect('login')->with('success', 'User Berhasil Ditambahkan');
     }
 }
