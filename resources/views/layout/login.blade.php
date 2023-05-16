@@ -17,52 +17,45 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    {{-- <img src="{{ asset('assets/images/favicon/company.png') }}" style="opacity: .7" width="200px"> --}}
+    <a href="#"><b>Admin</b>LTE</a>
   </div>
-  <!-- /.login-logo -->
+
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="{{ url('/login') }}" method="post">
+      <form action="{{ url ('/login') }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input name='username' type="text" class="form-control" placeholder="Username">
+          <input name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user" style="color: #1e3050;"></span>
             </div>
           </div>
+          @error('username')
+            <span class="error invalid-feedback" role="alert">{{ $message }}</span>
+          @enderror
         </div>
+
         <div class="input-group mb-3">
-          <input name='password' type="password" class="form-control" placeholder="Password">
+          <input name="password" type="password" class="form-control @error('password') is-invalid @enderror required" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span class="fas fa-lock" style="color: #1e3050;"></span>
             </div>
           </div>
+          @error('password')
+              <span class="error invalid-feedback" role="alert">{{ $message }}</span>
+          @enderror
         </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Login</button>
         </div>
       </form>
-      <!-- /.social-auth-links -->
 
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
       <p class="mb-0">
         <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
       </p>
@@ -73,10 +66,10 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
 </body>
 </html>

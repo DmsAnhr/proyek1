@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,27 +16,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/shop', function() {
-    return view('user.shop');
-});;
-
-Route::get('/about', function() {
-    return view('user.about');
-});;
-
-Route::get('/gallery', function() {
-    return view('user.gallery');
-});;
-
-Route::get('/news', function() {
-    return view('user.news');
-});;
-
-Route::get('/contact', function() {
-    return view('user.contact');
-});;
 
 Auth::routes();
 
+Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::middleware(['auth'])->group(function()
+{
+    Route::get('/', [HomeController::class, 'index']);
+
+    Route::get('/shop', function() {
+        return view('user.shop');
+    });;
+
+    Route::get('/about', function() {
+        return view('user.about');
+    });;
+
+    Route::get('/gallery', function() {
+        return view('user.gallery');
+    });;
+
+    Route::get('/news', function() {
+        return view('user.news');
+    });;
+
+    Route::get('/contact', function() {
+        return view('user.contact');
+    });;
+
+});
