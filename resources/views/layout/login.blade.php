@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -71,9 +71,9 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/admin/dist/js/adminlte.min.js') }}"></script>
 </body>
-</html> --}}
+</html>
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -116,15 +116,15 @@
                                     </div> <!--end auth-logo-text-->  
     
                                     
-                                    <form class="form-horizontal auth-form my-4" action="index.html">
-            
+                                    <form class="form-horizontal auth-form my-4" action="{{ url ('/login') }}" method="post">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <div class="input-group mb-3">
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i> 
                                                 </span>                                                                                                              
-                                                <input type="text"  class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Enter username">
+                                                <input type="text"  class="form-control @error('username') is-invalid @enderror" name="username" placeholder="Enter username">
                                                 @error('username')
                                                   <span class="error invalid-feedback" role="alert">{{ $message }}</span>
                                                 @enderror    
@@ -132,12 +132,12 @@
                                         </div><!--end form-group--> 
             
                                         <div class="form-group">
-                                            <label for="userpassword">Password</label>                                            
+                                            <label for="password">Password</label>                                            
                                             <div class="input-group mb-3"> 
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-lock"></i> 
                                                 </span>                                                       
-                                                <input type="password" class="form-control @error('password') is-invalid @enderror required" id="userpassword" name="password" placeholder="Enter password">
+                                                <input type="password" class="form-control @error('password') is-invalid @enderror required" name="password" placeholder="Enter password">
                                                 @error('password')
                                                   <span class="error invalid-feedback" role="alert">{{ $message }}</span>
                                                 @enderror    
@@ -151,9 +151,9 @@
                                                     <label class="custom-control-label text-muted" for="customSwitchSuccess">Remember me</label>
                                                 </div>
                                             </div> 
-                                            {{-- <div class="col-sm-6 text-right">
+                                            <div class="col-sm-6 text-right">
                                                 <a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>                                    
-                                            </div>  --}}
+                                            </div>
                                         </div><!--end form-group--> 
             
                                         <div class="form-group mb-0 row">
@@ -212,4 +212,4 @@
         
     </body>
 
-</html>
+</html> --}}

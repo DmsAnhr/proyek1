@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('layout.login');
+        return view('layout.login_keren');
     }
     
     public function username()
