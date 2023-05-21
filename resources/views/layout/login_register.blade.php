@@ -381,7 +381,7 @@
           <div class="right">
             <div class="content">
               <h2>Login</h2>
-              <form action="{{ url ('/login') }}" method="POST" id="registerForm">
+              <form action="{{ url ('/login') }}" method="POST" id="loginForm">
                 @csrf
 
                 <div class="form-element form-stack">
