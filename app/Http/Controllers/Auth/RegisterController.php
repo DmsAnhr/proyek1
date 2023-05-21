@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -65,21 +66,58 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $request->validate([
+        // $request->validate([
+        //     'username' => ['required', 'string', 'max:255', 'unique:users'],
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'max:255'],
+        //     'password' => ['required', 'string', 'min:3'],
+        // ]);
+
+        // $hashedPassword = Hash::make($request->input('password'));
+        // User::create([
+        //     'username' => $request->input('username'),
+        //     'name' => $request->input('name'),
+        //     'email' => $request->input('email'),
+        //     'password' => $hashedPassword,
+        // ]);
+
+        // return redirect('login')->with('success', 'User Berhasil Ditambahkan');
+
+
+        // Validasi input
+        // $request->validate([
+        //     'username' => ['required', 'string', 'max:255', 'unique:users'],
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'max:255'],
+        //     'password' => ['required', 'string', 'min:3'],
+        // ]);
+
+        $validator = Validator::make($request->all(), [
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:4'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:3'],
         ]);
 
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'errors' => $validator->errors()]);
+        }
+
+        // Buat pengguna baru
         $hashedPassword = Hash::make($request->input('password'));
-        User::create([
-            'username' => $request->input('username'),
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => $hashedPassword,
+        $user = User::create([
+                'username' => $request->input('username'),
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'password' => $hashedPassword,
         ]);
 
+        // Login pengguna baru
+        Auth::login($user);
+
+        // Registrasi berhasil
+        // return response()->json(['success' => true]);
         return redirect('login')->with('success', 'User Berhasil Ditambahkan');
+
     }
 }

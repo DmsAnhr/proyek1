@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -41,7 +43,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('layout.login_keren');
+        return view('layout.login_register');
     }
     
     public function username()
@@ -53,8 +55,28 @@ class LoginController extends Controller
     {
         $request->validate([
             $this->username() => 'required|string',
-            'password' => 'required|string|min:4',
+            'password' => 'required|string|min:3',
         ]);
+    }
+
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|string',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['success' => false, 'errors' => $validator->errors()]);
+        }
+
+        $credentials = $request->only('username', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect('/')->with('success', 'User Berhasil Ditambahkan');
+        } else {
+            return response()->json(['success' => false, 'message' => 'Invalid credentials']);
+        }
     }
     
 }

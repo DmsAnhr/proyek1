@@ -17,10 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('nama_barang');
             $table->integer('harga');
-            $table->string('kategori');
             $table->string('status');
-            $table->string('foto');
+            $table->string('foto')->nullable();
+            $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('transaction_id');
             $table->timestamps();
+            
+            $table->foreign('kategori_id')->references('id')->on('kategori');
+            $table->foreign('transaksi_id')->references('id')->on('shop');
         });
     }
 
