@@ -10,7 +10,7 @@ class Barang extends Model
     use HasFactory;
     public function kategori()
     {
-        return $this->belongsTo(KategoriModel::class, 'kategori_id');
+        return $this->belongsTo(KategoriModel::class);
     }
 
     public function transaksi()
