@@ -372,7 +372,7 @@
                   <button id="signUp" class="signup" type="submit" name="signup">Sign up</button>
                   <button id="goLeft" class="signup off" type="button">Log In</button> 
                 </div>
-                <div id="register-error"></div>
+                <div id="register-error" style="color: red;margin-top: 20px;"></div>
               </form>
             </div>
           </div>
@@ -423,7 +423,7 @@
                   <button id="logIn" class="login" type="submit" name="login">Log In</button>
                   <button id="goRight" class="login off" name="signup" type="button">Sign Up</button>
                 </div>
-                <div id="login-error"></div>
+                <div id="login-error" style="color: red;margin-top: 20px;"></div>
               </form>
             </div>
           </div>
@@ -435,7 +435,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="{{asset ('assets/user/js/login-keren.js')}}"></script>
-      <script src="{{asset ('assets/sevice.js')}}"></script>
+      <script src="{{asset ('assets/service.js')}}"></script>
 
 </body>
 </html>

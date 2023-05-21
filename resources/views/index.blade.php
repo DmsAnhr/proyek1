@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Ciliwung Camp</title>
     <!-- =================== META =================== -->
     <meta name="keywords" content="">
@@ -60,6 +61,7 @@
     <script src="{{asset ('assets/user/js/lazyload.min.js')}}"></script>
     <script src="{{asset ('assets/user/js/scripts.js')}}"></script>
     <script src="{{asset ('assets/user/js/custom.js')}}"></script>
+    <script src="{{asset ('assets/service.js')}}"></script>
 </body>
 
 </html>
