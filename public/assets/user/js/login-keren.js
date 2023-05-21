@@ -116,8 +116,8 @@ $(document).ready(function(){
     for (var i = 0; i <= shapePathData.length; i++) {
       // Create shape
       var headerShape = new Path({
-        strokeColor: 'rgba(255, 255, 255, 0.5)',
-        strokeWidth: 2,
+        strokeColor: '#5f5f5f',
+        strokeWidth: 3,
         parent: shapeGroup,
       });
       // Set path data

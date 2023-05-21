@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +23,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/logout', [LoginController::class, 'logout']);
+// Route::post('/login', 'Auth\LoginController@login')->name('login');
+// Route::post('/register', 'Auth\RegisterController@register')->name('register');
+
 
 Route::middleware(['auth'])->group(function()
 {
     Route::get('/', [HomeController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index']);
 
     Route::get('/shop', function() {
         return view('user.shop');
