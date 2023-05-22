@@ -118,39 +118,6 @@ $(document).ready(function () {
 
 
 
-    $('#tableBarang').on('click', '.link-edit',function () {
-        var rowData = table.row(this).data();
-
-        // $(".gambarEdit").html(`${rowData.id}`);
-        // $('.namaEditBarang').html(`${rowData.nama}`);
-        // $('.hargaEditBarang').html(`${rowData.harga}`);
-        // $('.keteranganEditBarang').html(`${rowData.keteragan}`);
-        // $('.kategoriEditBarang').html(`${rowData.nama_kategori}`);
-        // $('.jumlahEditBarang').html(`${rowData.jumlah}`);
-        // $('.statusEditBarang').html(`${rowData.status}`);
-        $.ajax({
-            url: `/kategori/${rowData.kategori_id}`,
-            type: 'GET',
-            success: function(response) {
-                $('.gambarEdit').attr('src', `${rowData.id}`);
-                $('.namaEditBarang').html(`${rowData.nama}`);
-                $('.hargaEditBarang').html(`${rowData.harga}`);
-                $('.keteranganEditBarang').html(`${rowData.keteragan}`);
-                $('.kategoriEditBarang').html(`${response.nama}`);
-                $('.jumlahEditBarang').html(`${rowData.jumlah}`);
-                $('.statusEditBarang').html(`${rowData.status}`);
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr.responseText);
-                // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
-            }
-        });
-
-        $('.table-row').hide();
-        $('.edit-row').show();
-        $('.page-title').text('Detail Barang');
-    })
-
     $('.btn-back-table').click(function () {
         $('.table-row').show();
         $('.edit-row').hide();

@@ -20,19 +20,7 @@
     <!-- plugins -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/plugins/select2/select2.min.css') }}" />
 
-    <!-- DataTables -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.css') }}" />
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.css') }}" />
-
-    <!-- X-editable css -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets/admin/plugins/x-editable/css/bootstrap-editable.css') }}" />
-
-    <!-- Responsive datatable examples -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.css') }}" />
+    @stack('css')
 
     <!-- App css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/css/bootstrap.min.css') }}" />
@@ -62,97 +50,15 @@
     <script src="{{ asset('assets/admin/js/feather.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/jquery-ui.min.js') }}"></script>
-    <script type="text/javascript">
-    //  var token = $('meta[name="csrf-token"]').attr('content');
-    //     $.ajaxSetup({
-    //         headers: {
-    //             'X-CSRF-TOKEN': token
-    //         }
-    //     });
-    //     console.log(token); 
-    </script>
-
-    <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/chartjs/chart.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/chartjs/roundedBar.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/lightpick/lightpick.js') }}"></script>
-    <script src="{{ asset('assets/admin/pages/jquery.sales_dashboard.init.js') }}"></script>
-
-    <script src="{{ asset('assets/admin/plugins/filter/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/filter/masonry.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/filter/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/pages/jquery.gallery.init.js') }}"></script>
-
-    <!-- Required datatable js -->
-    <script src="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-
-    <!-- Buttons examples -->
-    <script src="{{ asset('assets/admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/jszip.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/buttons.colVis.min.js') }}"></script>
-
-    <!-- Responsive examples -->
-    <script src="{{ asset('assets/admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
-
-    <!-- XEditable Plugin -->
-    <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/x-editable/js/bootstrap-editable.min.js') }}"></script>
-
-
-    <!-- Plugins js -->
     <script src="{{ asset('assets/admin/plugins/select2/select2.min.js') }}"></script>
 
-    <script>
-        $(document).ready(function () {
+    
+    <!-- Plugins js -->
+    @stack('js')
 
-$('#tableBarang').DataTable({
-    "responsive": true, "lengthChange": false, "autoWidth": false,
-    "iDisplayLength": 10,
-    'processing': true,
-    'serverSide': true,
-    'ajax': "{{ route('barang.index') }}",
-    'columns': [
-        { "data": null,"sortable": false, 
-          render: function (data, type, row, meta) {
-                    return meta.row + meta.settings._iDisplayStart + 1;
-                    }  
-        },
-        {data: 'nama', name: 'nama'},
-        {data: 'harga', name: 'harga'},
-        {data: 'jumlah', name: 'jumlah'},
-        {data: 'status', name: 'status'},
-        {data: 'action', name: 'action', orderable: false, searchable: false},
-    ],
-    columnDefs: [{
-        targets: -1,
-        render: function(data, type, row, meta) {
-            return `
-                <div class="dropdown-menu dropdown-menu-right"
-                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                    <a class="dropdown-item link-edit>Edit</a>
-                    <a class="dropdown-item delete-barang" href="#" data-id="${row.id}>Hapus</a>
-                </div>
-            `;
-        }
-    }]
-});
-});
-    </script>
     <!-- App js -->
     <script src="{{ asset('assets/admin/js/app.js') }}"></script>
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/itemJs.js') }}"></script>
     <script src="{{ asset('assets/service.js') }}"></script>
 </body>
 

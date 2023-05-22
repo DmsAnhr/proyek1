@@ -121,7 +121,7 @@
                                             </h5>
                                             <div class="row">
                                                 <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Tersedia :</h6>
+                                                    <h6 class="text-muted font-13">Jumlah :</h6>
                                                     <h3 class="pro-title jumlahEditBarang" id="inline-ready" name="stokTersedia"
                                                         style="width: fit-content;" data-type="text" data-pk="1"
                                                         data-title="Enter username">
@@ -129,7 +129,7 @@
                                                     </h3>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Disewa :</h6>
+                                                    <h6 class="text-muted font-13">Status :</h6>
                                                     <h3 class="pro-title" id="inline-rent" name="stokDisewa"
                                                         style="width: fit-content;" data-type="text" data-pk="1"
                                                         data-title="Enter username">
@@ -251,3 +251,37 @@
 
 
 @endsection
+
+@push('css')
+<!-- DataTables -->
+<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.css') }}" />
+<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.css') }}" />
+<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/x-editable/css/bootstrap-editable.css') }}" />
+<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.css') }}" />
+@endpush
+
+@push('js')
+     <!-- Required datatable js -->
+     <script src="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+ 
+     <!-- Buttons examples -->
+     <script src="{{ asset('assets/admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/jszip.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/pdfmake.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/vfs_fonts.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/buttons.html5.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/buttons.print.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/buttons.colVis.min.js') }}"></script>
+ 
+     <!-- Responsive examples -->
+     <script src="{{ asset('assets/admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
+ 
+     <!-- XEditable Plugin -->
+     <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
+     <script src="{{ asset('assets/admin/plugins/x-editable/js/bootstrap-editable.min.js') }}"></script>
+
+    <script src="{{ asset('assets/admin/js/itemJs.js') }}"></script>
+@endpush

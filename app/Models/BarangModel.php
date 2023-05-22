@@ -11,7 +11,7 @@ class BarangModel extends Model
     protected $table = 'barang';
     public function kategori()
     {
-        return $this->belongsTo(KategoriModel::class, 'id_kategori');
+        return $this->belongsTo(KategoriModel::class);
     }
 
     public function transaksi()

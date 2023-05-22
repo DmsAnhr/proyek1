@@ -243,3 +243,10 @@
     <!-- end page content -->
 </div>
 @endsection
+
+@push('js')
+<script src="{{ asset('assets/admin/plugins/filter/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/filter/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/filter/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/admin/pages/jquery.gallery.init.js') }}"></script>
+@endpush

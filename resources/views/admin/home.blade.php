@@ -539,3 +539,13 @@
     <!-- end page content -->
 </div>
 @endsection
+@push('js')
+<script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/chartjs/chart.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/chartjs/roundedBar.min.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/lightpick/lightpick.js') }}"></script>
+<script src="{{ asset('assets/admin/pages/jquery.sales_dashboard.init.js') }}"></script>
+@endpush
