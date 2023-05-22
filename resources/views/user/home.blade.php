@@ -10,8 +10,9 @@
             <li><a href="https://www.instagram.com/ciliwungcamp">instagram</a></li>
         </ul>
         <div class="main-slider">
+            @foreach ($home as $hm)
             <div class="main-slide">
-                <div class="main-slide-bg" style="background-image: {{ asset('assets/user/img/bg-slider.svg') }};"></div>
+                <div class="main-slide-bg" style="background-image: url(assets/img/bg-slider-2.svg);"></div>
                 <div class="container">
                     <div class="main-slide-info">
                         <h2 class="title">Ciliwung Camp</h2>
@@ -20,101 +21,16 @@
                     </div>
                     <div class="slide-img-cover">
                         <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img">
-                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
                             <div class="lable-bike-item">
-                                <div class="model">model SX-200</div>
-                                <div class="price">$1399</div>
+                                <div class="model">{{$hm->nama}}</div>
+                                <div class="price">Rp. {{$hm->harga}} / hari</div>
                             </div>
                         </a>
-                        <img src="{{asset ('assets/user/img/img-slider.png')}}" alt="img" class="slide-img">
+                        <img src="{{asset('storage/' . $hm->foto)}}" alt="img" class="slide-img">
                     </div>
                 </div>
             </div>
-            <div class="main-slide">
-                <div class="main-slide-bg" style="background-image: url(assets/img/bg-slider-2.svg);"></div>
-                <div class="container">
-                    <div class="main-slide-info">
-                        <h2 class="title">Ciliwunng Camp</h2>
-                        <p style="color: #ffd910;">Go far beyond the expectation</p>
-                        <a href="single-shop.html" class="btn"><span>Rent now</span></a>
-                    </div>
-                    <div class="slide-img-cover">
-                        <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img">
-                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
-                            <div class="lable-bike-item">
-                                <div class="model">model M-300</div>
-                                <div class="price">$1199</div>
-                            </div>
-                        </a>
-                        <img src="{{asset ('assets/user/img/img-slider-2.png')}}" alt="img" class="slide-img">
-                    </div>
-                </div>
-            </div>
-            <div class="main-slide">
-                <div class="main-slide-bg" style="background-image: url(assets/img/bg-slider-3.svg);"></div>
-                <div class="container">
-                    <div class="main-slide-info">
-                        <h2 class="title">Ciliwunng Camp</h2>
-                        <p style="color: #ffd910;">Go far beyond the expectation</p>
-                        <a href="single-shop.html" class="btn"><span>Rent Now</span></a>
-                    </div>
-                    <div class="slide-img-cover">
-                        <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img">
-                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
-                            <div class="lable-bike-item">
-                                <div class="model">model X-230</div>
-                                <div class="price">$1099</div>
-                            </div>
-                        </a>
-                        <img src="{{asset ('assets/user/img/img-slider-3.png')}}" alt="img" class="slide-img">
-                    </div>
-                </div>
-            </div>
-            <div class="main-slide">
-                <div class="main-slide-bg" style="background-image: url(assets/img/bg-slider.svg);"></div>
-                <div class="container">
-                    <div class="main-slide-info">
-                        <h2 class="title">Ciliwunng Camp</h2>
-                        <p style="color: #ffd910;">Go far beyond the expectation</p>
-                        <a href="single-shop.html" class="btn"><span>Rent Now</span></a>
-                    </div>
-                    <div class="slide-img-cover">
-                        <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img">
-                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
-                            <div class="lable-bike-item">
-                                <div class="model">model SX-200</div>
-                                <div class="price">$1399</div>
-                            </div>
-                        </a>
-                        <img src="{{asset ('assets/user/img/img-slider.png')}}" alt="img" class="slide-img">
-                    </div>
-                </div>
-            </div>
-            <div class="main-slide">
-                <div class="main-slide-bg" style="background-image: url(assets/img/bg-slider-2.svg);"></div>
-                <div class="container">
-                    <div class="main-slide-info">
-                        <h2 class="title">Ciliwunng Camp</h2>
-                        <p style="color: #ffd910;">Go far beyond the expectation</p>
-                        <a href="single-shop.html" class="btn"><span>Rent Now</span></a>
-                    </div>
-                    <div class="slide-img-cover">
-                        <a href="single-shop.html" class="lable-bike">
-                            <div class="lable-bike-img">
-                                <img src="{{asset ('assets/user/img/bike-info-slide.jpg')}}" alt="img"></div>
-                            <div class="lable-bike-item">
-                                <div class="model">model M-300</div>
-                                <div class="price">$1199</div>
-                            </div>
-                        </a>
-                        <img src="{{asset ('assets/user/img/img-slider-2.png')}}" alt="img" class="slide-img">
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
     <!-- ============= main-slider end ============= -->
@@ -126,14 +42,11 @@
                 <h2 class="title">Apa Yang Kamu Cari?</h2>
                 <ul class="form-wrap" style="justify-content: center;">
                     <li>
-                        <label>kategori</label>
+                        <label>Kategori</label>
                         <select class="nice-select">
-                            <option selected="selected">Mountain bike</option>
-                            <option>Hybrid/Comfort Bike</option>
-                            <option>Cyclocross Bike</option>
-                            <option>BMX/Trick Bike</option>
-                            <option>Road Bike</option>
-                            <option>Track Bike</option>
+                            @foreach ($kategori as $kt)
+                            <option value="{{$kt->id}}">{{$kt->nama}}</option>
+                            @endforeach
                         </select>
                     </li>
                     <!-- <li>
@@ -169,42 +82,17 @@
     <section class="s-category-bicycle">
         <div class="container">
             <div class="slider-categ-bicycle">
-                <div class="slide-categ-bicycle">
-                    <div class="categ-bicycle-item">
-                        <img src="{{asset ('assets/user/img/categ-2.png')}}" alt="category">
-                        <div class="categ-bicycle-info">
-                            <h4 class="title">Tenda</h4>
-                            <a href="shop.html" class="btn"><span>view more</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-categ-bicycle">
-                    <div class="categ-bicycle-item">
-                        <img src="{{asset ('assets/user/img/categ-1.png')}}" alt="category">
-                        <div class="categ-bicycle-info">
-                            <h4 class="title">Cooking Set</h4>
-                            <a href="shop.html" class="btn"><span>view more</span></a>
-                        </div>
-                    </div>
-                </div>
+                @foreach($kategori as $kt)
                 <div class="slide-categ-bicycle">
                     <div class="categ-bicycle-item">
                         <img src="{{asset ('assets/user/img/categ-3.png')}}" alt="category">
                         <div class="categ-bicycle-info">
-                            <h4 class="title">Compliment</h4>
+                            <h4 class="title">{{$kt->nama}}</h4>
                             <a href="shop.html" class="btn"><span>view more</span></a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="slide-categ-bicycle">
-                    <div class="categ-bicycle-item">
-                        <img src="{{asset ('assets/user/img/categ-3.png')}}" alt="category">
-                        <div class="categ-bicycle-info">
-                            <h4 class="title">bicycle <br>spare parts</h4>
-                            <a href="shop.html" class="btn"><span>view more</span></a>
-                        </div>
-                    </div>
-                </div> -->
+                @endforeach
             </div>
         </div>
     </section>
@@ -217,22 +105,22 @@
             <h2 class="title">Kelebihan Kami</h2>
             <div class="our-advantages-wrap">
                 <div class="our-advantages-item">
-                    <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/advantages-1.svg"
+                    <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/advantages-1.svg')}}"
                         alt="icon">
                     <h5>Free shipping <br>from $500</h5>
                 </div>
                 <div class="our-advantages-item">
-                    <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/advantages-2.svg"
+                    <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/advantages-2.svg')}}"
                         alt="icon">
                     <h5>Warranty service <br>for 3 months</h5>
                 </div>
                 <div class="our-advantages-item">
-                    <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/advantages-3.svg"
+                    <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/advantages-3.svg')}}"
                         alt="icon">
                     <h5>Exchange and return <br>within 14 days</h5>
                 </div>
                 <div class="our-advantages-item">
-                    <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/advantages-4.svg"
+                    <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/advantages-4.svg')}}"
                         alt="icon">
                     <h5>Discounts for <br>customers</h5>
                 </div>
@@ -249,27 +137,28 @@
                     <h2 class="title">Top Rent</h2>
                     <ul class="tab-nav product-tabs">
                         <li class="item" rel="tab1"><span>All</span></li>
-                        <!-- <li class="item" rel="tab2"><span>Road bike</span></li>
+                        {{-- <li class="item" rel="tab2"><span>Road bike</span></li>
                         <li class="item" rel="tab3"><span>City bike</span></li>
-                        <li class="item" rel="tab4"><span>BMX bike</span></li> -->
+                        <li class="item" rel="tab4"><span>BMX bike</span></li> --}}
                     </ul>
                 </div>
                 <div class="tabs-content">
                     <div class="tab tab1">
                         <div class="row product-cover">
+                            @foreach ($home as $key => $hm)
+                            @if($key < 4)
                             <div class="col-6 col-md-3 prod-item-col">
                                 <div class="product-item">
                                     <a href="single-shop.html" class="product-img">
-                                        <img src="assets/img/new.png"
+                                        <img src="{{asset('storage/'.$hm->foto)}}"
                                             alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Granite Peak
-                                                    24" <br>Girls
-                                                    Mountain Bike</a></h6>
+                                            <h6 class="prod-title product-name"><a href="single-shop.html">{{$hm->kategori->nama}}
+                                                    <br>{{$hm->nama}}</a></h6>
                                             <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
+                                                <div class="new-price">Rp. {{$hm->harga}}</div>
+                                                <div class="old-price">/ Hari</div>
                                             </div>
                                             <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
                                         </div>
@@ -279,7 +168,7 @@
                                                                                             <li>Class: <span>City</span></li>
                                                                                             <li>Number of speeds: <span>7</span></li>
                                                                                             <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
+                                                <li>Keterangan: <p>{{$hm->keterangan}}</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -292,111 +181,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="assets/img/new.png"
-                                            alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Granite Peak
-                                                    24" <br>Girls
-                                                    Mountain Bike</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                                                                                                                        <li>Class: <span>City</span></li>
-                                                                                                                        <li>Number of speeds: <span>7</span></li>
-                                                                                                                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="assets/img/new.png"
-                                            alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Granite Peak
-                                                    24" <br>Girls
-                                                    Mountain Bike</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                                                                                                                        <li>Class: <span>City</span></li>
-                                                                                                                        <li>Number of speeds: <span>7</span></li>
-                                                                                                                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="assets/img/new.png"
-                                            alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Granite Peak
-                                                    24" <br>Girls
-                                                    Mountain Bike</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                                                                                                                        <li>Class: <span>City</span></li>
-                                                                                                                        <li>Number of speeds: <span>7</span></li>
-                                                                                                                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            @endif
+                            @endforeach
                         </div>
                         <div class="tab tab2">
                             <div class="row product-cover">
@@ -1345,7 +1131,7 @@
                     <li class="comments">234 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
                     <li class="like">134 <i class="fa fa-heart-o" aria-hidden="true"></i></li>
                 </ul>
-                <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/instagram-1.jpg"
+                <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/instagram-1.jpg')}}"
                     alt="img">
             </a>
             <a href="#" class="instagram-item">
@@ -1353,7 +1139,7 @@
                     <li class="comments">222 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
                     <li class="like">118 <i class="fa fa-heart-o" aria-hidden="true"></i></li>
                 </ul>
-                <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/instagram-2.jpg"
+                <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/instagram-2.jpg')}}"
                     alt="img">
             </a>
             <a href="#" class="instagram-item">
@@ -1361,7 +1147,7 @@
                     <li class="comments">224 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
                     <li class="like">124 <i class="fa fa-heart-o" aria-hidden="true"></i></li>
                 </ul>
-                <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/instagram-3.jpg"
+                <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/instagram-3.jpg')}}"
                     alt="img">
             </a>
             <a href="#" class="instagram-item">
@@ -1369,7 +1155,7 @@
                     <li class="comments">155 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
                     <li class="like">107 <i class="fa fa-heart-o" aria-hidden="true"></i></li>
                 </ul>
-                <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/instagram-4.jpg"
+                <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/instagram-4.jpg')}}"
                     alt="img">
             </a>
             <a href="#" class="instagram-item">
@@ -1377,7 +1163,7 @@
                     <li class="comments">350 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
                     <li class="like">140 <i class="fa fa-heart-o" aria-hidden="true"></i></li>
                 </ul>
-                <img class="lazy" src="assets/img/placeholder-all.png" data-src="assets/img/instagram-5.jpg"
+                <img class="lazy" src="{{asset('assets/user/img/placeholder-all.png')}}" data-src="{{asset('assets/user/img/instagram-5.jpg')}}"
                     alt="img">
             </a>
         </div>

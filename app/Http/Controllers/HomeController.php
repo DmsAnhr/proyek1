@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BarangModel;
+use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        $kategori = KategoriModel::all();
+        $home = BarangModel::orderBy('updated_at', 'desc')->paginate(5);
+        return view('user.home')
+            ->with('home', $home)
+            ->with('kategori', $kategori);
     }
 }
