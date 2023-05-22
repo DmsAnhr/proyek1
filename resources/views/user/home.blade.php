@@ -154,8 +154,7 @@
                                             alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">{{$hm->kategori->nama}}
-                                                    <br>{{$hm->nama}}</a></h6>
+                                            <h6 class="prod-title product-name"><a href="single-shop.html">{{$hm->nama}}</a></h6>
                                             <div class="price-cover">
                                                 <div class="new-price">Rp. {{$hm->harga}}</div>
                                                 <div class="old-price">/ Hari</div>

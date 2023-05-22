@@ -7,6 +7,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -35,9 +36,7 @@ Route::middleware(['auth', 'role:user'])->group(function()
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/home', [HomeController::class, 'index']);
 
-    Route::get('/shop', function() {
-        return view('user.shop');
-    });;
+    Route::get('/shop', [ShopController::class, 'index']);
 
     Route::get('/about', function() {
         return view('user.about');
