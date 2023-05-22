@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShopModel extends Model
 {
     use HasFactory;
+    protected $table = 'transaksi';
     public function barang()
     {
         return $this->hasMany(BarangModel::class);

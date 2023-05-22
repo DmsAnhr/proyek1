@@ -43,351 +43,21 @@
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="table-items" class="table                                 "
+                                            <table id="tableBarang" class="table                                 "
                                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;"
                                                 role="grid" aria-describedby="datatable_info">
                                                 <thead>
                                                     <tr role="row">
-                                                        <th>Nama Barang</th>
-                                                        <th>Kategori</th>
-                                                        <th>Tersedia</th>
-                                                        <th>Harga/hari</th>
+                                                        <th>No</th>
+                                                        <th>Nama</th>
+                                                        <th>Harga</th>
+                                                        <th>Jumlah</th>
                                                         <th>Status</th>
                                                         <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!-- <tr role="row" class="odd">
-                                                        <td class="sorting_1">
-                                                            <img src="../assets/images/products/img-2.png" alt=""
-                                                                height="52">
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Apple
-                                                                    Watch</a>
-                                                                <br>
-                                                                <span class="text-muted font-13">Size-05 (Model
-                                                                    2019)</span>
-                                                            </p>
-                                                        </td>
-                                                        <td>Sports</td>
-                                                        <td>32</td>
-                                                        <td>$39</td>
-                                                        <td><span class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <ul class="list-inline mb-0">
-                                                                <li class="list-inline-item align-middle"><i class="fas fa-circle text-success"></i></li>
-                                                                <li class="list-inline-item align-middle"><i class="fas fa-circle text-danger"></i></li>
-                                                                <li class="list-inline-item align-middle"><i class="fas fa-circle text-info"></i></li>
-                                                                <li class="list-inline-item align-middle"><i class="fas fa-circle text-dark"></i></li>
-                                                                <li class="list-inline-item align-middle"><i class="fas fa-circle text-warning"></i></li>
-                                                            </ul>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr> -->
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Bata
-                                                                    Shoes</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Footwear</td>
-                                                        <td>24</td>
-                                                        <td>$49</td>
-                                                        <td>
-                                                            <span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">
 
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Best
-                                                                    Look
-                                                                    Chair</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Interior</td>
-                                                        <td>32</td>
-                                                        <td>$39</td>
-                                                        <td><span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">
-
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Brown
-                                                                    Morden
-                                                                    Chair</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Interior</td>
-                                                        <td>6</td>
-                                                        <td>$20</td>
-                                                        <td><span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Cosco
-                                                                    Vollyboll</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Sports</td>
-                                                        <td>8</td>
-                                                        <td>$49</td>
-                                                        <td><span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">
-
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Green
-                                                                    Morden
-                                                                    Chair</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Interior</td>
-                                                        <td>10</td>
-                                                        <td>$99</td>
-                                                        <td><span class="badge badge-md badge-soft-pink">Kosong</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">
-
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Important
-                                                                    Chair</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Interior</td>
-                                                        <td>32</td>
-                                                        <td>$39</td>
-                                                        <td><span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Lava
-                                                                    Purse</a>p>
-                                                        </td>
-                                                        <td>Life Style</td>
-                                                        <td>52</td>
-                                                        <td>$89</td>
-                                                        <td><span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">
-
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">Morden
-                                                                    Chair</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Interior</td>
-                                                        <td>10</td>
-                                                        <td>$99</td>
-                                                        <td><span class="badge badge-md badge-soft-pink">Kosong</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href="#"
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                                    <a class="dropdown-item" href="#">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">
-
-                                                            <p class="d-inline-block align-middle mb-0">
-                                                                <a href=""
-                                                                    class="d-inline-block align-middle mb-0 product-name">New
-                                                                    Morden
-                                                                    Chair</a>
-                                                            </p>
-                                                        </td>
-                                                        <td>Interior</td>
-                                                        <td>6</td>
-                                                        <td>$20</td>
-                                                        <td><span
-                                                                class="badge badge-md badge-soft-secondary">Tersedia</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="dropdown d-inline-block float-right">
-                                                                <a class="nav-link dropdown-toggle arrow-none"
-                                                                    id="dLabel8" data-toggle="dropdown" href=""
-                                                                    role="button" aria-haspopup="false"
-                                                                    aria-expanded="false">
-                                                                    <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                                                                </a>
-                                                                <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dLabel8" x-placement="bottom-end"
-                                                                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                                                                    <a class="dropdown-item link-edit">Edit</a>
-                                                                    <a class="dropdown-item ">Hapus</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -407,7 +77,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <img src="../assets/images/products/img-7.png" alt=""
-                                            class=" mx-auto  d-block" style="max-width: 90%;object-fit: contain;">
+                                            class=" mx-auto  d-block gambarEditBarang" style="max-width: 90%;object-fit: contain;">
                                         <button type="button"
                                             class="btn btn-img btn-secondary waves-effect mt-2 mx-auto d-block"
                                             style="width: 70%;" con="upload">Ubah
@@ -420,7 +90,7 @@
                                         <div class="single-pro-detail">
                                             <p class="mb-1">Barang</p>
                                             <div class="custom-border mb-3"></div>
-                                            <h3 class="pro-title" id="inline-name" style="width: 85%;" name="namaBarang"
+                                            <h3 class="pro-title namaEditBarang" id="inline-name" style="width: 85%;" name="namaBarang"
                                                 data-type="text" data-pk="1" data-title="Enter username">
                                                 Tenda The North Face
                                             </h3>
@@ -431,13 +101,13 @@
                                                 </h3> -->
                                             <div class="d-flex align-items-center">
                                                 <h4 style="margin: 10px 0 0 0;">Rp. </h4>
-                                                <h2 class="pro-price" id="inline-price" name="hargaBarang"
+                                                <h2 class="pro-price hargaEditBarang" id="inline-price" name="hargaBarang"
                                                     data-type="text" data-pk="1" data-title="Enter username"> 40.000
                                                 </h2>
                                                 <h4 style="margin: 10px 0 0 0;">/Hari</h4>
                                             </div>
                                             <h6 class="text-muted font-13">Keterangan :</h6>
-                                            <p id="inline-keterangan" style="width: 85%;" name="ketBarang"
+                                            <p id="inline-keterangan" class="keteranganEditBarang" style="width: 85%;" name="ketBarang"
                                                 data-type="textarea" data-pk="1"
                                                 data-placeholder="Your comments here..." data-title="Enter comments">
                                                 -Ukuran 4x4
@@ -445,26 +115,14 @@
                                             </p>
                                             <!-- <br> -->
                                             <h6 class="text-muted font-13">Kategori :</h6>
-                                            <h5 id="inline-kategori" style="width: fit-content;" name="kategoriBarang"
-                                                data-type="select" data-pk="1" data-value="1"
-                                                data-title="Select sex">
-                                            </h5>
-                                            <h6 class="text-muted font-13"></h6>
-                                            <h5 id="inline-kategori" style="width: fit-content;" name="kategoriBarang"
+                                            <h5 id="inline-kategori" class="kategoriEditBarang" style="width: fit-content;" name="kategoriBarang"
                                                 data-type="select" data-pk="1" data-value="1"
                                                 data-title="Select sex">
                                             </h5>
                                             <div class="row">
                                                 <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Jumlah Barang :</h6>
-                                                    <h3 class="pro-title" data-type="text" data-pk="1"
-                                                        data-title="Enter username">
-                                                        10
-                                                    </h3>
-                                                </div>
-                                                <div class="col-sm-4">
                                                     <h6 class="text-muted font-13">Tersedia :</h6>
-                                                    <h3 class="pro-title" id="inline-ready" name="stokTersedia"
+                                                    <h3 class="pro-title jumlahEditBarang" id="inline-ready" name="stokTersedia"
                                                         style="width: fit-content;" data-type="text" data-pk="1"
                                                         data-title="Enter username">
                                                         6
@@ -475,7 +133,7 @@
                                                     <h3 class="pro-title" id="inline-rent" name="stokDisewa"
                                                         style="width: fit-content;" data-type="text" data-pk="1"
                                                         data-title="Enter username">
-                                                        4
+                                                        tersedia
                                                     </h3>
                                                 </div>
                                             </div>
@@ -498,7 +156,7 @@
         <!-- end page content -->
     </div>
 
-    <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    <div id="modalAddBarang" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -508,8 +166,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="">
+                <form id="formBarang" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        @csrf
                         <div class="row">
                             <div class="col-12">
                                 <img src="" alt="" class=" mx-auto  d-block"
@@ -518,16 +177,22 @@
                                     style="width: 50%;" con="input">
                                     Tambah Gambar
                                 </button>
-                                <input type="file" class="inpt-img-upload"
-                                    style="visibility: hidden; position: absolute;">
+                                <input type="file" class="inpt-img-upload" name="foto" id="foto"
+                                     required style="opacity: 0;">
                             </div>
                             <div class="col-6">
                                 <label>Nama Barang</label>
-                                <input class="form-control" type="text" id="namaBarang">
+                                <input class="form-control" type="text" id="namaBarang" name="nama">
                             </div>
                             <div class="col-md-6">
                                 <label>Kategori Barang</label>
-                                <select class="select-kategori mb-3" style="width: 100%" data-placeholder="Choose">
+                                <select name="kategori_id" id="kategori_id" required class="form-control">
+                                    <option value="Pilih Kategori" selected disabled></option>
+                                    @foreach($kategori as $k)
+                                        <option value="{{ $k->id }}">{{ $k->nama }}</option>
+                                    @endforeach
+                                </select>
+                                {{-- <select class="select-kategori mb-3" style="width: 100%" data-placeholder="Choose">
                                     <optgroup label="Alaskan/Hawaiian Time Zone">
                                         <option value="AK">Alaska</option>
                                         <option value="HI">Hawaii</option>
@@ -549,11 +214,11 @@
                                         <option value="UT">Utah</option>
                                         <option value="WY">Wyoming</option>
                                     </optgroup>
-                                </select>
+                                </select> --}}
                             </div>
                             <div class="col-6">
                                 <label class="mt-3">Jumlah Barang</label>
-                                <input class="form-control" type="number" id="jumlahBarang">
+                                <input class="form-control" type="number" id="jumlahBarang" name="jumlah">
                             </div>
                             <div class="col-md-6">
                                 <label class="mt-3">Harga Sewa</label>
@@ -561,7 +226,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Rp.</span>
                                     </div>
-                                    <input type="text" id="example-input3-group1" name="example-input3-group1"
+                                    <input type="text" id="example-input3-group1" name="harga"
                                         class="form-control">
                                     <div class="input-group-append">
                                         <span class="input-group-text">/hari</span>
@@ -570,17 +235,19 @@
                             </div>
                             <div class="col-12">
                                 <label class="mt-3">Keterangan</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="keterangan"></textarea>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-sm btn-gradient-primary btn-lg ml-auto">
-                        Simpan
-                    </button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-sm btn-gradient-primary btn-lg ml-auto" id="submitFormItem">
+                            Simpan
+                        </button>
+                    </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
 @endsection

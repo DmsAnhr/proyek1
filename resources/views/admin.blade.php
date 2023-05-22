@@ -112,6 +112,43 @@
     <!-- Plugins js -->
     <script src="{{ asset('assets/admin/plugins/select2/select2.min.js') }}"></script>
 
+    <script>
+        $(document).ready(function () {
+
+$('#tableBarang').DataTable({
+    "responsive": true, "lengthChange": false, "autoWidth": false,
+    "iDisplayLength": 10,
+    'processing': true,
+    'serverSide': true,
+    'ajax': "{{ route('barang.index') }}",
+    'columns': [
+        { "data": null,"sortable": false, 
+          render: function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                    }  
+        },
+        {data: 'nama', name: 'nama'},
+        {data: 'harga', name: 'harga'},
+        {data: 'jumlah', name: 'jumlah'},
+        {data: 'status', name: 'status'},
+        {data: 'action', name: 'action', orderable: false, searchable: false},
+    ],
+    columnDefs: [{
+        targets: -1,
+        render: function(data, type, row, meta) {
+            return `
+                <div class="dropdown-menu dropdown-menu-right"
+                    aria-labelledby="dLabel8" x-placement="bottom-end"
+                    style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
+                    <a class="dropdown-item link-edit>Edit</a>
+                    <a class="dropdown-item delete-barang" href="#" data-id="${row.id}>Hapus</a>
+                </div>
+            `;
+        }
+    }]
+});
+});
+    </script>
     <!-- App js -->
     <script src="{{ asset('assets/admin/js/app.js') }}"></script>
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>

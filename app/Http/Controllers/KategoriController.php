@@ -35,9 +35,9 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->ajax()) {
-            return "True request!";
-        }
+        // if ($request->ajax()) {
+        //     return "True request!";
+        // }
         $kategori = new KategoriModel;
         $kategori->nama = $request->nama;
         // Lakukan pengisian properti lainnya sesuai kebutuhan

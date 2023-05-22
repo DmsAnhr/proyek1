@@ -54,8 +54,39 @@ $(function () {
 
 $(document).ready(function () {
 
+    // $('#tableBarang').DataTable({
+    //     "responsive": true, "lengthChange": false, "autoWidth": false,
+    //     "iDisplayLength": 10,
+    //     'processing': true,
+    //     'serverSide': true,
+    //     'ajax': "{{ route('barang.index') }}",
+    //     'columns': [
+    //         { "data": null,"sortable": false, 
+    //           render: function (data, type, row, meta) {
+    //                     return meta.row + meta.settings._iDisplayStart + 1;
+    //                     }  
+    //         },
+    //         {data: 'nama', name: 'nama'},
+    //         {data: 'harga', name: 'harga'},
+    //         {data: 'jumlah', name: 'jumlah'},
+    //         {data: 'status', name: 'status'},
+    //         {data: 'action', name: 'action', orderable: false, searchable: false},
+    //     ],
+    //     columnDefs: [{
+    //         targets: -1,
+    //         render: function(data, type, row, meta) {
+    //             return `
+    //                 <div class="dropdown-menu dropdown-menu-right"
+    //                     aria-labelledby="dLabel8" x-placement="bottom-end"
+    //                     style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
+    //                     <a class="dropdown-item link-edit>Edit</a>
+    //                     <a class="dropdown-item delete-barang" href="#" data-id="${row.id}>Hapus</a>
+    //                 </div>
+    //             `;
+    //         }
+    //     }]
+    // });
     $('.edit-row').hide();
-    $('#table-items').DataTable({});
     $(".select-kategori").select2();
 
 
@@ -87,7 +118,34 @@ $(document).ready(function () {
 
 
 
-    $('.link-edit').click(function () {
+    $('#tableBarang').on('click', '.link-edit',function () {
+        var rowData = table.row(this).data();
+
+        // $(".gambarEdit").html(`${rowData.id}`);
+        // $('.namaEditBarang').html(`${rowData.nama}`);
+        // $('.hargaEditBarang').html(`${rowData.harga}`);
+        // $('.keteranganEditBarang').html(`${rowData.keteragan}`);
+        // $('.kategoriEditBarang').html(`${rowData.nama_kategori}`);
+        // $('.jumlahEditBarang').html(`${rowData.jumlah}`);
+        // $('.statusEditBarang').html(`${rowData.status}`);
+        $.ajax({
+            url: `/kategori/${rowData.kategori_id}`,
+            type: 'GET',
+            success: function(response) {
+                $('.gambarEdit').attr('src', `${rowData.id}`);
+                $('.namaEditBarang').html(`${rowData.nama}`);
+                $('.hargaEditBarang').html(`${rowData.harga}`);
+                $('.keteranganEditBarang').html(`${rowData.keteragan}`);
+                $('.kategoriEditBarang').html(`${response.nama}`);
+                $('.jumlahEditBarang').html(`${rowData.jumlah}`);
+                $('.statusEditBarang').html(`${rowData.status}`);
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+                // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
+            }
+        });
+
         $('.table-row').hide();
         $('.edit-row').show();
         $('.page-title').text('Detail Barang');

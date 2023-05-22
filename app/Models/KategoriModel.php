@@ -12,8 +12,8 @@ class KategoriModel extends Model
     protected $table = 'kategori';
     protected $fillable = ['nama'];
 
-    public function items()
+    public function barang()
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany(BarangModel::class);
     }
 }

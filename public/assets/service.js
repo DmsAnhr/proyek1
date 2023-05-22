@@ -62,9 +62,7 @@ $(document).ready(function () {
     });
 
     // add category
-    $("#submitFormKategori").click(function () {
-        var token = $('meta[name="csrf-token"]').attr('content');
-        console.log(token);
+    $('#submitFormKategori').click(function () {
         var formData = $("#formKategori").serialize();
         var url = $("#formKategori").attr('action');
         $.ajax({
@@ -79,5 +77,74 @@ $(document).ready(function () {
                 alert("Terjadi kesalahan. Silakan coba lagi."); // Menampilkan pesan kesalahan
             },
         });
+    });
+
+    //add item
+    $('#submitFormItem').click(function () {
+        e.preventDefault();
+        var formData = $("#formBarang").serialize();
+        $.ajax({
+            url: '/barang',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log(response.message);
+                $('#modalAddBarang').toggle();
+                $("#formBarang")[0].reset();
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+            }
+        }); 
+    });
+
+    // edit barang
+    // $('#tableBarang').on('click', '.edit-barang', function(e) {
+    //     e.preventDefault();
+    //     var itemId = $(this).data('id');
+
+    //     // Mengambil data item menggunakan permintaan Ajax
+    //     $.ajax({
+    //         url: `/items/${itemId}/edit`,
+    //         type: 'GET',
+    //         success: function(response) {
+    //             // Proses data yang diterima
+    //             // Tampilkan formulir edit item atau modifikasi tampilan sesuai kebutuhan Anda
+    //         },
+    //         error: function(xhr, status, error) {
+    //             console.log(xhr.responseText);
+    //             // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
+    //         }
+    //     });
+    // });
+
+    // hapus barang
+    $('#tableBarang').on('click', '.delete-barang', function(e) {
+        e.preventDefault();
+        var itemId = $(this).data('id');
+
+        // Konfirmasi penghapusan
+        if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
+            // Menghapus item menggunakan permintaan Ajax
+            $.ajax({
+                url: `/items/${itemId}`,
+                type: 'DELETE',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    // Proses respon setelah item dihapus
+                    console.log(response.message);
+                    // Refresh tabel setelah penghapusan item
+                    table.ajax.reload();
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                    // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
+                }
+            });
+        }
     });
 });

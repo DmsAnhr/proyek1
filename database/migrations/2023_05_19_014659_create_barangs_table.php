@@ -16,16 +16,17 @@ return new class extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('kategori_id');
-            $table->unsignedBigInteger('transaction_id')->nullable();
-            $table->string('nama_barang');
+            $table->unsignedBigInteger('transaksi_id')->nullable();
+            $table->string('nama');
             $table->integer('harga');
+            $table->integer('jumlah');
             $table->string('status')->default('tersedia');
-            $table->string('keterangan');
+            $table->text('keterangan');
             $table->string('foto');
             $table->timestamps();
             
             $table->foreign('kategori_id')->references('id')->on('kategori');
-            $table->foreign('transaksi_id')->references('id')->on('shop');
+            $table->foreign('transaksi_id')->references('id')->on('transaksi');
         });
     }
 

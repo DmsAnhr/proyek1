@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
@@ -69,9 +70,12 @@ Route::middleware(['auth', 'role:admin'])->group(function()
         return view('admin.cashier');
     });;
 
-    Route::get('/barang', function() {
-        return view('admin.item');
-    });;
+    Route::resource('barang', BarangController::class);
+    Route::post('/make_barang', [BarangController::class, 'store']);
+    Route::get('barang', [BarangController::class, 'index'])->name('barang.index');
+    Route::get('/barang/{item}/edit', 'ItemController@edit')->name('barang.edit');
+    Route::delete('/barang/{item}', 'ItemController@destroy')->name('barang.delete');
+
 
     Route::get('/kategori', function() {
         return view('admin.category');
