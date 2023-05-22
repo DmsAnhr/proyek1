@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kode_transaksi');
-            $table->integer('id_user');
+            $table->integer('id_user')->nullable();
             $table->string('alamat');
             $table->timestamp('tanggal_start')->useCurrent();
             $table->date('tanggal_finish');

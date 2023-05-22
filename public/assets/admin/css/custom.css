@@ -7,3 +7,8 @@
     padding-top: 0;
     text-align: left !important;
 }
+
+.nf-item .item-container{
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}

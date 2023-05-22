@@ -13,4 +13,11 @@ class ShopModel extends Model
     {
         return $this->hasMany(BarangModel::class);
     }
+
+    public function barangs()
+    {
+        return $this->belongsToMany(Barang::class, 'transaksi_barangs')
+            ->withPivot('jumlah')
+            ->withTimestamps();
+    }
 }

@@ -73,9 +73,11 @@ Route::middleware(['auth', 'role:admin'])->group(function()
     Route::resource('barang', BarangController::class);
     Route::post('/make_barang', [BarangController::class, 'store']);
     Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
-    // Route::get('/barang/{item}/edit', 'ItemController@edit')->name('barang.edit');
     Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
     Route::delete('/barang_delete/{id}', [BarangController::class, 'destroy']);
+
+    Route::get('/get-data', [BarangController::class, 'getData']);
+    // Route::get('/get-data', 'BarangController@getData');
 
 
     Route::get('/kategori', function() {

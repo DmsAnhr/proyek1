@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/css/icons.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/css/metisMenu.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/css/app.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/css/custom.css') }}" />
 
 </head>
 
@@ -60,6 +61,8 @@
     <script src="{{ asset('assets/admin/js/app.js') }}"></script>
     <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
     <script src="{{ asset('assets/service.js') }}"></script>
+
+    @stack('jsPage')
 </body>
 
 </html>

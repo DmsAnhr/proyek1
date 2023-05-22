@@ -24,7 +24,14 @@ class BarangController extends Controller
         $barang = BarangModel::all();
         return view('admin/item')
             ->with('kategori', KategoriModel::all());
-            
+    }
+
+    public function getData()
+    {
+        $barang = BarangModel::with('kategori')->get();
+        $kategori = KategoriModel::all();
+        return response()->json(['barang' => $barang, 'kategori' => $kategori]);
+        
     }
 
 
@@ -57,11 +64,11 @@ class BarangController extends Controller
             'harga' => 'required',
             'keterangan' => 'required',
         ]);
-    
+
         // Mengunggah gambar dan mendapatkan path-nya
-        
-        $gambarPath = $request->file('foto')->store('images','public');
-        
+
+        $gambarPath = $request->file('foto')->store('images', 'public');
+
         $barang = new BarangModel;
         $barang->nama = $request->nama;
         $barang->kategori_id = $request->kategori_id;
@@ -70,7 +77,7 @@ class BarangController extends Controller
         $barang->keterangan = $request->keterangan;
         $barang->foto = $gambarPath;
         $barang->save();
-    
+
         return back();
     }
 

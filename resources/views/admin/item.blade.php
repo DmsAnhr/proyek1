@@ -37,8 +37,8 @@
                                     </button>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                    Available all products.
-                                </p> -->
+                                        Available all products.
+                                    </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -76,8 +76,9 @@
                                 <!-- <form action=""> -->
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <img src="../assets/images/products/img-7.png" alt=""
-                                            class=" mx-auto  d-block gambarEditBarang" style="max-width: 90%;object-fit: contain;">
+                                        <img src="{{ asset('assets/admin/images/products/img-7.png') }}" alt=""
+                                            class=" mx-auto  d-block gambarEditBarang"
+                                            style="max-width: 90%;object-fit: contain;">
                                         <button type="button"
                                             class="btn btn-img btn-secondary waves-effect mt-2 mx-auto d-block"
                                             style="width: 70%;" con="upload">Ubah
@@ -90,15 +91,16 @@
                                         <div class="single-pro-detail">
                                             <p class="mb-1">Barang</p>
                                             <div class="custom-border mb-3"></div>
-                                            <h3 class="pro-title namaEditBarang" id="inline-name" style="width: 85%;" name="namaBarang"
-                                                data-type="text" data-pk="1" data-title="Enter username">
+                                            <h3 class="pro-title namaEditBarang" id="inline-name" style="width: 85%;"
+                                                name="namaBarang" data-type="text" data-pk="1"
+                                                data-title="Enter username">
                                                 Tenda The North Face
                                             </h3>
                                             <!-- <h3 class="pro-titles" id="inline-usernames" style="width: 85%;"
-                                                    name="namaBarang" data-type="text" data-pk="1"
-                                                    data-title="Enter username">
-                                                    Tenda The North Face
-                                                </h3> -->
+                                                        name="namaBarang" data-type="text" data-pk="1"
+                                                        data-title="Enter username">
+                                                        Tenda The North Face
+                                                    </h3> -->
                                             <div class="d-flex align-items-center">
                                                 <h4 style="margin: 10px 0 0 0;">Rp. </h4>
                                                 <h2 class="pro-price hargaEditBarang" id="inline-price" name="hargaBarang"
@@ -107,24 +109,24 @@
                                                 <h4 style="margin: 10px 0 0 0;">/Hari</h4>
                                             </div>
                                             <h6 class="text-muted font-13">Keterangan :</h6>
-                                            <p id="inline-keterangan" class="keteranganEditBarang" style="width: 85%;" name="ketBarang"
-                                                data-type="textarea" data-pk="1"
+                                            <p id="inline-keterangan" class="keteranganEditBarang" style="width: 85%;"
+                                                name="ketBarang" data-type="textarea" data-pk="1"
                                                 data-placeholder="Your comments here..." data-title="Enter comments">
                                                 -Ukuran 4x4
                                                 -Muat 5 orang
                                             </p>
                                             <!-- <br> -->
                                             <h6 class="text-muted font-13">Kategori :</h6>
-                                            <h5 id="inline-kategori" class="kategoriEditBarang" style="width: fit-content;" name="kategoriBarang"
-                                                data-type="select" data-pk="1" data-value="1"
+                                            <h5 id="inline-kategori" class="kategoriEditBarang" style="width: fit-content;"
+                                                name="kategoriBarang" data-type="select" data-pk="1" data-value="1"
                                                 data-title="Select sex">
                                             </h5>
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <h6 class="text-muted font-13">Jumlah :</h6>
-                                                    <h3 class="pro-title jumlahEditBarang" id="inline-ready" name="stokTersedia"
-                                                        style="width: fit-content;" data-type="text" data-pk="1"
-                                                        data-title="Enter username">
+                                                    <h3 class="pro-title jumlahEditBarang" id="inline-ready"
+                                                        name="stokTersedia" style="width: fit-content;" data-type="text"
+                                                        data-pk="1" data-title="Enter username">
                                                         6
                                                     </h3>
                                                 </div>
@@ -156,8 +158,8 @@
         <!-- end page content -->
     </div>
 
-    <div id="modalAddBarang" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-        aria-hidden="true">
+    <div id="modalAddBarang" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -177,8 +179,8 @@
                                     style="width: 50%;" con="input">
                                     Tambah Gambar
                                 </button>
-                                <input type="file" class="inpt-img-upload" name="foto" id="foto"
-                                     required style="opacity: 0;">
+                                <input type="file" class="inpt-img-upload" name="foto" id="foto" required
+                                    style="opacity: 0;">
                             </div>
                             <div class="col-6">
                                 <label>Nama Barang</label>
@@ -188,7 +190,7 @@
                                 <label>Kategori Barang</label>
                                 <select name="kategori_id" id="kategori_id" required class="form-control">
                                     <option value="Pilih Kategori" selected disabled></option>
-                                    @foreach($kategori as $k)
+                                    @foreach ($kategori as $k)
                                         <option value="{{ $k->id }}">{{ $k->nama }}</option>
                                     @endforeach
                                 </select>
@@ -240,7 +242,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-sm btn-gradient-primary btn-lg ml-auto" id="submitFormItem">
+                        <button type="submit" class="btn btn-sm btn-gradient-primary btn-lg ml-auto"
+                            id="submitFormItem">
                             Simpan
                         </button>
                     </div>
@@ -248,40 +251,204 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
 @endsection
 
 @push('css')
-<!-- DataTables -->
-<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.css') }}" />
-<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.css') }}" />
-<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/x-editable/css/bootstrap-editable.css') }}" />
-<link rel="stylesheet" type="text/css"href="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.css') }}" />
+    <!-- DataTables -->
+    <link rel="stylesheet"
+        type="text/css"href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.css') }}" />
+    <link rel="stylesheet"
+        type="text/css"href="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.css') }}" />
+    <link rel="stylesheet"
+        type="text/css"href="{{ asset('assets/admin/plugins/x-editable/css/bootstrap-editable.css') }}" />
+    <link rel="stylesheet"
+        type="text/css"href="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.css') }}" />
 @endpush
 
 @push('js')
-     <!-- Required datatable js -->
-     <script src="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
- 
-     <!-- Buttons examples -->
-     <script src="{{ asset('assets/admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/jszip.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/pdfmake.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/vfs_fonts.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/buttons.html5.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/buttons.print.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/buttons.colVis.min.js') }}"></script>
- 
-     <!-- Responsive examples -->
-     <script src="{{ asset('assets/admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
- 
-     <!-- XEditable Plugin -->
-     <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
-     <script src="{{ asset('assets/admin/plugins/x-editable/js/bootstrap-editable.min.js') }}"></script>
+    <!-- Required datatable js -->
+    <script src="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+    <!-- Buttons examples -->
+    <script src="{{ asset('assets/admin/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/buttons.colVis.min.js') }}"></script>
+
+    <!-- Responsive examples -->
+    <script src="{{ asset('assets/admin/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
+
+    <!-- XEditable Plugin -->
+    <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/x-editable/js/bootstrap-editable.min.js') }}"></script>
 
     <script src="{{ asset('assets/admin/js/itemJs.js') }}"></script>
+@endpush
+
+@push('jsPage')
+    <script type="text/javascript">
+        // init table barang
+        var table = $('#tableBarang').DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "iDisplayLength": 10,
+            'processing': true,
+            'serverSide': true,
+            'ajax': "/barang",
+            'columns': [{
+                    "data": null,
+                    "sortable": false,
+                    render: function(data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+                {
+                    data: 'harga',
+                    name: 'harga'
+                },
+                {
+                    data: 'jumlah',
+                    name: 'jumlah'
+                },
+                {
+                    data: 'status',
+                    name: 'status'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false
+                },
+            ],
+            columnDefs: [{
+                targets: -1,
+                render: function(data, type, row, meta) {
+                    return `
+                    <div class="dropdown d-inline-block float-right">
+                        <a class="nav-link dropdown-toggle arrow-none"
+                            id="dLabel8" data-toggle="dropdown" href=""
+                            role="button" aria-haspopup="false"
+                            aria-expanded="false">
+                            <i class="fas fa-ellipsis-h font-20 text-muted"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="dLabel8" x-placement="bottom-end"
+                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
+                            <a class="dropdown-item link-edit" data-id="` + row.id + `">Edit</a>
+                            <a class="dropdown-item delete-barang" data-id="${row.id}">Hapus</a>
+                        </div>
+                    </div>
+                `;
+                }
+            }]
+        });
+
+        //add item
+        $('#submitFormItem').click(function() {
+            e.preventDefault();
+            var formData = $("#formBarang").serialize();
+            $.ajax({
+                url: '/barang',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log(response.message);
+                    $('#modalAddBarang').toggle();
+                    $("#formBarang")[0].reset();
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+
+
+        //Open Edit
+        $('#tableBarang').on('click', '.link-edit', function() {
+            var id = $(this).data('id');
+            $.ajax({
+                url: 'barang/' + id,
+                type: "GET",
+                success: function(data) {
+                    $('.gambarEditBarang').attr('src', 'storage/' + data.foto);
+                    $('.namaEditBarang').text(data.nama);
+                    $('.hargaEditBarang').text(data.harga);
+                    $('.keteranganEditBarang').text(data.keterangan);
+                    $('.kategoriEditBarang').text(data.kategori.nama);
+                    $('.jumlahEditBarang').text(data.jumlah);
+                    $('.statusEditBarang').text(data.status);
+                    $('.table-row').hide();
+                    $('.edit-row').show();
+                    $('.page-title').text('Detail Barang');
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+
+        });
+
+        // edit barang
+        // $('#tableBarang').on('click', '.edit-barang', function(e) {
+        //     e.preventDefault();
+        //     var itemId = $(this).data('id');
+
+        //     // Mengambil data item menggunakan permintaan Ajax
+        //     $.ajax({
+        //         url: `/items/${itemId}/edit`,
+        //         type: 'GET',
+        //         success: function(response) {
+        //             // Proses data yang diterima
+        //             // Tampilkan formulir edit item atau modifikasi tampilan sesuai kebutuhan Anda
+        //         },
+        //         error: function(xhr, status, error) {
+        //             console.log(xhr.responseText);
+        //             // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
+        //         }
+        //     });
+        // });
+
+        // hapus barang
+        $('#tableBarang').on('click', '.delete-barang', function(e) {
+            e.preventDefault();
+            var itemId = $(this).data('id');
+            // var url = route('barang.destroy', { barang: barangId });
+
+            // Konfirmasi penghapusan
+            if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
+                // Menghapus item menggunakan permintaan Ajax
+                $.ajax({
+                    url: '/barang_delete/' + itemId,
+                    type: 'DELETE',
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        // Proses respon setelah item dihapus
+                        console.log(response.message);
+                        // Refresh tabel setelah penghapusan item
+                        table.ajax.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                        // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
+                    }
+                });
+            }
+        });
+    </script>
 @endpush

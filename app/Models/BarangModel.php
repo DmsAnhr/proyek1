@@ -12,7 +12,7 @@ class BarangModel extends Model
     protected $primaryKey = 'id';
     public function kategori()
     {
-        return $this->belongsTo(KategoriModel::class);
+        return $this->belongsTo(KategoriModel::class, 'kategori_id');
     }
 
     public function transaksi()

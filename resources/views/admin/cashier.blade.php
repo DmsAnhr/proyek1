@@ -31,12 +31,12 @@
                                 <div class="col-12">
                                     <h4 class="mt-0">Filter</h4>
                                 </div>
-                                <ul class="col container-filter categories-filter mb-0 text-left" id="filter">
+                                <ul class="col container-filter categories-filter containerFilterKat mb-0 text-left" id="filter">
                                     <li><a class="categories active" data-filter="*">All</a></li>
                                     <li><a class="categories" data-filter=".branding">Branding</a></li>
-                                    <li><a class="categories" data-filter=".design">Design</a></li>
+                                    {{-- <li><a class="categories" data-filter=".design">Design</a></li>
                                     <li><a class="categories" data-filter=".photo">Photo</a></li>
-                                    <li><a class="categories" data-filter=".coffee">coffee</a></li>
+                                    <li><a class="categories" data-filter=".coffee">coffee</a></li> --}}
                                 </ul>
                             </div><!-- End portfolio  -->
                         </div>
@@ -46,8 +46,8 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <div class="row container-grid nf-col-3  projects-wrapper">
-                                <div class="col-lg-3 col-md-6 p-0 nf-item branding design coffee spacing">
+                            <div class="row container-grid nf-col-3  projects-wrapper barang-wrapper-kasir">
+                                {{-- <div class="col-lg-3 col-md-6 p-0 nf-item branding design coffee spacing">
                                     <div class="item-box">
                                         <a class="cbox-gallary1 items-rent" title="Consequat massa quis">
                                             <img class="item-container " src="{{asset ('assets/admin/images/small/img-1.jpg')}}"
@@ -162,7 +162,7 @@
                                     </div>
                                     <!--end item-box-->
                                 </div>
-                                <!--end col-->
+                                <!--end col--> --}}
 
                                 <div class="col-lg-3 col-md-6 p-0 nf-item photo spacing">
                                     <div class="item-box">
@@ -190,47 +190,28 @@
                 <div class="col-4 d-flex flex-column">
                     <div class="card flex-grow-1">
                         <div class="card-body d-flex flex-wrap">
-                            <div class="col-12 invoice-item-box" style="overflow-y: auto;">
-                                <h4>Invoice</h4>
-                                <!-- <div class="items d-flex justify-content-between">
-                                    <h6 class="text-truncate" style="max-width: 60%;" data-toggle="tooltip"
-                                        data-placement="bottom" title="" data-original-title="Tenda Gunung">
-                                        Tenda Gunung shodfhduiosuikahksudhuikhasdkashduif hishduif isduyi hfyu sduio
-                                    </h6>
-                                    <div class="btn-group" aria-label="Basic example" role="group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><i
-                                                class="mdi mdi-minus"></i></button>
-                                        <button class="btn btn-sm mx-1 disabled">6</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><i
-                                                class="mdi mdi-plus"></i></button>
+                            <form  id="formTransaksi">
+                                <div class="col-12 invoice-item-box" style="overflow-y: auto;">
+                                    <h4>Invoice</h4>
+                                    <div class="items d-flex justify-content-between">
+                                        <h6>Kompor</h6>
+                                        <h6>x2</h6>
                                     </div>
-                                </div> -->
-                                <div class="items d-flex justify-content-between">
-                                    <h6>Kompor</h6>
-                                    <h6>x2</h6>
+                                    <div class="items d-flex justify-content-between">
+                                        <h6>Tali</h6>
+                                        <h6>x9</h6>
+                                    </div>
+                                    <div class="items d-flex justify-content-between">
+                                        <h6>cangkir</h6>
+                                        <h6>x3</h6>
+                                    </div>
                                 </div>
-                                <div class="items d-flex justify-content-between">
-                                    <h6>Tali</h6>
-                                    <h6>x9</h6>
+                                <div class="col-12 mt-auto text-right">
+                                    <hr>
+                                    <h5>Total Biaya</h5>
+                                    <h6>Rp.100.000</h6>
                                 </div>
-                                <div class="items d-flex justify-content-between">
-                                    <h6>cangkir</h6>
-                                    <h6>x3</h6>
-                                </div>
-                                <!--<h5>hahah</h5>
-                                <h5>hahah</h5>
-                                <h5>hahah</h5>
-                                <h5>hahah</h5>
-                                <h5>hahah</h5>
-                                <h5>hahah</h5>
-                                <h5>hahah</h5>
-                                <h5>hahah</h5> -->
-                            </div>
-                            <div class="col-12 mt-auto text-right">
-                                <hr>
-                                <h5>Total Biaya</h5>
-                                <h6>Rp.100.000</h6>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -248,5 +229,84 @@
 <script src="{{ asset('assets/admin/plugins/filter/isotope.pkgd.min.js') }}"></script>
 <script src="{{ asset('assets/admin/plugins/filter/masonry.pkgd.min.js') }}"></script>
 <script src="{{ asset('assets/admin/plugins/filter/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('assets/admin/pages/jquery.gallery.init.js') }}"></script>
+{{-- <script src="{{ asset('assets/admin/pages/jquery.gallery.init.js') }}"></script> --}}
+<script>
+    //get barang on cashier
+    $.ajax({
+        url: "/get-data",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            // Manipulasi data yang diterima dari server
+
+            // Menampilkan daftar kategori
+            var kategori = data.kategori;
+            var kategoriSelect = $(".containerFilterKat");
+            $.each(kategori, function(index, kat) {
+                // kategoriSelect.append('<option value="' + kat.id + '">' + kat.nama + '</option>');
+                kategoriSelect.append('<li><a class="categories" data-filter=".' + kat.nama + '">' + kat.nama + '</a></li>');
+            });
+            
+            // Menampilkan daftar barang
+            var html = "";
+            $.each(data.barang, function(index, item) {
+                // html += "<tr>";
+                // html += "<td>" + item.id + "</td>";
+                // html += "<td><img src='" + item.gambar + "' alt='Gambar'></td>";
+                // html += "<td>" + item.nama + "</td>";
+                // html += "<td>" + item.harga + "</td>";
+                // html += "<td>" + item.kategori.nama + "</td>";
+                // html += "</tr>";
+
+                html += '<div class="col-lg-3 col-md-6 p-0 nf-item '+ item.kategori.nama +'" data-idBarang="' + item.id + '">';
+                    html += '<div class="item-box">';
+                        html += '<a class="cbox-gallary1 items-rent" title="' + item.nama + '">';
+                            html += '<img class="item-container" src="'+ ('storage/' + item.foto) +'"alt="1" />';
+                            html += '<div class="item-mask">';
+                                html += '<div class="item-caption">';
+                                    html += '<h6 class="text-light">' + item.nama + '</h6>';
+                                    html += '<p class="text-light">Rp. ' + item.harga + '</p>';
+                                html += '</div>';
+                            html += '</div>';
+                        html += '</a>';
+                    html += '</div>';
+                html += '</div>';
+                
+                $(".barang-wrapper-kasir").append(html);
+
+                var $container = $('.projects-wrapper');
+                var $filter = $('#filter');
+                // Initialize isotope 
+                $container.isotope({
+                    filter: '*',
+                    layoutMode: 'masonry',
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear'
+                    }
+                });
+                // Filter items when filter link is clicked
+                $filter.find('a').click(function() {
+                    var selector = $(this).attr('data-filter');
+                    $filter.find('a').removeClass('active');
+                    $(this).addClass('active');
+                    $container.isotope({
+                        filter: selector,
+                        animationOptions: {
+                            animationDuration: 750,
+                            easing: 'linear',
+                            queue: false,
+                        }
+                    });
+                    return false;
+                });
+
+            });
+        }
+    });
+
+    $('.barang-wrapper-kasir').on('click', '.items-rent',function () {
+        $('.invoice-item-box').append('<div class="items d-flex justify-content-between"><h6>Tenda gunung</h6><h6>x1</h6></div >')
+    })
+</script>
 @endpush
