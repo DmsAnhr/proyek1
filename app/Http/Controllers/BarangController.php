@@ -6,6 +6,7 @@ use App\Models\BarangModel;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 use DataTables;
+use Illuminate\Support\Facades\Storage;
 
 class BarangController extends Controller
 {
@@ -17,7 +18,7 @@ class BarangController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $barang = BarangModel::all();
+            $barang = BarangModel::query();
             return DataTables::of($barang)->toJson();
         }
         $barang = BarangModel::all();
@@ -26,44 +27,6 @@ class BarangController extends Controller
             
     }
 
-    protected function getActionColumn($row): string
-    {
-        $formUrl = url('/barang/' . $row->id);
-        $editUrl = url('/barang/' . $row->id . '/edit/');
-        $actionCol = "<form action='$formUrl' method='POST'>
-                        <a href='$editUrl' type='button' class='btn btn-sm btn-warning text-white'>
-                            <i class='fas fa-edit'></i> Edit
-                        </a>";
-        $actionCol .= csrf_field();
-        $actionCol .= "<button type='button' class='btn btn-sm btn-danger' data-toggle='modal' data-target='#deleteModal$row->id'><i class='fas fa-trash pr-1'></i>Delete</button>
-                        <!-- Delete Modal -->
-                        <div class='modal fade' id='deleteModal$row->id' tabindex='-1' role='dialog' aria-labelledby='deleteModalLabel$row->id' aria-hidden='true'>
-                            <div class='modal-dialog modal-dialog-centered' role='document'>
-                            <div class='modal-content'>
-                                <div class='modal-header'>
-                                <h5 class='modal-title' id='deleteModalLabel$row->id'>Konfirmasi Hapus</h5>
-                                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                    <span aria-hidden='true'>&times;</span>
-                                </button>
-                                </div>
-                                <div class='modal-body'>
-                                <p>Anda yakin ingin menghapus $row->nama ?</p>
-                                </div>
-                                <div class='modal-footer'>
-                                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Tidak</button>
-                                <form method='POST' action='$formUrl' class='d-inline pl-2'>";
-        $actionCol .= csrf_field();
-        $actionCol .= method_field('DELETE');
-        $actionCol .= "<button type='submit' class='btn btn-danger'>Ya</button>
-                                </form>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </form>";
-    
-        return $actionCol;
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -117,9 +80,12 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(BarangModel $barang)
+    public function show($id)
     {
-        return response()->download(storage_path("app/$barang->foto"));
+        // return response()->download(storage_path("app/$barang->foto"));
+        $barang = BarangModel::with('kategori')->findOrFail($id);
+
+        return response()->json($barang);
     }
 
     /**
@@ -151,8 +117,12 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BarangModel $barang)
+    public function destroy($id)
     {
-        //
+        Storage::delete($id->foto);
+        $barang = BarangModel::findOrFail($id);
+        $barang->delete();
+
+        return response()->json(['message' => 'Barang berhasil dihapus']);
     }
 }
