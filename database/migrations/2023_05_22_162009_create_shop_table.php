@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('kode_transaksi');
             $table->integer('id_user')->nullable();
             $table->string('alamat');
+            $table->integer('totalHarga');
             $table->timestamp('tanggal_start')->useCurrent();
             $table->date('tanggal_finish');
             $table->timestamps();

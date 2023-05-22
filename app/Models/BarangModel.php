@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class BarangModel extends Model
 {
@@ -15,8 +16,10 @@ class BarangModel extends Model
         return $this->belongsTo(KategoriModel::class, 'kategori_id');
     }
 
-    public function transaksi()
+    public function transaksis(): BelongsToMany
     {
-        return $this->belongsTo(ShopModel::class);
+        return $this->belongsToMany(Transaksi::class, 'transaksi_barang', 'barang_id', 'transaksi_id')
+                    ->withPivot('jumlah')
+                    ->withTimestamps();
     }
 }

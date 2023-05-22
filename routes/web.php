@@ -7,6 +7,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -79,6 +80,7 @@ Route::middleware(['auth', 'role:admin'])->group(function()
     Route::get('/get-data', [BarangController::class, 'getData']);
     // Route::get('/get-data', 'BarangController@getData');
 
+    Route::post('/checkout-kasir', [ShopController::class, 'store']);
 
     Route::get('/kategori', function() {
         return view('admin.category');

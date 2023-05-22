@@ -12,3 +12,7 @@
     aspect-ratio: 3/2;
     object-fit: cover;
 }
+
+.nf-item .item-mask{
+    cursor: pointer;
+}

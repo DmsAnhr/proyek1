@@ -36,45 +36,47 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi input
         $request->validate([
+            'kode_transaksi' => 'required',
             'id_user' => 'required',
             'alamat' => 'required',
-            'tanggal_start' => 'required',
-            'tanggal_finish' => 'required',
+            'totalHarga' => 'required',
+            'tanggalStart' => 'required',
+            'barangs' => 'required|array',
             'barangs.*.id' => 'required',
-            'barangs.*.jumlah' => 'required',
+            'barangs.*.jumlah' => 'required|integer|min:1',
         ]);
 
-        // Simpan transaksi ke database
-        $transaksi = ShopModel::create([
-            'id_user' => $request->id_user,
-            'alamat' => $request->alamat,
-            'tanggal_start' => $request->tanggal_start,
-            'tanggal_finish' => $request->tanggal_finish,
-        ]);
+        // Ambil data dari request
+        $kodeTransaksi = $request->input('kode_transaksi');
+        $idUser = $request->input('id_user');
+        $alamat = $request->input('alamat');
+        $totalHarga = $request->input('totalHarga');
+        $tanggalStart = $request->input('tanggalStart');
+        $barangs = $request->input('barangs');
 
-        $totalHarga = 0;
+        // Simpan data transaksi
+        $transaksi = new ShopModel();
+        $transaksi->kode_transaksi = $kodeTransaksi;
+        $transaksi->id_user = $idUser;
+        $transaksi->alamat = $alamat;
+        $transaksi->totalHarga = $totalHarga;
+        $transaksi->tanggal_start = $tanggalStart;
+        // Setel tanggal_finish sesuai kebutuhan
 
-        // Simpan data transaksi barang ke dalam tabel pivot dan hitung total harga
-        foreach ($request->barangs as $barang) {
-            $barangModel = BarangModel::find($barang['id']);
-            $jumlahBarang = $barang['jumlah'];
-            $hargaBarang = $barangModel->harga;
-
-            $transaksi->barangs()->attach($barangModel, [
-                'jumlah' => $jumlahBarang,
-                'harga' => $hargaBarang,
-            ]);
-
-            $totalHarga += $jumlahBarang * $hargaBarang;
-
-            // Mengurangi jumlah barang yang tersedia
-            $barangModel->decrement('jumlah', $jumlahBarang);
-        }
-
-        // Simpan total harga transaksi
-        $transaksi->total_harga = $totalHarga;
         $transaksi->save();
+
+        // Simpan data barang untuk transaksi     
+        foreach ($barangs as $barang) {
+            $barangModel = BarangModel::find($barang['id']);
+            if ($barangModel) {
+                $transaksi->barangs()->attach($barangModel->id, ['jumlah' => $barang['jumlah']]);
+                $barangModel->jumlah -= $barang['jumlah'];
+                $barangModel->save();
+            }
+        }
+        
 
         return response()->json(['message' => 'Transaksi berhasil disimpan.']);
     }
