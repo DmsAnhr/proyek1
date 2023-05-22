@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('kategori_id');
-            $table->unsignedBigInteger('transaksi_id')->nullable();
             $table->string('nama');
             $table->integer('harga');
             $table->integer('jumlah');
@@ -24,9 +22,6 @@ return new class extends Migration
             $table->text('keterangan');
             $table->string('foto');
             $table->timestamps();
-            
-            $table->foreign('kategori_id')->references('id')->on('kategori');
-            $table->foreign('transaksi_id')->references('id')->on('transaksi');
         });
     }
 

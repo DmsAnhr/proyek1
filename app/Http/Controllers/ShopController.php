@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BarangModel;
+use App\Models\KategoriModel;
 use App\Models\ShopModel;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,11 @@ class ShopController extends Controller
      */
     public function index()
     {
-        //
+        $kategori = KategoriModel::all();
+        $barang = BarangModel::all();
+        return view('user.shop')
+            ->with('barang', $barang)
+            ->with('kategori', $kategori);
     }
 
     /**

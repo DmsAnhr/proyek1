@@ -45,15 +45,11 @@
                                     <li>
                                         <p><input type="checkbox" checked><span>Semua</span></p>
                                     </li>
+                                    @foreach($kategori as $kt)
                                     <li>
-                                        <p><input type="checkbox"><span>Tenda Gunung</span></p>
+                                        <p><input type="checkbox"><span>{{$kt->nama}}</span></p>
                                     </li>
-                                    <li>
-                                        <p><input type="checkbox"><span>Cooking Set</span></p>
-                                    </li>
-                                    <li>
-                                        <p><input type="checkbox"><span>Compliment</span></p>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <!-- <li class="widget wiget-price">
@@ -155,28 +151,28 @@
                     </div>
                     <div class="shop-product-cover">
                         <div class="row product-cover block">
+                            @foreach($barang as $brg)
                             <div class="col-12 col-sm-4 prod-item-col">
                                 <div class="product-item">
                                     <a href="{{url('shop/single_shop')}}" class="product-img">
-                                        <img src="{{asset ('assets/user/img/new.png')}}"alt="product"></a>
+                                        <img src="{{asset ('storage/'.$brg->foto)}}"alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="{{url('shop/single_shop')}}">Hyper E-Ride
-                                                    Bike 700C
-                                                    <br>20+ Mile Range</a></h6>
+                                            <h6 class="prod-title product-name"><a href="{{url('shop/single_shop')}}">
+                                                {{$brg->nama}}</a></h6>
                                             <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
+                                                <div class="new-price">Rp. {{$brg->harga}}</div>
+                                                <div class="old-price">/ Hari</div>
                                             </div>
                                             <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
                                         </div>
                                         <div class="prod-info">
                                             <ul class="prod-list">
                                                 <!-- <li>Frame Size: <span>17</span></li>
-                        <li>Class: <span>City</span></li>
-                        <li>Number of speeds: <span>7</span></li>
-                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
+                                                    <li>Class: <span>City</span></li>
+                                                    <li>Number of speeds: <span>7</span></li>
+                                                    <li>Type: <span>Rigid</span></li> -->
+                                                <li>Keterangan: <p>{{$brg->keterangan}}</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -189,143 +185,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-4 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="{{asset ('assets/user/img/prod-4.png')}}"alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">New Spring
-                                                    Beach Cruiser
-                                                    <br>Bicycle Chrome</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                        <li>Class: <span>City</span></li>
-                        <li>Number of speeds: <span>7</span></li>
-                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="{{asset ('assets/user/img/prod-5.png')}}"alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Granite Peak
-                                                    24" <br>Girls
-                                                    Mountain Bike</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                                <li>Class: <span>City</span></li>
-                                <li>Number of speeds: <span>7</span></li>
-                                <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="{{asset ('assets/user/img/prod-6.png')}}"alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Aluminum and
-                                                    Fork
-                                                    <br>Mountain Sr-26omg</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                        <li>Class: <span>City</span></li>
-                        <li>Number of speeds: <span>7</span></li>
-                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4 prod-item-col">
-                                <div class="product-item">
-                                    <a href="single-shop.html" class="product-img">
-                                        <img src="{{asset ('assets/user/img/prod-7.png')}}"alt="product"></a>
-                                    <div class="product-item-wrap">
-                                        <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="single-shop.html">Steel Frame
-                                                    MTB Bike
-                                                    <br>with 21 Speed</a></h6>
-                                            <div class="price-cover">
-                                                <div class="new-price">$1.699</div>
-                                                <div class="old-price">/Hari</div>
-                                            </div>
-                                            <a class="btn btn-add-to-cart"><span>Add To Cart</span></a>
-                                        </div>
-                                        <div class="prod-info">
-                                            <ul class="prod-list">
-                                                <!-- <li>Frame Size: <span>17</span></li>
-                        <li>Class: <span>City</span></li>
-                        <li>Number of speeds: <span>7</span></li>
-                        <li>Type: <span>Rigid</span></li> -->
-                                                <li>Keterangan: <p>Produk untuk Gunung</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="product-icon-top">
-                                            <!-- <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li> -->
-                                            <li><a href="#"><i class="fa fa-shopping-cart"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4 prod-item-col">
+                            @endforeach
+                            {{-- <div class="col-12 col-sm-4 prod-item-col">
                                 <div class="product-item">
                                     <a href="single-shop.html" class="product-img">
                                         <img src="{{asset ('assets/user/img/prod-8.png')}}"alt="product"></a>
@@ -343,9 +204,9 @@
                                         <div class="prod-info">
                                             <ul class="prod-list">
                                                 <!-- <li>Frame Size: <span>17</span></li>
-                        <li>Class: <span>City</span></li>
-                        <li>Number of speeds: <span>7</span></li>
-                        <li>Type: <span>Rigid</span></li> -->
+                                                    <li>Class: <span>City</span></li>
+                                                    <li>Number of speeds: <span>7</span></li>
+                                                    <li>Type: <span>Rigid</span></li> -->
                                                 <li>Keterangan: <p>Produk untuk Gunung</p>
                                                 </li>
                                             </ul>
@@ -358,7 +219,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="pagination-cover">
                             <ul class="pagination">
