@@ -16,11 +16,47 @@ class ShopController extends Controller
      */
     public function index()
     {
+        $transaksi = ShopModel::all();
         $kategori = KategoriModel::all();
         $barang = BarangModel::all();
         return view('user.shop')
+            ->with('transaksi', $transaksi)
             ->with('barang', $barang)
             ->with('kategori', $kategori);
+    }
+
+    public function indexAdmin()
+    {
+        $transaksi = ShopModel::all();
+        $kategori = KategoriModel::all();
+        $barang = BarangModel::all();
+        return view('admin.penyewaan')
+            ->with('transaksi', $transaksi)
+            ->with('barang', $barang)
+            ->with('kategori', $kategori);
+    }
+
+    public function indexRiwayat()
+    {
+        $transaksi = ShopModel::all();
+        $kategori = KategoriModel::all();
+        $barang = BarangModel::all();
+        return view('admin.riwayat')
+            ->with('transaksi', $transaksi)
+            ->with('barang', $barang)
+            ->with('kategori', $kategori);
+    }
+
+    public function getData()
+    {
+        $transaksi = ShopModel::all();
+        return response()->json(['data' => $transaksi]);
+    }
+
+    public function getRiwayat()
+    {
+        $transaksi = ShopModel::whereNotNull('tanggal_finish')->get();
+        return response()->json(['data' => $transaksi]);
     }
 
     /**
@@ -46,6 +82,7 @@ class ShopController extends Controller
             'kode_transaksi' => 'required',
             'id_user' => 'required',
             'alamat' => 'required',
+            'namaPeminjam' => 'required',
             'totalHarga' => 'required',
             'tanggalStart' => 'required',
             'barangs' => 'required|array',
@@ -57,6 +94,7 @@ class ShopController extends Controller
         $kodeTransaksi = $request->input('kode_transaksi');
         $idUser = $request->input('id_user');
         $alamat = $request->input('alamat');
+        $namaPeminjam = $request->input('namaPeminjam');
         $totalHarga = $request->input('totalHarga');
         $tanggalStart = $request->input('tanggalStart');
         $barangs = $request->input('barangs');
@@ -66,6 +104,7 @@ class ShopController extends Controller
         $transaksi->kode_transaksi = $kodeTransaksi;
         $transaksi->id_user = $idUser;
         $transaksi->alamat = $alamat;
+        $transaksi->namaPeminjam = $namaPeminjam;
         $transaksi->totalHarga = $totalHarga;
         $transaksi->tanggal_start = $tanggalStart;
         // Setel tanggal_finish sesuai kebutuhan
@@ -116,9 +155,18 @@ class ShopController extends Controller
      * @param  \App\Models\Shop  $shop
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ShopModel $shop)
+    public function update(Request $request, $id)
     {
-        //
+        $transaksi = ShopModel::find($id);
+        if ($transaksi) {
+            $tanggalFinish = $request->input('tanggal_finish');
+            $transaksi->tanggal_finish = $tanggalFinish;
+            $transaksi->save();
+    
+            return response()->json(['message' => 'Data updated successfully']);
+        }
+    
+        return response()->json(['message' => 'Data not found'], 404);
     }
 
     /**

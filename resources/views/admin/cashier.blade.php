@@ -233,6 +233,10 @@
         <div class="modal-body">
             <div class="row">
                 <div class="col-12">
+                    <label class="mt-3">Nama Pelanggan</label>
+                    <input class="form-control" type="text" id="namaPelanggan" name="namaPelanggan">
+                </div>
+                <div class="col-12">
                     <label class="mt-3">Alamat</label>
                     <textarea class="form-control" id="alamatPelanggan" rows="5" name="alamatPelanggan"></textarea>
                 </div>
@@ -255,6 +259,7 @@
 {{-- <script src="{{ asset('assets/admin/pages/jquery.gallery.init.js') }}"></script> --}}
 <script>
     var alamat='';
+    var nama = '';
     var hargaSehari= 0;
     $('.invoice-item-box').css('max-height', ($('.page-content').innerHeight()-200));
     //get barang on cashier
@@ -423,6 +428,7 @@
 
     // isi alamat
     $('.btn-alamat').click(function() {
+        nama = $('#namaPelanggan').val();
         alamat = $('#alamatPelanggan').val();
         $('.btn-modal-alamat').removeClass('btn-gradient-danger').addClass('btn-gradient-success');
     });
@@ -432,6 +438,7 @@
         var idShop = generateId(10);
         var idUserShop = 1;
         var alamatShop = alamat;
+        var namaShop = nama;
         var hargaShop = $('.totalHarga').attr('value');
         var tanggalShop = getCurrentTimestamp();
         var barangShop = []
@@ -449,6 +456,7 @@
             kode_transaksi : idShop,
             id_user : idUserShop,
             alamat : alamatShop,
+            namaPeminjam : namaShop,
             totalHarga: hargaShop,
             tanggalStart: tanggalShop,
             barangs : barangShop,

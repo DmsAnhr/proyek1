@@ -434,7 +434,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="{{asset ('assets/user/js/login-keren.js')}}"></script>
+      <script src="{{asset ('assets/userNew/js/login-keren.js')}}"></script>
       <script src="{{asset ('assets/service.js')}}"></script>
 
 </body>

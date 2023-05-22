@@ -30,6 +30,10 @@ Route::get('/logout', [LoginController::class, 'logout']);
 // Route::post('/login', 'Auth\LoginController@login')->name('login');
 // Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
+Route::get('/rental', function() {
+    return view('rental.home');
+});;
+
 
 Route::middleware(['auth', 'role:user'])->group(function()
 {
@@ -78,6 +82,11 @@ Route::middleware(['auth', 'role:admin'])->group(function()
     Route::get('/get-data', [BarangController::class, 'getData']);
     // Route::get('/get-data', 'BarangController@getData');
 
+    Route::get('/penyewaan', [ShopController::class, 'indexAdmin']);
+    Route::get('/riwayat', [ShopController::class, 'indexRiwayat']);
+    Route::get('/get-transaksi', [ShopController::class, 'getData']);
+    Route::get('/get-riwayat', [ShopController::class, 'getRiwayat']);
+    Route::post('/transaksi-update/{id}', [ShopController::class, 'update']);
     Route::post('/checkout-kasir', [ShopController::class, 'store']);
 
     Route::get('/kategori', function() {

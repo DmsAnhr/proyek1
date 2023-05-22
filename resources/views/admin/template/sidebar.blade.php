@@ -16,8 +16,6 @@
             <a href="javascript: void(0);"><i class="ti-shopping-cart"></i><span>Penyewaan</span><span
                     class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul class="nav-second-level" aria-expanded="false">
-                <li class="nav-item"><a class="nav-link" href="{{url('pesanan')}}"><i
-                            class="ti-control-record"></i>Pesanan Masuk</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{url('penyewaan')}}"><i
                             class="ti-control-record"></i>Berlangsung</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{url('riwayat')}}"><i
@@ -31,10 +29,6 @@
 
         <li>
             <a href="{{url('kategori')}}"><i class="ti-layers-alt"></i><span>Kategori</span></a>
-        </li>
-
-        <li>
-            <a href="{{url('voucher')}}"><i class="ti-ticket"></i><span>Kupon Voucher</span></a>
         </li>
 
         <li>
