@@ -117,12 +117,18 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        Storage::delete($id->foto);
         $barang = BarangModel::findOrFail($id);
+        $fotoPath = public_path('public/storage/images') . '/' . $barang->foto;
+        if (file_exists($fotoPath)) {
+            unlink($fotoPath);
+        }
+        Storage::delete($barang->foto);
         $barang->delete();
 
+        // if ($request->ajax()) {
+        // }
         return response()->json(['message' => 'Barang berhasil dihapus']);
     }
 }

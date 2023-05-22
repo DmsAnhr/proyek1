@@ -9,6 +9,7 @@ class BarangModel extends Model
 {
     use HasFactory;
     protected $table = 'barang';
+    protected $primaryKey = 'id';
     public function kategori()
     {
         return $this->belongsTo(KategoriModel::class);
