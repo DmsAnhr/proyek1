@@ -43,11 +43,11 @@
                                 <h5 class="title">Kategori</h5>
                                 <ul>
                                     <li>
-                                        <p><input type="checkbox" checked><span>Semua</span></p>
+                                        <p><input type="checkbox" value="0" checked><span>Semua</span></p>
                                     </li>
                                     @foreach($kategori as $kt)
                                     <li>
-                                        <p><input type="checkbox"><span>{{$kt->nama}}</span></p>
+                                        <p><input type="checkbox" value="{{$kt->id}}"><span>{{$kt->nama}}</span></p>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -130,7 +130,10 @@
                  </div> -->
                     <h2 class="title">Semua</h2>
                     <div class="shop-sort-cover">
-                        <div class="sort-left">120 Produk</div>
+                        @php
+                            $dataCount = DB::table('barang')->count();
+                        @endphp
+                        <div class="sort-left">{{ $dataCount }}</div>
                         <div class="sort-right">
                             <div class="sort-by">
                                 <span class="sort-name">sort by:</span>
@@ -154,11 +157,11 @@
                             @foreach($barang as $brg)
                             <div class="col-12 col-sm-4 prod-item-col">
                                 <div class="product-item">
-                                    <a href="{{url('shop/single_shop')}}" class="product-img">
+                                    <a href="{{ url('shop/single_shop', ['id' => $brg->id]) }}" class="product-img">
                                         <img src="{{asset ('storage/'.$brg->foto)}}"alt="product"></a>
                                     <div class="product-item-wrap">
                                         <div class="product-item-cover">
-                                            <h6 class="prod-title product-name"><a href="{{url('shop/single_shop')}}">
+                                            <h6 class="prod-title product-name"><a href="{{ url('shop/single_shop', ['id' => $brg->id]) }}">
                                                 {{$brg->nama}}</a></h6>
                                             <div class="price-cover">
                                                 <div class="new-price">Rp. {{$brg->harga}}</div>

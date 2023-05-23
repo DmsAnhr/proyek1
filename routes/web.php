@@ -56,9 +56,8 @@ Route::get('/contact', function() {
     return view('user.contact');
 });;
 
-Route::get('/shop/single_shop', function() {
-    return view('user.single_shop');
-});;
+Route::get('/shop/single_shop/{id}', [ShopController::class, 'getBarangId']);
+
 Route::middleware(['auth', 'role:user'])->group(function()
 {
 
