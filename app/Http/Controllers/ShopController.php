@@ -53,6 +53,18 @@ class ShopController extends Controller
         return response()->json(['data' => $transaksi]);
     }
 
+    public function getBarangId($id)
+    {
+        $kategori = KategoriModel::all();
+        $barang = BarangModel::where('id', $id)->first();
+        $barangAll = BarangModel::all();
+
+        return view('user.single_shop', ['id' => $id])
+            ->with('barang', $barang)
+            ->with('barangAll', $barangAll)
+            ->with('kategori', $kategori);
+    }
+
     public function getRiwayat()
     {
         $transaksi = ShopModel::whereNotNull('tanggal_finish')->get();
