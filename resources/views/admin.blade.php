@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{asset ('assets/user/img/new.png') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/lightpick/lightpick.css') }}" />

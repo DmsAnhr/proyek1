@@ -8,7 +8,7 @@
             <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0)">
                 <div class="container">
                     <div class="d-flex justify-content-center">
-                        <h1>Shoes - Grid listing</h1>
+                        <h1>Product - Rental</h1>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     </li>
                     <li>
                         <a href="#0"><i class="ti-view-grid"></i></a>
-                        <a href="listing-row-1-sidebar-left.html"><i class="ti-view-list"></i></a>
+                        <a href="#"><i class="ti-view-list"></i></a>
                     </li>
                     <li>
                         <a data-bs-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters">
@@ -199,18 +199,18 @@
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
                     <figure>
-                        <span class="ribbon off">-30%</span>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/1.jpg" alt="">
+                        {{-- <span class="ribbon off">-30%</span> --}}
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/kursi1.png')}}" data-src="assets/userNew/img/products/shoes/1.jpg" alt="">
                         </a>
-                        <div data-countdown="2019/05/15" class="countdown"></div>
+                        {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Air x Fear</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Kursi Camping</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$48.00</span>
-                        <span class="old_price">$60.00</span>
+                        <span class="new_price">Rp. 10.000</span>
+                        {{-- <span class="old_price">$60.00</span> --}}
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -224,19 +224,19 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon off">-30%</span>
+                    {{-- <span class="ribbon off">-30%</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/2.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/lampu1.png')}}" data-src="assets/userNew/img/products/shoes/2.jpg" alt="">
                         </a>
-                        <div data-countdown="2019/05/10" class="countdown"></div>
+                        {{-- <div data-countdown="2019/05/10" class="countdown"></div> --}}
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Okwahn II</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Lampu Lentera</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$90.00</span>
-                        <span class="old_price">$170.00</span>
+                        <span class="new_price">Rp. 15.000</span>
+                        {{-- <span class="old_price">$170.00</span> --}}
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -250,19 +250,19 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon off">-50%</span>
+                    {{-- <span class="ribbon off">-50%</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/3.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/matras1.png')}}" data-src="assets/userNew/img/products/shoes/3.jpg" alt="">
                         </a>
-                        <div data-countdown="2019/05/21" class="countdown"></div>
+                        {{-- <div data-countdown="2019/05/21" class="countdown"></div> --}}
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Air Wildwood ACG</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Matras</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$75.00</span>
-                        <span class="old_price">$155.00</span>
+                        <span class="new_price">Rp. 20.000</span>
+                        {{-- <span class="old_price">$155.00</span> --}}
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -276,17 +276,17 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon new">New</span>
+                    {{-- <span class="ribbon new">New</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/4.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/tenda4.png')}}" data-src="assets/userNew/img/products/shoes/4.jpg" alt="">
                         </a>
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor ACG React Terra</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Tenda The North Face</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$110.00</span>
+                        <span class="new_price">Rp. 55.000</span>
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -300,17 +300,17 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon new">New</span>
+                    {{-- <span class="ribbon new">New</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/5.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/tas2.png')}}" data-src="assets/userNew/img/products/shoes/5.jpg" alt="">
                         </a>
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Air Zoom Alpha</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Tas Jinjing</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$140.00</span>
+                        <span class="new_price">Rp. 18.000</span>
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -324,17 +324,17 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon new">New</span>
+                    {{-- <span class="ribbon new">New</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/6.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/sepatu2.png')}}" data-src="assets/userNew/img/products/shoes/6.jpg" alt="">
                         </a>
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Air Alpha</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Sepatu Gunung</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$130.00</span>
+                        <span class="new_price">Rp. 35.000</span>
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -348,17 +348,17 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon hot">Hot</span>
+                    {{-- <span class="ribbon hot">Hot</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/7.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/senter1.png')}}" data-src="assets/userNew/img/products/shoes/7.jpg" alt="">
                         </a>
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Air 98</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Senter</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$115.00</span>
+                        <span class="new_price">Rp. 5.000</span>
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -372,17 +372,17 @@
             
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="grid_item">
-                    <span class="ribbon hot">Hot</span>
+                    {{-- <span class="ribbon hot">Hot</span> --}}
                     <figure>
-                        <a href="product-detail-1.html">
-                            <img class="img-fluid lazy" src="{{asset ('assets/userNew/img/products/product_placeholder_square_medium.jpg')}}" data-src="img/products/shoes/8.jpg" alt="">
+                        <a href="{{url('singleRental')}}">
+                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/sleeping1.png')}}" data-src="assets/userNew/img/products/shoes/8.jpg" alt="">
                         </a>
                     </figure>
-                    <a href="product-detail-1.html">
-                        <h3>Armor Air 720</h3>
+                    <a href="{{url('singleRental')}}">
+                        <h3>Sleeping Bag</h3>
                     </a>
                     <div class="price_box">
-                        <span class="new_price">$120.00</span>
+                        <span class="new_price">Rp 50.000</span>
                     </div>
                     <ul>
                         <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
@@ -422,6 +422,13 @@
 
 @push('css')
 <link href="{{asset ('assets/userNew/css/listing.css')}}" rel="stylesheet">
+<style>
+    .grid_item img{
+        height: 245px;
+        aspec-ratio: 2/3;
+        object-fit: contain;
+    }
+</style>
 @endpush
 
 @push('js')

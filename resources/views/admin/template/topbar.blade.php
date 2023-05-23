@@ -4,11 +4,10 @@
     <div class="topbar-left">
         <a href="#" class="logo">
             <span>
-                <img src="{{asset ('assets/admin/images/logo-sm.png')}}" alt="logo-small" class="logo-sm">
+                <img src="{{asset ('assets/user/img/new.png') }}" alt="logo-small" class="logo-sm" style="height: 50px!important">
             </span>
             <span>
-                <img src="{{asset ('assets/admin/images/logo.png')}}" alt="logo-large" class="logo-lg logo-light">
-                <img src="{{asset ('assets/admin/images/logo-dark.png')}}" alt="logo-large" class="logo-lg">
+                <img src="{{asset ('assets/user/img/new.png') }}" alt="logo-large" class="logo-lg logo-light">
             </span>
         </a>
     </div>

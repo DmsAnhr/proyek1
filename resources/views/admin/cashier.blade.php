@@ -33,8 +33,8 @@
                                 </div>
                                 <ul class="col container-filter categories-filter containerFilterKat mb-0 text-left" id="filter">
                                     <li><a class="categories active" data-filter="*">All</a></li>
-                                    <li><a class="categories" data-filter=".branding">Branding</a></li>
-                                    {{-- <li><a class="categories" data-filter=".design">Design</a></li>
+                                    {{-- <li><a class="categories" data-filter=".branding">Branding</a></li>
+                                    <li><a class="categories" data-filter=".design">Design</a></li>
                                     <li><a class="categories" data-filter=".photo">Photo</a></li>
                                     <li><a class="categories" data-filter=".coffee">coffee</a></li> --}}
                                 </ul>
@@ -45,7 +45,7 @@
                     <!--end card-->
 
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body" style="min-height: 245px;">
                             <div class="row container-grid nf-col-3  projects-wrapper barang-wrapper-kasir">
                                 {{-- <div class="col-lg-3 col-md-6 p-0 nf-item branding design coffee spacing">
                                     <div class="item-box">
@@ -280,14 +280,8 @@
             
             // Menampilkan daftar barang
             var html = "";
+            var $container = $('.projects-wrapper');
             $.each(data.barang, function(index, item) {
-                // html += "<tr>";
-                // html += "<td>" + item.id + "</td>";
-                // html += "<td><img src='" + item.gambar + "' alt='Gambar'></td>";
-                // html += "<td>" + item.nama + "</td>";
-                // html += "<td>" + item.harga + "</td>";
-                // html += "<td>" + item.kategori.nama + "</td>";
-                // html += "</tr>";
 
                 html += '<div class="col-lg-3 col-md-6 p-0 nf-item '+ item.kategori.nama +'">';
                     html += '<div class="item-box">';
@@ -303,38 +297,38 @@
                     html += '</div>';
                 html += '</div>';
                 
-                $(".barang-wrapper-kasir").append(html);
-
-                var $container = $('.projects-wrapper');
-                var $filter = $('#filter');
-                // Initialize isotope 
-                $container.isotope({
-                    filter: '*',
-                    layoutMode: 'masonry',
-                    animationOptions: {
-                        duration: 750,
-                        easing: 'linear'
-                    }
-                });
-                // Filter items when filter link is clicked
-                $filter.find('a').click(function() {
-                    var selector = $(this).attr('data-filter');
-                    $filter.find('a').removeClass('active');
-                    $(this).addClass('active');
+                    // Initialize isotope 
                     $container.isotope({
-                        filter: selector,
+                        filter: '*',
+                        layoutMode: 'masonry',
                         animationOptions: {
-                            animationDuration: 750,
-                            easing: 'linear',
-                            queue: false,
+                            duration: 750,
+                            easing: 'linear'
                         }
                     });
-                    return false;
-                });
-
             });
+
+            $(".barang-wrapper-kasir").append(html);
         }
     });
+
+    // Filter items when filter link is clicked
+    var $filter = $('#filter');
+    $('#filter').on('click', 'a', function() {
+        var selector = $(this).attr('data-filter');
+        $filter.find('a').removeClass('active');
+        $(this).addClass('active');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                animationDuration: 750,
+                easing: 'linear',
+                queue: false,
+            }
+        });
+        return false;
+    });
+
 
     function addZeroPrefix(number) {
         return number < 10 ? '0' + number : number;

@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h4 class="title-text mt-0">Visits</h4>
-                                    <h3 class="font-weight-semibold mb-1">24k</h3>
+                                    <h3 class="font-weight-semibold mb-1">23</h3>
                                     <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
                                                 class="mdi mdi-trending-up"></i>8.5%</span>Up From Yesterday</p>
                                 </div>
@@ -56,7 +56,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h4 class="title-text mt-0">New Orders</h4>
-                                    <h3 class="font-weight-semibold mb-1">10k</h3>
+                                    <h3 class="font-weight-semibold mb-1">8</h3>
                                     <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
                                                 class="mdi mdi-trending-up"></i>1.5%</span> Up From Last Week</p>
                                 </div>
@@ -80,8 +80,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
-                                    <h4 class="title-text mt-0">Return Orders</h4>
-                                    <h3 class="font-weight-semibold mb-1">8400</h3>
+                                    <h4 class="title-text mt-0">Orders Done</h4>
+                                    <h3 class="font-weight-semibold mb-1">19</h3>
                                     <p class="mb-0 text-muted text-truncate"><span class="text-danger"><i
                                                 class="mdi mdi-trending-down"></i>3%</span> Down From Last Month</p>
                                 </div>
@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col-8">
                                     <h4 class="title-text mt-0">Revenue</h4>
-                                    <h3 class="font-weight-semibold mb-1">$1590</h3>
+                                    <h3 class="font-weight-semibold mb-1">200k</h3>
                                     <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
                                                 class="mdi mdi-trending-up"></i>10.5%</span> Up From Yesterday</p>
                                 </div>

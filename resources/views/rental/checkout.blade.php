@@ -13,7 +13,7 @@
 					<li>Page active</li>
 				</ul>
 		</div>
-		<h1>Sign In or Create an Account</h1>
+		<h1>Process your checkout</h1>
 			
 	</div>
 	<!-- /page_header -->
@@ -23,21 +23,15 @@
 						<h3>1. User Info and Billing address</h3>
 					<ul class="nav nav-tabs" id="tab_checkout" role="tablist">
 					  <li class="nav-item">
-						<a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab_1" role="tab" aria-controls="tab_1" aria-selected="true">Register</a>
+						<a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab_1" role="tab" aria-controls="tab_1" aria-selected="true">Address</a>
 					  </li>
 					  <li class="nav-item">
-						<a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab_2" role="tab" aria-controls="tab_2" aria-selected="false">Login</a>
+						<a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab_2" role="tab" aria-controls="tab_2" aria-selected="false">Other</a>
 					  </li>
 					</ul>
 					<div class="tab-content checkout">
 						<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password">
-							</div>
-							<hr>
+							
 							<div class="row no-gutters">
 								<div class="col-6 form-group pr-1">
 									<input type="text" class="form-control" placeholder="Name">
@@ -217,15 +211,15 @@
 						<h3>3. Order Summary</h3>
 					<div class="box_general summary">
 						<ul>
-							<li class="clearfix"><em>1x Armor Air X Fear</em>  <span>$145.00</span></li>
-							<li class="clearfix"><em>2x Armor Air Zoom Alpha</em> <span>$115.00</span></li>
+							<li class="clearfix"><em>1x Tenda The North Face</em>  <span>Rp. 55.000</span></li>
+							<li class="clearfix"><em>1x Matras</em> <span>Rp. 20.000</span></li>
 						</ul>
 						<ul>
-							<li class="clearfix"><em><strong>Subtotal</strong></em>  <span>$450.00</span></li>
-							<li class="clearfix"><em><strong>Shipping</strong></em> <span>$0</span></li>
+							<li class="clearfix"><em><strong>Subtotal</strong></em>  <span>Rp. 75.000</span></li>
+							<li class="clearfix"><em><strong>Shipping</strong></em> <span>Rp. 0</span></li>
 							
 						</ul>
-						<div class="total clearfix">TOTAL <span>$450.00</span></div>
+						<div class="total clearfix">TOTAL <span>Rp. 75.000</span></div>
 						<div class="form-group">
 								<label class="container_check">Register to the Newsletter.
 								  <input type="checkbox" checked>
@@ -233,7 +227,7 @@
 								</label>
 							</div>
 						
-						<a href="confirm.html" class="btn_1 full-width">Confirm and Pay</a>
+						<a href="{{url('payRental')}}" class="btn_1 full-width">Confirm and Pay</a>
 					</div>
 					<!-- /box_general -->
 					</div>

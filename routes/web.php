@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\RentalController;
 use App\Http\Controllers;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Auth;
@@ -30,9 +31,33 @@ Route::get('/logout', [LoginController::class, 'logout']);
 // Route::post('/login', 'Auth\LoginController@login')->name('login');
 // Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
-Route::get('/rental', function() {
-    return view('rental.home');
+Route::get('/rental', [RentalController::class, 'index']);
+Route::get('/aboutRental', function() {
+    return view('rental.about');
 });;
+Route::get('/shopRental', function() {
+    return view('rental.shop');
+});;
+Route::get('/blogRental', function() {
+    return view('rental.blog');
+});;
+Route::get('/contactRental', function() {
+    return view('rental.contact');
+});;
+Route::get('/singleRental', function() {
+    return view('rental.singe_shop');
+});;
+Route::get('/checkoutRental', function() {
+    return view('rental.checkout');
+});;
+Route::get('/payRental', function() {
+    return view('rental.pay');
+});;
+
+
+
+
+
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -59,10 +84,17 @@ Route::get('/contact', function() {
 Route::get('/shop/single_shop', function() {
     return view('user.single_shop');
 });;
+
+
+
+
 Route::middleware(['auth', 'role:user'])->group(function()
 {
 
 });
+
+
+
 
 Route::middleware(['auth', 'role:admin'])->group(function()
 {
@@ -93,5 +125,6 @@ Route::middleware(['auth', 'role:admin'])->group(function()
         return view('admin.category');
     });;
     Route::post('/make_kategori', [KategoriController::class, 'store']);
+    Route::get('/get_kategori', [KategoriController::class, 'index']);
 
 });

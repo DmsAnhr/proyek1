@@ -8,6 +8,10 @@
     text-align: left !important;
 }
 
+.nf-item{
+    border: 0.1px solid #6262ff;
+}
+
 .nf-item .item-container{
     aspect-ratio: 3/2;
     object-fit: cover;

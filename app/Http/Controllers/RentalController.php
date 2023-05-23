@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BarangModel;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class RentalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,10 @@ class KategoriController extends Controller
     public function index()
     {
         $kategori = KategoriModel::all();
-        return response()->json($kategori);
+        $barang = BarangModel::orderBy('updated_at', 'desc')->paginate(5);
+        return view('rental.home')
+            ->with('kategori', $kategori)
+            ->with('barang', $barang);
     }
 
     /**
@@ -36,16 +40,7 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        // if ($request->ajax()) {
-        //     return "True request!";
-        // }
-        $kategori = new KategoriModel;
-        $kategori->nama = $request->nama;
-        // Lakukan pengisian properti lainnya sesuai kebutuhan
-
-        $kategori->save();
-
-        return response()->json(['message' => 'Kategori berhasil ditambahkan']);
+        //
     }
 
     /**

@@ -1,7 +1,7 @@
 <div class="left-sidenav">
     <ul class="metismenu left-sidenav-menu">
         <li class="mm-active">
-            <a href="{{url('home')}}"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
+            <a href="{{url('admin')}}"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
         </li>
 
         <li>

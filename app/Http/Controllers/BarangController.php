@@ -26,12 +26,16 @@ class BarangController extends Controller
             ->with('kategori', KategoriModel::all());
     }
 
+    public function rentalIndex(){
+        $barang = BarangModel::all();
+        return view('rental.home', compact('barang'));
+    }
+
     public function getData()
     {
         $barang = BarangModel::with('kategori')->get();
         $kategori = KategoriModel::all();
         return response()->json(['barang' => $barang, 'kategori' => $kategori]);
-        
     }
 
 

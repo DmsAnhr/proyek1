@@ -5,7 +5,7 @@
             <div class="row small-gutters">
                 <div class="col-xl-3 col-lg-3 d-lg-flex align-items-center">
                     <div id="logo">
-                        <a href="index.html"><img src="{{asset ('assets/userNew/img/logo.svg')}}" alt="" width="100" height="35"></a>
+                        <a href="index.html"><img src="{{asset ('assets/user/img/new.png') }}" alt="" width="100" height="35"></a>
                     </div>
                 </div>
                 <nav class="col-xl-6 col-lg-7">
@@ -23,7 +23,7 @@
                             <a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
                         </div>
                         <ul>
-                            <li class="submenu">
+                            {{-- <li class="submenu">
                                 <a href="javascript:void(0);" class="show-submenu">Home</a>
                                 <ul>
                                     <li><a href="index.html">Slider</a></li>
@@ -100,12 +100,22 @@
                                     <li><a href="modal-advertise.html">Modal Advertise</a></li>
                                     <li><a href="modal-newsletter.html">Modal Newsletter</a></li>
                                 </ul>
+                            </li> --}}
+                            
+                            <li>
+                                <a href="{{url('rental')}}">HOME</a>
                             </li>
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <a href="{{url('aboutRental')}}">ABOUT</a>
                             </li>
                             <li>
-                                <a href="#0">Buy Template</a>
+                                <a href="{{url('shopRental')}}">SHOP</a>
+                            </li>
+                            <li>
+                                <a href="{{url('blogRental')}}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{url('contactRental')}}">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -115,42 +125,45 @@
                     <ul class="top_tools">
                         <li>
                             <div class="dropdown dropdown-cart">
-                                <a href="cart.html" class="cart_bt"><strong>2</strong></a>
+                                <a href="{{url('cartRental')}}" class="cart_bt">
+                                    {{-- <strong>2</strong> --}}
+                                </a>
                                 <div class="dropdown-menu">
                                     <ul>
                                         <li>
                                             <a href="product-detail-1.html">
-                                                <figure><img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/thumb/1.jpg" alt="" width="50" height="50" class="lazy"></figure>
-                                                <strong><span>1x Armor Air x Fear</span>$90.00</strong>
+                                                <figure><img src="{{asset ('assets/userNew/img/products/tenda4.png')}}" data-src="assets/userNew/img/products/shoes/thumb/1.jpg" alt="" width="50" height="50" class=""></figure>
+                                                <strong><span>Tenda The North Face</span>Rp. 55.000</strong>
                                             </a>
                                             <a href="#0" class="action"><i class="ti-trash"></i></a>
                                         </li>
                                         <li>
                                             <a href="product-detail-1.html">
-                                                <figure><img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/thumb/2.jpg" alt="" width="50" height="50" class="lazy"></figure>
-                                                <strong><span>1x Armor Okwahn II</span>$110.00</strong>
+                                                <figure><img src="{{asset ('assets/userNew/img/products/matras1.png')}}" data-src="assets/userNew/img/products/shoes/thumb/2.jpg" alt="" width="50" height="50" class=""></figure>
+                                                <strong><span>Matras</span>Rp. 20.000</strong>
                                             </a>
                                             <a href="0" class="action"><i class="ti-trash"></i></a>
                                         </li>
                                     </ul>
                                     <div class="total_drop">
-                                        <div class="clearfix"><strong>Total</strong><span>$200.00</span></div>
-                                        <a href="cart.html" class="btn_1 outline">View Cart</a><a href="checkout.html" class="btn_1">Checkout</a>
+                                        <div class="clearfix"><strong>Total</strong><span>Rp. 75.000</span></div>
+                                        {{-- <a href="cart.html" class="btn_1 outline">View Cart</a> --}}
+                                        <a href="{{url('checkoutRental')}}" class="btn_1">Checkout</a>
                                     </div>
                                 </div>
                             </div>
                             <!-- /dropdown-cart-->
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#0" class="wishlist"><span>Wishlist</span></a>
-                        </li>
+                        </li> --}}
                         <li>
                             <div class="dropdown dropdown-access">
                                 <a href="account.html" class="access_link"><span>Account</span></a>
                                 <div class="dropdown-menu">
-                                    <a href="{{url ('/login')}}" class="btn_1">Sign In or Sign Up</a>
-                                    {{-- <ul>
-                                        <li>
+                                    <a href="{{url ('/login')}}" class="btn_1"> {{ Auth::user()->username }}</a>
+                                    <ul>
+                                        {{-- <li>
                                             <a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
                                         </li>
                                         <li>
@@ -158,11 +171,11 @@
                                         </li>
                                         <li>
                                             <a href="account.html"><i class="ti-user"></i>My Profile</a>
-                                        </li>
+                                        </li> --}}
                                         <li>
-                                            <a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
+                                            <a href="{{url ('/login')}}"><i class="ti-na"></i>Logout</a>
                                         </li>
-                                    </ul> --}}
+                                    </ul>
                                 </div>
                             </div>
                             <!-- /dropdown-access-->

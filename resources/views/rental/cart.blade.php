@@ -38,7 +38,7 @@
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
-                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="img/products/shoes/1.jpg" class="lazy" alt="Image">
+                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/1.jpg" class="lazy" alt="Image">
                                     </div>
                                     <span class="item_cart">Armor Air x Fear</span>
                                 </td>
@@ -60,7 +60,7 @@
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
-                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="img/products/shoes/2.jpg" class="lazy" alt="Image">
+                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/2.jpg" class="lazy" alt="Image">
                                     </div>
                                     <span class="item_cart">Armor Okwahn II</span>
                                 </td>
@@ -82,7 +82,7 @@
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
-                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="img/products/shoes/3.jpg" class="lazy" alt="Image">
+                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/3.jpg" class="lazy" alt="Image">
                                     </div>
                                     <span class="item_cart">Armor Air Wildwood ACG</span>
                                 </td>
