@@ -35,32 +35,32 @@ Route::get('/rental', function() {
 });;
 
 
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+
+Route::get('/shop', [ShopController::class, 'index']);
+
+Route::get('/about', function() {
+    return view('user.about');
+});;
+
+Route::get('/gallery', function() {
+    return view('user.gallery');
+});;
+
+Route::get('/news', function() {
+    return view('user.news');
+});;
+
+Route::get('/contact', function() {
+    return view('user.contact');
+});;
+
+Route::get('/shop/single_shop', function() {
+    return view('user.single_shop');
+});;
 Route::middleware(['auth', 'role:user'])->group(function()
 {
-    Route::get('/', [HomeController::class, 'index']);
-    Route::get('/home', [HomeController::class, 'index']);
-
-    Route::get('/shop', [ShopController::class, 'index']);
-
-    Route::get('/about', function() {
-        return view('user.about');
-    });;
-
-    Route::get('/gallery', function() {
-        return view('user.gallery');
-    });;
-
-    Route::get('/news', function() {
-        return view('user.news');
-    });;
-
-    Route::get('/contact', function() {
-        return view('user.contact');
-    });;
-
-    Route::get('/shop/single_shop', function() {
-        return view('user.single_shop');
-    });;
 
 });
 

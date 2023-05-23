@@ -18,7 +18,7 @@ $(document).ready(function () {
             success: function (response) {
                 // Login berhasil
                 if (response.success) {
-                    window.location.href = "/"; // Ganti dengan URL tujuan setelah login berhasil
+                    window.location.href = "/home"; // Ganti dengan URL tujuan setelah login berhasil
                 } else {
                     // Login gagal
                     if (response.errors) {

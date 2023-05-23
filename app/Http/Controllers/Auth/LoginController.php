@@ -61,21 +61,24 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'username' => 'required|string',
+
+        $request->validate([
+            'username' => 'required',
             'password' => 'required',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['success' => false, 'errors' => $validator->errors()]);
-        }
-
-        $credentials = $request->only('username', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect('/')->with('success', 'User Berhasil Ditambahkan');
+        // Logika otentikasi
+        if (auth()->attempt($request->only('username', 'password'))) {
+            // Autentikasi berhasil
+            return response()->json([
+                'success' => true,
+            ]);
         } else {
-            return response()->json(['success' => false, 'message' => 'Invalid credentials']);
+            // Autentikasi gagal
+            return response()->json([
+                'success' => false,
+                'message' => 'Username atau Password salah.',
+            ]);
         }
     }
     
