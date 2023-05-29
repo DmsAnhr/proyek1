@@ -47,6 +47,13 @@ class ShopController extends Controller
             ->with('kategori', $kategori);
     }
 
+    public function getDataBarang()
+    {
+        $barang = BarangModel::with('kategori')->get();
+        $kategori = KategoriModel::withCount('barang')->get();
+        return response()->json(['barang' => $barang, 'kategori' => $kategori]);
+    }
+
     public function getData()
     {
         $transaksi = ShopModel::all();

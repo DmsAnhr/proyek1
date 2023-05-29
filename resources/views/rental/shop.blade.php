@@ -31,10 +31,6 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#0"><i class="ti-view-grid"></i></a>
-                        <a href="#"><i class="ti-view-list"></i></a>
-                    </li>
-                    <li>
                         <a data-bs-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters">
                             <i class="ti-filter"></i><span>Filters</span>
                         </a>
@@ -42,36 +38,13 @@
                 </ul>
                 <div class="collapse" id="filters">
                     <div class="row small-gutters filters_listing_1">
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-6">
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" class="drop">Categories</a>
                                 <div class="dropdown-menu">
-                                    <div class="filter_type">
+                                    <div class="filter_type filter-category">
                                         <ul>
-                                            <li>
-                                                <label class="container_check">Men <small>12</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Women <small>24</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Running <small>23</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Training <small>11</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
+
                                         </ul>
                                         <a href="#0" class="apply_filter">Apply</a>
                                     </div>
@@ -79,81 +52,7 @@
                             </div>
                             <!-- /dropdown -->
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="dropdown">
-                                <a href="#" data-bs-toggle="dropdown" class="drop">Color</a>
-                                <div class="dropdown-menu">
-                                    <div class="filter_type">
-                                        <ul>
-                                            <li>
-                                                <label class="container_check">Blue <small>06</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Red <small>12</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Orange <small>17</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Black <small>43</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                        <a href="#0" class="apply_filter">Apply</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /dropdown -->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="dropdown">
-                                <a href="#" data-bs-toggle="dropdown" class="drop">Brand</a>
-                                <div class="dropdown-menu">
-                                    <div class="filter_type">
-                                        <ul>
-                                            <li>
-                                                <label class="container_check">Adidas <small>11</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Nike <small>08</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Vans <small>05</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="container_check">Puma <small>18</small>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                        <a href="#0" class="apply_filter">Apply</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /dropdown -->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-6">
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" class="drop">Price</a>
                                 <div class="dropdown-menu">
@@ -195,229 +94,43 @@
             </div>
         </div>
         <!-- /toolbox -->
-        <div class="row small-gutters">
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    <figure>
-                        {{-- <span class="ribbon off">-30%</span> --}}
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/kursi1.png')}}" data-src="assets/userNew/img/products/shoes/1.jpg" alt="">
-                        </a>
-                        {{-- <div data-countdown="2019/05/15" class="countdown"></div> --}}
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Kursi Camping</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 10.000</span>
-                        {{-- <span class="old_price">$60.00</span> --}}
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon off">-30%</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/lampu1.png')}}" data-src="assets/userNew/img/products/shoes/2.jpg" alt="">
-                        </a>
-                        {{-- <div data-countdown="2019/05/10" class="countdown"></div> --}}
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Lampu Lentera</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 15.000</span>
-                        {{-- <span class="old_price">$170.00</span> --}}
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon off">-50%</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/matras1.png')}}" data-src="assets/userNew/img/products/shoes/3.jpg" alt="">
-                        </a>
-                        {{-- <div data-countdown="2019/05/21" class="countdown"></div> --}}
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Matras</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 20.000</span>
-                        {{-- <span class="old_price">$155.00</span> --}}
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon new">New</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/tenda4.png')}}" data-src="assets/userNew/img/products/shoes/4.jpg" alt="">
-                        </a>
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Tenda The North Face</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 55.000</span>
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon new">New</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/tas2.png')}}" data-src="assets/userNew/img/products/shoes/5.jpg" alt="">
-                        </a>
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Tas Jinjing</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 18.000</span>
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon new">New</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/sepatu2.png')}}" data-src="assets/userNew/img/products/shoes/6.jpg" alt="">
-                        </a>
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Sepatu Gunung</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 35.000</span>
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon hot">Hot</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/senter1.png')}}" data-src="assets/userNew/img/products/shoes/7.jpg" alt="">
-                        </a>
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Senter</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp. 5.000</span>
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->
-            
-            <div class="col-6 col-md-4 col-xl-3">
-                <div class="grid_item">
-                    {{-- <span class="ribbon hot">Hot</span> --}}
-                    <figure>
-                        <a href="{{url('singleRental')}}">
-                            <img class="img-fluid " src="{{asset ('assets/userNew/img/products/sleeping1.png')}}" data-src="assets/userNew/img/products/shoes/8.jpg" alt="">
-                        </a>
-                    </figure>
-                    <a href="{{url('singleRental')}}">
-                        <h3>Sleeping Bag</h3>
-                    </a>
-                    <div class="price_box">
-                        <span class="new_price">Rp 50.000</span>
-                    </div>
-                    <ul>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                        <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-                    </ul>
-                </div>
-                <!-- /grid_item -->
-            </div>
-            <!-- /col -->				
+        <div class="row small-gutters item-row-list">
+            			
         </div>
         <!-- /row -->
             
-        <div class="pagination__wrapper">
-            <ul class="pagination">
-                <li><a href="#0" class="prev" title="previous page">&#10094;</a></li>
-                <li>
-                    <a href="#0" class="active">1</a>
-                </li>
-                <li>
-                    <a href="#0">2</a>
-                </li>
-                <li>
-                    <a href="#0">3</a>
-                </li>
-                <li>
-                    <a href="#0">4</a>
-                </li>
-                <li><a href="#0" class="next" title="next page">&#10095;</a></li>
-            </ul>
-        </div>
             
     </div>
     <!-- /container -->
 </main>
+<div class="modal" tabindex="-1" id="modal-alert-login">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Oopss...</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Silahkan Login / Register terlebih dahulu.</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="/login" class="btn btn-primary">Login / Register</a>
+        </div>
+      </div>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+    </symbol>
+</svg>
+<div class="alert alert-success d-none align-items-center" role="alert"style="position: fixed;bottom: 20px;z-index: 99;right: 20px;">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      Barang Berhasil Ditambah ke cart
+    </div>
+</div>
 @endsection
 
 @push('css')
@@ -434,4 +147,88 @@
 @push('js')
 <script src="{{asset ('assets/userNew/js/sticky_sidebar.min.js')}}"></script>
 <script src="{{asset ('assets/userNew/js/specific_listing.js')}}"></script>
+
+<script type="text/javascript">
+    $.ajax({
+        url: "/barangShop",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            // Manipulasi data yang diterima dari server
+
+            // Menampilkan daftar kategori
+            var kategori = data.kategori;
+            var kategoriSelect = $(".filter-category ul");
+            $.each(kategori, function(index, kat) {
+                var jumlahBarang = kat.barang_count;
+                var html = '<li>';
+                    html+='<label class="container_check">' + kat.nama + ' <small>'+ jumlahBarang +'</small>';
+                        html+='<input type="checkbox">';
+                        html+='<span class="checkmark"></span>';
+                    html+='</label>';
+                html+='</li>';
+                kategoriSelect.append(html);
+            });
+            
+            // Menampilkan daftar barang
+            $.each(data.barang, function(index, item) {
+
+                var html = '<div class="col-6 col-md-4 col-xl-3 '+ item.kategori.nama +'">';
+                    html += '<div class="grid_item">';
+                        html += '<figure>';
+                            html += '<a type="button" class="btn-item-single" barang-id="'+ item.id +'">';
+                                html += '<img class="img-fluid " src="'+ ('storage/' + item.foto) +'" data-src="'+ ('storage/' + item.foto) +'" alt="">';
+                            html += '</a>';
+                        html += '</figure>';
+                        html += '<a type="button" class="btn-item-single" barang-id="'+ item.id +'">';
+                            html += '<h3>' + item.nama + '</h3>';
+                        html += '</a>';
+                        html += '<div class="price_box">';
+                            html += '<span class="new_price">Rp.' + item.harga + '</span>';
+                        html += '</div>';
+                        html += '<ul>';
+                            html += '<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>';
+                            html += '<li><a type="button" class="tooltip-1 btn-add-cart" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart" barang-id="' + item.id + '"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>';
+                        html += '</ul>';
+                    html += '</div>';
+                html += '</div>';
+                
+                $(".item-row-list").append(html);
+            });
+        }
+    });
+
+</script>
+@guest
+    <script>
+        $(document).on('click', '.btn-add-cart', function() {
+            $('#modal-alert-login').modal('show'); 
+        });
+    </script>
+@endguest
+@auth
+    <script>
+    
+        $(document).on('click', '.btn-add-cart', function() {
+            var barangId = $(this).attr('barang-id');
+            
+            $.ajax({
+                url: "/add-to-cart",
+                type: "POST",
+                dataType: "json",
+                data: { barang_id: barangId },
+                success: function(response) {
+                    reloadCart();
+                    $('.alert-success').removeClass('d-none').addClass('d-flex');
+                    setTimeout(() => {
+                        $('.alert-success').removeClass('d-flex').addClass('d-none');
+                    }, 2000);
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    </script>
+@endauth
 @endpush

@@ -14,7 +14,7 @@
 .toolbox.sticky {
   width: 100%;
   position: fixed;
-  top: 0;
+  top: 68px;
   left: 0;
   z-index: 999999;
   background-color: #004dda;
