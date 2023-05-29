@@ -30,13 +30,27 @@ Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 // Route::post('/login', 'Auth\LoginController@login')->name('login');
 // Route::post('/register', 'Auth\RegisterController@register')->name('register');
+Route::get('/get-user-id', function () {
+    $userId = auth()->id();
+    return response()->json(['user_id' => $userId]);
+});
 
 Route::get('/rental', [RentalController::class, 'index']);
+Route::get('/barangRental', [RentalController::class, 'getDataBarang']);
+Route::get('/barangShop', [ShopController::class, 'getDataBarang']);
+
+Route::get('/cartData', [RentalController::class, 'showCart']);
+Route::post('/add-to-cart', [RentalController::class, 'addToCart']);
+Route::post('/dec-item-cart', [RentalController::class, 'decCart']);
+
 Route::get('/aboutRental', function() {
     return view('rental.about');
 });;
 Route::get('/shopRental', function() {
     return view('rental.shop');
+});;
+Route::get('/cart', function() {
+    return view('rental.cart');
 });;
 Route::get('/blogRental', function() {
     return view('rental.blog');
@@ -57,10 +71,10 @@ Route::get('/payRental', function() {
 
 
 
+Route::get('/', [RentalController::class, 'index']);
 
 
 
-Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/shop', [ShopController::class, 'index']);
@@ -93,7 +107,7 @@ Route::middleware(['auth', 'role:user'])->group(function()
 
 Route::middleware(['auth', 'role:admin'])->group(function()
 {
-    Route::get('/', [AdminController::class, 'index']);
+    // Route::get('/', [AdminController::class, 'index']);
     Route::get('/admin', [AdminController::class, 'index']);
 
     Route::get('/kasir', function() {

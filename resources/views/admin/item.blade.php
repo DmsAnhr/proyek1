@@ -356,7 +356,7 @@
         });
 
         //add item
-        $('#submitFormItem').click(function() {
+        $('#submitFormItem').click(function(e) {
             e.preventDefault();
             var formData = $("#formBarang").serialize();
             $.ajax({

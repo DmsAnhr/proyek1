@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -22,7 +23,7 @@
 	<link rel="stylesheet" href="{{asset ('assets/userNew/https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap')}}">
 
     <!-- BASE CSS -->
-    <link rel="stylesheet" href="{{asset ('assets/userNew/css/bootstrap.custom.min.css')}}">
+    <link rel="stylesheet" href="{{asset ('assets/userNew/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset ('assets/userNew/css/style.css')}}">
 
     @stack('css')
@@ -33,7 +34,9 @@
 </head>
 
 <body>
-	
+	@auth
+        <div class="d-none" id="userid" data-id="{{ Auth::user()->name }}"></div>
+    @endauth
 	<div id="page">
         @include('rental.template.header')
 
@@ -50,7 +53,99 @@
     <script src="{{asset ('assets/userNew/js/common_scripts.min.js')}}"></script>
     <script src="{{asset ('assets/userNew/js/main.js')}}"></script>
 	
-    @stack('js')
+    @auth
+        <script>
+            function reloadCart() {
+                var userId;
+                $.ajax({
+                    url: '/get-user-id',
+                    method: 'GET',
+                    success: function(response) {
+                        userId = response.user_id;
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
+                });
+                
+                $.ajax({
+                    url: '/cartData',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        var totalHarga = 0;
+                        var totalBarang = 0;
+                        $.each(response, function(index, item) {
+                            var html = '<li>';
+                                html += '<a href="product-detail-1.html">';
+                                    html += '<figure><img src="storage/' + item.barang.foto + '" data-src="storage/' + item.barang.foto + '" alt="' + item.barang.nama + '" width="50" height="50" class=""></figure>';
+                                    html += '<strong><span>' + item.barang.nama + '</span>@Rp.' + item.barang.harga + '</strong>';
+                                html += '</a>';
+                                html += '<a href="#0" class="action" style="padding-top:15px;padding-right:25px;color:black">X'+item.jumlah+'</a>';
+                            html += '</li>';
+                            $(".cart-dropdown ul").html('');
+                            $(".cart-dropdown ul").append(html);
+                            totalHarga += (parseInt(item.barang.harga)*parseInt(item.jumlah));
+                            totalBarang += parseInt(item.jumlah);
+                        });
+                        $('.totalHargaCart').text('Rp.'+totalHarga);
+                        $('.totalBarangCart').text(totalBarang);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+            $(document).ready(function () {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
 
+                reloadCart();
+
+                // var userId;
+                // $.ajax({
+                //     url: '/get-user-id',
+                //     method: 'GET',
+                //     success: function(response) {
+                //         userId = response.user_id;
+                //     },
+                //     error: function(xhr) {
+                //         console.log(xhr.responseText);
+                //     }
+                // });
+                
+                // $.ajax({
+                //     url: '/cartData',
+                //     type: 'GET',
+                //     dataType: 'json',
+                //     success: function(response) {
+                //         var totalHarga = 0;
+                //         var totalBarang = 0;
+                //         $.each(response, function(index, item) {
+                //             var html = '<li>';
+                //                 html += '<a href="product-detail-1.html">';
+                //                     html += '<figure><img src="storage/' + item.barang.foto + '" data-src="storage/' + item.barang.foto + '" alt="' + item.barang.nama + '" width="50" height="50" class=""></figure>';
+                //                     html += '<strong><span>' + item.barang.nama + '</span>@Rp.' + item.barang.harga + '</strong>';
+                //                 html += '</a>';
+                //                 html += '<a href="#0" class="action" style="padding-top:15px;padding-right:25px;color:black">X'+item.jumlah+'</a>';
+                //             html += '</li>';
+                //             $(".cart-dropdown ul").append(html);
+                //             totalHarga += (parseInt(item.barang.harga)*parseInt(item.jumlah));
+                //             totalBarang += parseInt(item.jumlah);
+                //         });
+                //         $('.totalHargaCart').text('Rp.'+totalHarga);
+                //         $('.totalBarangCart').text(totalBarang);
+                //     },
+                //     error: function(xhr, status, error) {
+                //         console.log(xhr.responseText);
+                //     }
+                // });
+            });
+        </script>
+    @endauth
+    @stack('js')
 </body>
 </html>

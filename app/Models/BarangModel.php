@@ -16,10 +16,15 @@ class BarangModel extends Model
         return $this->belongsTo(KategoriModel::class, 'kategori_id', 'id');
     }
 
-    public function transaksis(): BelongsToMany
+    public function transaksi(): BelongsToMany
     {
-        return $this->belongsToMany(Transaksi::class, 'transaksi_barang', 'barang_id', 'transaksi_id')
+        return $this->belongsToMany(ShopModel::class, 'transaksi_barang', 'barang_id', 'transaksi_id')
                     ->withPivot('jumlah')
                     ->withTimestamps();
+    }
+
+    public function cart()
+    {
+        return $this->hasMany(CartModel::class, 'product_id');
     }
 }

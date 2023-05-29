@@ -125,31 +125,30 @@
                     <ul class="top_tools">
                         <li>
                             <div class="dropdown dropdown-cart">
-                                <a href="{{url('cartRental')}}" class="cart_bt">
-                                    {{-- <strong>2</strong> --}}
-                                </a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li>
-                                            <a href="product-detail-1.html">
-                                                <figure><img src="{{asset ('assets/userNew/img/products/tenda4.png')}}" data-src="assets/userNew/img/products/shoes/thumb/1.jpg" alt="" width="50" height="50" class=""></figure>
-                                                <strong><span>Tenda The North Face</span>Rp. 55.000</strong>
-                                            </a>
-                                            <a href="#0" class="action"><i class="ti-trash"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="product-detail-1.html">
-                                                <figure><img src="{{asset ('assets/userNew/img/products/matras1.png')}}" data-src="assets/userNew/img/products/shoes/thumb/2.jpg" alt="" width="50" height="50" class=""></figure>
-                                                <strong><span>Matras</span>Rp. 20.000</strong>
-                                            </a>
-                                            <a href="0" class="action"><i class="ti-trash"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="total_drop">
-                                        <div class="clearfix"><strong>Total</strong><span>Rp. 75.000</span></div>
-                                        {{-- <a href="cart.html" class="btn_1 outline">View Cart</a> --}}
-                                        <a href="{{url('checkoutRental')}}" class="btn_1">Checkout</a>
-                                    </div>
+                                @auth
+                                    <a href="{{url('cartRental')}}" class="cart_bt">
+                                        <strong class="totalBarangCart">0</strong>
+                                    </a>
+                                @endauth
+                                @guest
+                                    <a href="{{url('login')}}" class="cart_bt"></a>
+                                @endguest
+                                <div class="dropdown-menu cart-dropdown">
+                                    @auth
+                                        <ul>
+                                            {{-- isi cart --}}
+                                        </ul>
+                                        <div class="total_drop">
+                                            <div class="clearfix"><strong>Total</strong><span class="totalHargaCart">Rp. 0</span></div>
+                                            {{-- <a href="cart.html" class="btn_1 outline">View Cart</a> --}}
+                                            <a href="{{url('cart')}}" class="btn_1">Lihat Keranjang</a>
+                                        </div>
+                                    @endauth
+                                    @guest
+                                        <div class="total_drop">
+                                            <a href="{{url('/login')}}" class="btn_1">Login or Register</a>
+                                        </div>
+                                    @endguest
                                 </div>
                             </div>
                             <!-- /dropdown-cart-->
@@ -161,9 +160,12 @@
                             <div class="dropdown dropdown-access">
                                 <a href="account.html" class="access_link"><span>Account</span></a>
                                 <div class="dropdown-menu">
-                                    <a href="{{url ('/login')}}" class="btn_1"> {{ Auth::user()->username }}</a>
+                                    @guest
+                                        <a href="{{url ('/login')}}" class="btn_1">Login or Register</a>
+                                    @endguest
+                                    @auth
                                     <ul>
-                                        {{-- <li>
+                                        <li>
                                             <a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
                                         </li>
                                         <li>
@@ -171,11 +173,12 @@
                                         </li>
                                         <li>
                                             <a href="account.html"><i class="ti-user"></i>My Profile</a>
-                                        </li> --}}
+                                        </li>
                                         <li>
                                             <a href="{{url ('/login')}}"><i class="ti-na"></i>Logout</a>
                                         </li>
                                     </ul>
+                                    @endauth
                                 </div>
                             </div>
                             <!-- /dropdown-access-->
