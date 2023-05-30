@@ -28,7 +28,7 @@
                                     <ul>
                                         <li class="item-box"
                                             style="display: flex;align-items: center;justify-content: space-between;">
-                                            <p>- Tenda 5x5</p>
+                                            <p>- {{$barang->nama}}</p>
                                             <div>
                                                 <input type="number" min="1" max="" value="1"
                                                     style="width: 40px;border: none;background-color: #fafafa;font-size: 19px;">
