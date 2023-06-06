@@ -11,7 +11,8 @@
     <title>Ciliwung Camp</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset ('assets/userNew/img/favicon.ico')}}">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{asset ('assets/userNew/img/favicon.ico')}}"> --}}
+    <link rel="shortcut icon" type="image/x-icon"  href="{{asset ('assets/user/img/new.png') }}">
     <link rel="apple-touch-icon" type="image/x-icon" href="{{asset ('assets/userNew/img/apple-touch-icon-57x57-precomposed.png')}}">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{asset ('assets/userNew/img/apple-touch-icon-72x72-precomposed.png')}}">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{asset ('assets/userNew/img/apple-touch-icon-114x114-precomposed.png')}}">
@@ -52,7 +53,26 @@
 	<!-- COMMON SCRIPTS -->
     <script src="{{asset ('assets/userNew/js/common_scripts.min.js')}}"></script>
     <script src="{{asset ('assets/userNew/js/main.js')}}"></script>
-	
+	<script type="text/javascript">
+        function formatRupiah(angka, prefix){
+            var angkas = angka.toString();
+			var number_string = angkas.replace(/[^,\d]/g, '').toString(),
+			split   		= number_string.split(','),
+			sisa     		= split[0].length % 3,
+			rupiah     		= split[0].substr(0, sisa),
+			ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+ 
+			// tambahkan titik jika yang di input sudah menjadi angka ribuan
+			if(ribuan){
+				separator = sisa ? '.' : '';
+				rupiah += separator + ribuan.join('.');
+			}
+ 
+			rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+			return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+		}
+    </script>
+
     @auth
         <script>
             function reloadCart() {
@@ -75,20 +95,20 @@
                     success: function(response) {
                         var totalHarga = 0;
                         var totalBarang = 0;
+                        $(".cart-dropdown ul").html('');
                         $.each(response, function(index, item) {
                             var html = '<li>';
                                 html += '<a href="product-detail-1.html">';
                                     html += '<figure><img src="storage/' + item.barang.foto + '" data-src="storage/' + item.barang.foto + '" alt="' + item.barang.nama + '" width="50" height="50" class=""></figure>';
-                                    html += '<strong><span>' + item.barang.nama + '</span>@Rp.' + item.barang.harga + '</strong>';
+                                    html += '<strong><span>' + item.barang.nama + '</span>@' + formatRupiah(item.barang.harga, 'Rp. ') + '</strong>';
                                 html += '</a>';
                                 html += '<a href="#0" class="action" style="padding-top:15px;padding-right:25px;color:black">X'+item.jumlah+'</a>';
                             html += '</li>';
-                            $(".cart-dropdown ul").html('');
                             $(".cart-dropdown ul").append(html);
                             totalHarga += (parseInt(item.barang.harga)*parseInt(item.jumlah));
                             totalBarang += parseInt(item.jumlah);
                         });
-                        $('.totalHargaCart').text('Rp.'+totalHarga);
+                        $('.totalHargaCart').text(formatRupiah(totalHarga, 'Rp. '));
                         $('.totalBarangCart').text(totalBarang);
                     },
                     error: function(xhr, status, error) {

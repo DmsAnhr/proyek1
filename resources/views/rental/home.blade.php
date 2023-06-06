@@ -303,7 +303,7 @@
                                 html+='<h3>' + item.nama + '</h3>';
                             html+='</a>';
                             html+='<div class="price_box">';
-                                html+='<span class="new_price">Rp.' + item.harga + '</span>';
+                                html+='<span class="new_price">' + formatRupiah(item.harga, 'Rp. ')+ '</span>';
                             html+='</div>';
                             html+='<ul>';
                                 html+='<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>';

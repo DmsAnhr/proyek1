@@ -17,7 +17,7 @@
                         </div>
                     </a>
                     <!-- Mobile menu button -->
-                    <div class="main-menu">
+                    <div class="main-menu d-flex justify-content-center">
                         <div id="header_menu">
                             <a href="index.html"><img src="{{asset ('assets/userNew/img/logo_black.svg')}}" alt="" width="100" height="35"></a>
                             <a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
@@ -126,12 +126,12 @@
                         <li>
                             <div class="dropdown dropdown-cart">
                                 @auth
-                                    <a href="{{url('cartRental')}}" class="cart_bt">
+                                    <a href="{{url('cart')}}" class="cart_bt">
                                         <strong class="totalBarangCart">0</strong>
                                     </a>
                                 @endauth
                                 @guest
-                                    <a href="{{url('login')}}" class="cart_bt"></a>
+                                    <a href="{{url('profile')}}" class="cart_bt"></a>
                                 @endguest
                                 <div class="dropdown-menu cart-dropdown">
                                     @auth

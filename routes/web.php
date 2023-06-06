@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\RentalController;
@@ -43,14 +44,15 @@ Route::get('/cartData', [RentalController::class, 'showCart']);
 Route::post('/add-to-cart', [RentalController::class, 'addToCart']);
 Route::post('/dec-item-cart', [RentalController::class, 'decCart']);
 
+Route::get('/checkoutData', [CheckoutController::class, 'index']);
+Route::post('/checkout-pay', [CheckoutController::class, 'store']);
+
+
 Route::get('/aboutRental', function() {
     return view('rental.about');
 });;
 Route::get('/shopRental', function() {
     return view('rental.shop');
-});;
-Route::get('/cart', function() {
-    return view('rental.cart');
 });;
 Route::get('/blogRental', function() {
     return view('rental.blog');
@@ -58,24 +60,37 @@ Route::get('/blogRental', function() {
 Route::get('/contactRental', function() {
     return view('rental.contact');
 });;
-Route::get('/singleRental', function() {
+Route::get('/product', function() {
     return view('rental.singe_shop');
 });;
-Route::get('/checkoutRental', function() {
-    return view('rental.checkout');
-});;
-Route::get('/payRental', function() {
-    return view('rental.pay');
-});;
 
 
+
+Route::middleware(['auth', 'role:user'])->group(function()
+{
+    Route::get('/cart', function() {
+        return view('rental.cart');
+    });;
+    Route::get('/checkout', function() {
+        return view('rental.checkout');
+    });;
+    Route::get('/paymentSuccess', function() {
+        return view('rental.pay');
+    });;
+    Route::get('/cartData', [RentalController::class, 'showCart']);
+    Route::post('/add-to-cart', [RentalController::class, 'addToCart']);
+    Route::post('/dec-item-cart', [RentalController::class, 'decCart']);
+    
+    Route::get('/checkoutData', [CheckoutController::class, 'index']);
+    Route::post('/checkout-pay', [CheckoutController::class, 'store']);
+});
 
 
 Route::get('/', [RentalController::class, 'index']);
 
 
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [RentalController::class, 'index']);
 
 Route::get('/shop', [ShopController::class, 'index']);
 
@@ -128,7 +143,7 @@ Route::middleware(['auth', 'role:admin'])->group(function()
     Route::get('/get-transaksi', [ShopController::class, 'getData']);
     Route::get('/get-riwayat', [ShopController::class, 'getRiwayat']);
     Route::post('/transaksi-update/{id}', [ShopController::class, 'update']);
-    Route::post('/checkout-kasir', [ShopController::class, 'store']);
+    Route::post('/checkout-kasir', [CheckoutController::class, 'store']);
 
     Route::get('/kategori', function() {
         return view('admin.category');

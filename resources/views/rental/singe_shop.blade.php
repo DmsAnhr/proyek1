@@ -425,4 +425,9 @@
 @push('js')
     <!-- SPECIFIC SCRIPTS -->
 	<script src="{{asset ('assets/userNew/js/carousel_with_thumbs.js')}}"></script>
+    <script>
+        var url = window.location.href;
+        var idURL = url.match(/id=(\d+)/);
+        var idBarang = idURL[1];
+    </script>
 @endpush

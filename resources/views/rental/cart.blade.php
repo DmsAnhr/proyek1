@@ -7,8 +7,8 @@
         <div class="breadcrumbs">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Category</a></li>
-                <li>Page active</li>
+                <li><a href="#">Shop</a></li>
+                <li>Cart</li>
             </ul>
         </div>
         <h1>Cart page</h1>
@@ -35,51 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="thumb_cart">
-                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/2.jpg" class="lazy" alt="Image">
-                                    </div>
-                                    <span class="item_cart">Armor Okwahn II</span>
-                                </td>
-                                <td>
-                                    <strong>$110.00</strong>
-                                </td>
-                                <td>
-                                    <div class="numbers-row">
-                                        <input type="text" value="1" id="quantity_2" class="qty2" name="quantity_2">
-                                    <div class="inc button_inc">+</div><div class="dec button_inc">-</div></div>
-                                </td>
-                                <td>
-                                    <strong>$110.00</strong>
-                                </td>
-                                <td class="options">
-                                    <a href="#"><i class="ti-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="thumb_cart">
-                                        <img src="{{asset ('assets/userNew/img/products/product_placeholder_square_small.jpg')}}" data-src="assets/userNew/img/products/shoes/3.jpg" class="lazy" alt="Image">
-                                    </div>
-                                    <span class="item_cart">Armor Air Wildwood ACG</span>
-                                </td>
-                                <td>
-                                    <strong>$90.00</strong>
-                                </td>
-                                
-                                <td>
-                                    <div class="numbers-row">
-                                        <input type="text" value="1" id="quantity_3" class="qty2" name="quantity_3">
-                                    <div class="inc button_inc">+</div><div class="dec button_inc">-</div></div>
-                                </td>
-                                <td>
-                                    <strong>$90.00</strong>
-                                </td>
-                                <td class="options">
-                                    <a href="#"><i class="ti-trash"></i></a>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
 
@@ -107,18 +63,27 @@
         <div class="container">
         <div class="row justify-content-end">
             <div class="col-xl-4 col-lg-4 col-md-6">
-        <ul>
-            <li>
-                <span>Subtotal</span> $240.00
-            </li>
-            <li>
-                <span>Shipping</span> $7.00
-            </li>
-            <li>
-                <span>Total</span> $247.00
-            </li>
-        </ul>
-        <a href="{{url('checkoutRental')}}" class="btn_1 full-width cart">Proceed to Checkout</a>
+        
+        <div class="checkout-detail">
+            <div class="d-flex justify-content-between align-items-center">
+                <h6>Hari</h6>
+                <div class="hari-row">
+                    <input type="number" value="1" id="input-hari" class="input-hari" name="hari" min="1" style="width: 50px">
+                    <div class="btn-inc-hari" style="right: 0;top: 0;">+</div>
+                    <div class="btn-dec-hari" style="left: 0;top: 0;">-</div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <h6>Subtotal</h6>
+                <h6 class="all-subtotal" data-harga="0">Rp.0  x 1 hari</h6>
+            </div>
+            <hr style="height: 3px;margin: 20px 0">
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <h4 style="color: red;font-weight: bold;">TOTAL</h4>
+                <h4 style="color: red;font-weight: bold;" class="all-total" data-harga="0">Rp.0</h4>
+            </div>
+        </div>
+        <button type="button" class="btn_1 full-width cart btn-ckeckout">Proceed to Checkout</button>
                 </div>
             </div>
         </div>
@@ -130,6 +95,47 @@
 
 @push('css')
     <link href="{{asset ('assets/userNew/css/cart.css')}}" rel="stylesheet">
+    <style>
+        .btn-inc, .btn-dec, .btn-inc-hari, .btn-dec-hari{
+            cursor: pointer;
+            position: absolute;
+            width: 33px;
+            height: 40px;
+            line-height: 38px;
+            text-align: center;
+            z-index: 2;
+            font-size: 26px;
+            font-size: 1.625rem;
+            font-weight: 300 !important;
+            color: #999;
+        }
+
+        .hari-row{
+            position: relative;
+            width: 30%;
+            height: 40px;
+            overflow: visible;
+            border: 1px solid #dddddd;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #fff;
+            text-align: left !important;
+        }
+
+        .input-jumlah, .input-hari{
+            position: relative;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            left: 50%;
+            background: none;
+            padding: 5px;
+            border: none;
+            margin-left: -20px;
+        }
+    </style>
 @endpush
 
 @push('js')
@@ -164,17 +170,17 @@
                         html += '<span class="item_cart">' + item.barang.nama + '</span>';
                     html += '</td>';
                     html += '<td>';
-                        html += '<strong>Rp.' + item.barang.harga + '</strong>';
+                        html += '<strong class="harga-barang" data-harga="'+ item.barang.harga +'">' + formatRupiah(item.barang.harga, 'Rp. ') + '</strong>';
                     html += '</td>';
                     html += '<td>';
                         html += '<div class="numbers-row">';
-                            html += '<input type="text" value="' + item.jumlah + '" id="quantity_1" class="qty2" name="quantity_1">';
-                            html += '<div class="inc button_inc button-inc" barang-id="'+item.barang.id+'">+</div>';
-                            html += '<div class="dec button_inc button-dec" barang-id="'+item.barang.id+'">-</div>';
+                            html += '<input type="text" value="' + item.jumlah + '" class="input-jumlah" name="">';
+                            html += '<div class="btn-inc" style="right: 0;top: 0;" barang-id="'+item.barang.id+'">+</div>';
+                            html += '<div class="btn-dec" style="left: 0;top: 0;" barang-id="'+item.barang.id+'">-</div>';
                         html += '</div>';
                     html += '</td>';
                     html += '<td>';
-                        html += '<strong class="barangSubTotal" subTotal="'+ subTotal +'">Rp.' + subTotal + '</strong>';
+                        html += '<strong class="barangSubTotal" subTotal="'+ subTotal +'">' + formatRupiah(subTotal, 'Rp. ') + '</strong>';
                     html += '</td>';
                     html += '<td class="options">';
                         html += '<a href="#"><i class="ti-trash"></i></a>';
@@ -183,20 +189,43 @@
                 $(".cart-list tbody").append(html);
 
             });
+            changeTotal();
         },
         error: function(xhr, status, error) {
             console.log(xhr.responseText);
         }
     });
 
-    $(document).on('click','.btn-inc', function() {
-        var barangId = $(this).attr('barang-id');
+    function changeTotal() {
+        var total = 0;
+        var hari = $('.input-hari').val();
+        $('.input-jumlah').each(function() {
+            var jumlah = parseInt($(this).val());
+            var harga = parseInt($(this).parents('tr').find('.harga-barang').attr('data-harga'));
+            var subtotal = jumlah * harga;
+            total = total+subtotal;
+            console.log(total);
+            $(this).parents('tr').find('.barangSubTotal').attr('subTotal', subtotal).text(formatRupiah(subtotal, 'Rp. '));
+        });
+        $('.all-subtotal').data('harga', total).text(formatRupiah(total, 'Rp. ')+' x '+hari+'hari');
+        total = parseInt(total) * parseInt(hari);
+        $('.all-total').data('total', total).text(formatRupiah(total, 'Rp. '));
+    };
+
+    $('.cart-list').on('click','.btn-inc:not(.ignore)', function() {
+        var btn = $(this);
+        btn.addClass('ignore');
+        var barangId = btn.attr('barang-id');
+        var jumlah = parseInt(btn.siblings('input').val());
+        btn.siblings('input').val(jumlah + 1);
         $.ajax({
             url: "/add-to-cart",
             type: "POST",
             dataType: "json",
             data: { barang_id: barangId },
             success: function(response) {
+                changeTotal();
+                btn.removeClass('ignore');
                 $('.alert-success').removeClass('d-none').addClass('d-flex');
                 setTimeout(() => {
                     $('.alert-success').removeClass('d-flex').addClass('d-none');
@@ -208,23 +237,50 @@
         });
     });
     
-    $(document).on('click','.btn-dec', function() {
-        var barangId = $(this).attr('barang-id');
-        $.ajax({
-            url: "/dec-item-cart",
-            type: "POST",
-            dataType: "json",
-            data: { barang_id: barangId },
-            success: function(response) {
-                $('.alert-success').removeClass('d-none').addClass('d-flex');
-                setTimeout(() => {
-                    $('.alert-success').removeClass('d-flex').addClass('d-none');
-                }, 2000);
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr.responseText);
-            }
-        });
+    $('.cart-list').on('click','.btn-dec:not(.ignore)', function() {
+        var btn = $(this);
+        btn.addClass('ignore');
+        var barangId = btn.attr('barang-id');
+        var jumlah = parseInt(btn.siblings('input').val());
+        if (jumlah != 1) {
+            btn.siblings('input').val(jumlah - 1);
+            $.ajax({
+                url: "/dec-item-cart",
+                type: "POST",
+                dataType: "json",
+                data: { barang_id: barangId },
+                success: function(response) {
+                    changeTotal();
+                    btn.removeClass('ignore');
+                    $('.alert-success').removeClass('d-none').addClass('d-flex');
+                    setTimeout(() => {
+                        $('.alert-success').removeClass('d-flex').addClass('d-none');
+                    }, 2000);
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        }
+    });
+
+    $('.btn-inc-hari').click(function() {
+        var hari = parseInt($(this).siblings('input').val());
+        $(this).siblings('input').val(hari + 1);
+        changeTotal();
+    });
+
+    $('.btn-dec-hari').click(function() {
+        var hari = parseInt($(this).siblings('input').val());
+        if (hari != 1) {
+            $(this).siblings('input').val(hari - 1);
+            changeTotal();
+        }
+    });
+
+    $('.btn-ckeckout').click(function() {
+        var hari = $('#input-hari').val();
+        window.location.href = '/checkout?id_hari=' + hari;
     });
 </script>
 @endpush

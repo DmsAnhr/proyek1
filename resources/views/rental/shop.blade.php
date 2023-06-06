@@ -173,7 +173,7 @@
             // Menampilkan daftar barang
             $.each(data.barang, function(index, item) {
 
-                var html = '<div class="col-6 col-md-4 col-xl-3 '+ item.kategori.nama +'">';
+                var html = '<div class="col-6 col-md-4 col-xl-3 item-rental '+ item.kategori.nama +'" data-id="'+ item.id +'" data-name="'+ item.nama +'">';
                     html += '<div class="grid_item">';
                         html += '<figure>';
                             html += '<a type="button" class="btn-item-single" barang-id="'+ item.id +'">';
@@ -184,7 +184,7 @@
                             html += '<h3>' + item.nama + '</h3>';
                         html += '</a>';
                         html += '<div class="price_box">';
-                            html += '<span class="new_price">Rp.' + item.harga + '</span>';
+                            html += '<span class="new_price">' + formatRupiah(item.harga, 'Rp. ') + '</span>';
                         html += '</div>';
                         html += '<ul>';
                             html += '<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>';
@@ -198,6 +198,11 @@
         }
     });
 
+    $('.item-row-list').on('click', '.item-rental', function() {
+        var id = $(this).data('id');
+        var name = $(this).data('name');
+        window.location.href = '/product?'+ name +'%20id=' + id;
+    });
 </script>
 @guest
     <script>

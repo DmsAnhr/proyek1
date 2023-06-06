@@ -9,8 +9,8 @@
 			<div class="breadcrumbs">
 				<ul>
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Category</a></li>
-					<li>Page active</li>
+					<li><a href="#">Shop</a></li>
+					<li>Checkout</li>
 				</ul>
 		</div>
 		<h1>Process your checkout</h1>
@@ -32,120 +32,57 @@
 					<div class="tab-content checkout">
 						<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
 							
-							<div class="row no-gutters">
+							{{-- <div class="row no-gutters">
 								<div class="col-6 form-group pr-1">
 									<input type="text" class="form-control" placeholder="Name">
 								</div>
 								<div class="col-6 form-group pl-1">
 									<input type="text" class="form-control" placeholder="Last Name">
 								</div>
-							</div>
-							<!-- /row -->
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Full Address">
-							</div>
-							<div class="row no-gutters">
-								<div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="City">
-								</div>
-								<div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Postal code">
-								</div>
-							</div>
-							<!-- /row -->
-							<div class="row no-gutters">
-								<div class="col-md-12 form-group">
-									<div class="custom-select-form">
-										<select class="wide add_bottom_15" name="country" id="country">
-											<option value="" selected>Country</option>
-											<option value="Europe">Europe</option>
-											<option value="United states">United states</option>
-											<option value="Asia">Asia</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<!-- /row -->
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Telephone">
-							</div>
-							<hr>
-							<div class="form-group">
-								<label class="container_check" id="other_addr">Other billing address
-								  <input type="checkbox">
-								  <span class="checkmark"></span>
-								</label>
-							</div>
-							<div id="other_addr_c" class="pt-2">
-							<div class="row no-gutters">
-								<div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="Name">
-								</div>
-								<div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Last Name">
-								</div>
-							</div>
-							<!-- /row -->
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Full Address">
-							</div>
-							<div class="row no-gutters">
-								<div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="City">
-								</div>
-								<div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Postal code">
-								</div>
-							</div>
-							<!-- /row -->
-							<div class="row no-gutters">
-								<div class="col-md-12 form-group">
-									<div class="custom-select-form">
-										<select class="wide add_bottom_15" name="country" id="country_2">
-											<option value="" selected>Country</option>
-											<option value="Europe">Europe</option>
-											<option value="United states">United states</option>
-											<option value="Asia">Asia</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<!-- /row -->
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Telephone">
-							</div>
-							</div>
-							<!-- /other_addr_c -->
-							<hr>
+							</div> --}}
+							<h6><b class="nama">NAMA</b></h6>
+							<h6 style="font-size: 13px;letter-spacing: 1px" class="notelp">08xx xxxx xxx</h6>
+							<h6 style="font-size: 13px;letter-spacing: 1px" class="alamat">JL.</h6>
+							<h6 style="font-size: 13px;letter-spacing: 1px" class="kecamatan">Kecamatan, kodepos</h6>
+							{{-- <h6 style="font-size: 13px;letter-spacing: 1px">65124</h6> --}}
 						</div>
 						<!-- /tab_1 -->
-					  <div class="tab-pane fade" id="tab_2" role="tabpanel" aria-labelledby="tab_2" style="position: relative;">
-						  <a href="#0" class="social_bt facebook">Login con Facebook</a>
-						  <a href="#0" class="social_bt google">Login con Google</a>
-						  <div class="form-group">
-								<input type="email" class="form-control" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password" name="password_in" id="password_in">
-							</div>
-						  	<div class="clearfix add_bottom_15">
-								<div class="checkboxes float-start">
-									<label class="container_check">Remember me
-										<input type="checkbox">
-										<span class="checkmark"></span>
-									</label>
+					  	<div class="tab-pane fade" id="tab_2" role="tabpanel" aria-labelledby="tab_2" style="position: relative;">
+							{{-- <div id="other_addr_c" class="pt-2"> --}}
+								<div class="row no-gutters">
+									<div class="col-12 form-group pr-1">
+										<input type="text" class="form-control" placeholder="Name">
+									</div>
 								</div>
-								<div class="float-end"><a id="forgot" href="#0">Lost Password?</a></div>
-							</div>
-							  <div id="forgot_pw">
+								<!-- /row -->
 								<div class="form-group">
-									<input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
+									<input type="text" class="form-control" placeholder="Full Address">
 								</div>
-								<p>A new password will be sent shortly.</p>
-								<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-							</div>
-							<hr>
-						  	<input type="submit" class="btn_1 full-width" value="Login">
+								<div class="row no-gutters">
+									{{-- <div class="col-6 form-group pr-1">
+										<input type="text" class="form-control" placeholder="City">
+									</div> --}}
+									<div class="col-6 form-group pl-1">
+										<input type="text" class="form-control" placeholder="Postal code">
+									</div>
+									<div class="col-6 form-group">
+										<div class="custom-select-form">
+											<select class="wide add_bottom_15" name="kecamatan" id="country_2">
+												<option value="" selected>Kecamatan</option>
+												<option value="Blimbing">Blimbing</option>
+												<option value="Kedungkandang">Kedungkandang</option>
+												<option value="Klojen">Klojen</option>
+												<option value="Lowokwaru">Lowokwaru</option>
+												<option value="Sukun">Sukun</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Telephone">
+								</div>
+							{{-- </div> --}}
 						</div>
 						<!-- /tab_2 -->
 					</div>
@@ -155,47 +92,52 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="step middle payments">
 						<h3>2. Payment and Shipping</h3>
+						<h6 class="pb-2">Payment Method</h6>
+
+						<div class="payment_info d-none d-sm-block">
+							<figure><img src="{{asset ('assets/userNew/img/cards_all.svg')}}" alt=""></figure>	
+							{{-- <p>Sensibus reformidans interpretaris sit ne, nec errem nostrum et, te nec meliore philosophia. At vix quidam periculis. Solet tritani ad pri, no iisque definitiones sea.</p> --}}
+						</div>
 							<ul>
 								<li>
 									<label class="container_radio">Credit Card<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment" checked>
+										<input type="radio" name="payment" value="Credit Card" checked>
 										<span class="checkmark"></span>
 									</label>
 								</li>
 								<li>
-									<label class="container_radio">Paypal<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment">
-										<span class="checkmark"></span>
-									</label>
-								</li>
-								<li>
-									<label class="container_radio">Cash on delivery<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment">
+									<label class="container_radio">E-Wallet<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="payment" value="E-Wallet">
 										<span class="checkmark"></span>
 									</label>
 								</li>
 								<li>
 									<label class="container_radio">Bank Transfer<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment">
+										<input type="radio" name="payment" value="Bank Transfer">
+										<span class="checkmark"></span>
+									</label>
+								</li>
+								<li>
+									<label class="container_radio">Cash on delivery (COD)<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="payment" value="COD">
 										<span class="checkmark"></span>
 									</label>
 								</li>
 							</ul>
-							<div class="payment_info d-none d-sm-block"><figure><img src="{{asset ('assets/userNew/img/cards_all.svg')}}" alt=""></figure>	<p>Sensibus reformidans interpretaris sit ne, nec errem nostrum et, te nec meliore philosophia. At vix quidam periculis. Solet tritani ad pri, no iisque definitiones sea.</p></div>
 							
 							<h6 class="pb-2">Shipping Method</h6>
 							
 						
 						<ul>
 								<li>
-									<label class="container_radio">Standard shipping<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="shipping" checked>
+									<label class="container_radio">Self Pickup<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="shipping" value="Pickup" checked>
 										<span class="checkmark"></span>
 									</label>
 								</li>
 								<li>
-									<label class="container_radio">Express shipping<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="shipping">
+									<label class="container_radio">Express Shipping<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="shipping" value="Delivery">
 										<span class="checkmark"></span>
 									</label>
 								</li>
@@ -210,16 +152,17 @@
 					<div class="step last">
 						<h3>3. Order Summary</h3>
 					<div class="box_general summary">
-						<ul>
-							<li class="clearfix"><em>1x Tenda The North Face</em>  <span>Rp. 55.000</span></li>
-							<li class="clearfix"><em>1x Matras</em> <span>Rp. 20.000</span></li>
+						<ul class="ul-sumary">
+							{{-- <li class="clearfix"><em>1x Tenda The North Face </em>  <span>Rp. 55.000</span></li>
+							<li class="clearfix"><em>1x Matras</em> <span>Rp. 20.000</span></li> --}}
 						</ul>
 						<ul>
-							<li class="clearfix"><em><strong>Subtotal</strong></em>  <span>Rp. 75.000</span></li>
-							<li class="clearfix"><em><strong>Shipping</strong></em> <span>Rp. 0</span></li>
+							<li class="clearfix subtotal" subtotal=""><em><strong>Subtotal</strong></em>  <span>Rp. 0</span></li>
+							<li class="clearfix hari" hari=""><em><strong>Lama</strong></em> <span>1 Hari</span></li>
+							<li class="clearfix shipping" shipping="0"><em><strong>Shipping</strong></em> <span>Rp. 0</span></li>
 							
 						</ul>
-						<div class="total clearfix">TOTAL <span>Rp. 75.000</span></div>
+						<div class="total clearfix" allTotal="">TOTAL <span>Rp. 0</span></div>
 						<div class="form-group">
 								<label class="container_check">Register to the Newsletter.
 								  <input type="checkbox" checked>
@@ -227,7 +170,7 @@
 								</label>
 							</div>
 						
-						<a href="{{url('payRental')}}" class="btn_1 full-width">Confirm and Pay</a>
+						<button type="button" class="btn_1 btn-pay full-width">Confirm and Pay</button>
 					</div>
 					<!-- /box_general -->
 					</div>
@@ -253,5 +196,130 @@
         else
             $('#other_addr_c').fadeOut('fast');
     });
+</script>
+<script>
+	var idUser;
+	var url = window.location.href;
+	var regex = /[?&]id_hari(=([^&#]*)|&|#|$)/;
+	var results = regex.exec(url);
+	var lamaHari = results ? decodeURIComponent(results[2].replace(/\+/g, ' ')) : null;
+	$('.hari').attr('hari', lamaHari).html('<em><strong>Lama</strong></em> <span>x'+lamaHari+' Hari</span>');
+	
+
+	function addZeroPrefix(number) {
+        return number < 10 ? '0' + number : number;
+    }
+
+	function getCurrentTimestamp() {
+        var now = new Date();
+        var timestamp = now.getFullYear() + '-' + addZeroPrefix(now.getMonth() + 1) + '-' + addZeroPrefix(now.getDate()) + ' ' + addZeroPrefix(now.getHours()) + ':' + addZeroPrefix(now.getMinutes()) + ':' + addZeroPrefix(now.getSeconds());
+        return timestamp;
+    }
+
+	function generateId(length) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+        }
+        return result;
+    };
+
+    function changeTotal() {
+        var total = 0;
+        var hari = parseInt(lamaHari);
+        var shipping = $('.shipping').attr('shipping');
+        $('.item-co').each(function() {
+            var harga = parseInt($(this).find('.subtotal-barang').attr('data-subtotal'));
+			total = total + harga;
+        });
+        $('.subtotal').attr('subtotal', total).html('<em><strong>Subtotal</strong></em>  <span>'+ formatRupiah(total, 'Rp. ') +'</span>');
+        total = parseInt(total) * parseInt(hari) + parseInt(shipping);
+        $('.total').attr('allTotal', total).html('TOTAL <span>'+ formatRupiah(total, 'Rp. ') +'</span>');
+    };
+
+    $.ajax({
+        url: '/checkoutData',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+			var user = response.user;
+        	var cartItems = response.cartItems;
+
+			idUser = user.id;
+			$('.nama').text(user.name);
+			$('.notelp').text(user.noTelp);
+			$('.alamat').text(user.alamat);
+			$('.kecamatan').text(user.kecamatan+', '+user.kodepos);
+
+            $.each(cartItems, function(index, item) {
+
+                var subTotal = (parseInt(item.barang.harga)*parseInt(item.jumlah));
+				var html = '<li class="clearfix item-co"  barang-id="'+item.barang.id+'" barang-jumlah="'+ item.jumlah +'"><em>'+ item.jumlah +'x ' + item.barang.nama + '</em>  <span class="subtotal-barang" data-subtotal="'+ subTotal +'">'+ formatRupiah(subTotal, 'Rp. ') +'</span></li>';
+                $(".ul-sumary").append(html);
+
+            });
+            changeTotal();
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+
+	$('.btn-pay').click(function() {
+		var idUserShop = idUser;
+		var idShop = generateId(10);
+        var namaShop = $('.nama').text();
+        var alamatShop = $('.alamat').text() + ', ' + $('.kecamatan').text();
+        var hargaShop = $('.total').attr('allTotal');
+        var lamaShop = $('.hari').attr('hari');
+		var paymentShop = $("input[name='payment']:checked").val();
+		var shippingShop = $("input[name='shipping']:checked").val();
+        var tanggalShop = getCurrentTimestamp();
+        var statusShop = 'Proses';
+        var barangShop = [];
+
+
+        $('.item-co').each(function() {
+            var barangId = $(this).attr('barang-id');
+            var barangJumlah = parseInt($(this).attr('barang-jumlah'));
+            barangShop.push({
+                id: barangId,
+                jumlah: barangJumlah
+            });
+        });    
+        
+        var dataShop = {
+            id_user : idUserShop,
+            kode_transaksi : idShop,
+            namaPeminjam : namaShop,
+            alamat : alamatShop,
+            totalHarga: hargaShop,
+            lama_sewa: lamaShop,
+            payment: paymentShop,
+            shipping: shippingShop,
+            tanggalStart: tanggalShop,
+            status: statusShop,
+            barangs : barangShop,
+        }
+
+        $.ajax({
+            url: "/checkout-pay",
+            type: "POST",
+            data: JSON.stringify(dataShop),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log(response.message);
+                // Lakukan aksi tambahan setelah berhasil menyimpan transaksi 
+				window.location.href = '/paymentSuccess';
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+            }
+        });
+	});
 </script>
 @endpush

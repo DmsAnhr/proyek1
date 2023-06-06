@@ -14,8 +14,9 @@
                             </g>
                         </svg>
                     </div>
-                <h2>Order completed!</h2>
-                <p>You will receive a confirmation email soon!</p>
+                    <h2>Order completed!</h2>
+                    <p>Your order is going to process!</p>
+                    <a href="/home" class="btn btn-primary" style="width: 40%">Back Home</a>
                 </div>
             </div>
         </div>
