@@ -36,6 +36,7 @@ Route::get('/get-user-id', function () {
     return response()->json(['user_id' => $userId]);
 });
 
+Route::get('/', [RentalController::class, 'index']);
 Route::get('/rental', [RentalController::class, 'index']);
 Route::get('/barangRental', [RentalController::class, 'getDataBarang']);
 Route::get('/barangShop', [ShopController::class, 'getDataBarang']);

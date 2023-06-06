@@ -175,7 +175,7 @@
                                             <a href="account.html"><i class="ti-user"></i>My Profile</a>
                                         </li>
                                         <li>
-                                            <a href="{{url ('/login')}}"><i class="ti-na"></i>Logout</a>
+                                            <a href="{{url ('/logout')}}"><i class="ti-na"></i>Logout</a>
                                         </li>
                                     </ul>
                                     @endauth
