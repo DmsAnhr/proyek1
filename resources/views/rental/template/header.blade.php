@@ -131,7 +131,7 @@
                                     </a>
                                 @endauth
                                 @guest
-                                    <a href="{{url('profile')}}" class="cart_bt"></a>
+                                    <a class="cart_bt"></a>
                                 @endguest
                                 <div class="dropdown-menu cart-dropdown">
                                     @auth
@@ -158,7 +158,7 @@
                         </li> --}}
                         <li>
                             <div class="dropdown dropdown-access">
-                                <a href="account.html" class="access_link"><span>Account</span></a>
+                                <a class="access_link"><span>Account</span></a>
                                 <div class="dropdown-menu">
                                     @guest
                                         <a href="{{url ('/login')}}" class="btn_1">Login or Register</a>
