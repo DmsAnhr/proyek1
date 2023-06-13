@@ -56,7 +56,13 @@ class ShopController extends Controller
 
     public function getData()
     {
-        $transaksi = ShopModel::all();
+        $transaksi = ShopModel::where('status', 'Berlangsung')->get();
+        return response()->json(['data' => $transaksi]);
+    }
+
+    public function getDataNew()
+    {
+        $transaksi = ShopModel::where('status', 'Proses')->get();
         return response()->json(['data' => $transaksi]);
     }
 
@@ -139,7 +145,7 @@ class ShopController extends Controller
                 $barangModel->save();
             }
         }
-        
+
 
         return response()->json(['message' => 'Transaksi berhasil disimpan.']);
     }
@@ -181,10 +187,24 @@ class ShopController extends Controller
             $tanggalFinish = $request->input('tanggal_finish');
             $transaksi->tanggal_finish = $tanggalFinish;
             $transaksi->save();
-    
+
             return response()->json(['message' => 'Data updated successfully']);
         }
-    
+
+        return response()->json(['message' => 'Data not found'], 404);
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $transaksi = ShopModel::find($id);
+        if ($transaksi) {
+            $status = $request->input('status');
+            $transaksi->status = $status;
+            $transaksi->save();
+
+            return response()->json(['message' => 'Pesanan Dikirim']);
+        }
+
         return response()->json(['message' => 'Data not found'], 404);
     }
 

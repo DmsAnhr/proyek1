@@ -23,7 +23,6 @@ class CheckoutController extends Controller
             'user' => $user,
             'cartItems' => $cartItems
         ]);
-
     }
 
     /**
@@ -51,11 +50,11 @@ class CheckoutController extends Controller
             'namaPeminjam' => 'required',
             'alamat' => 'required',
             'totalHarga' => 'required',
-            'lama_sewa'=> 'required',
-            'payment'=> 'required',
-            'shipping'=> 'required',
-            'tanggalStart'=> 'required',
-            'status'=> 'required',
+            'lama_sewa' => 'required',
+            'payment' => 'required',
+            'shipping' => 'required',
+            'tanggalStart' => 'required',
+            'status' => 'required',
             'barangs' => 'required|array',
             'barangs.*.id' => 'required',
             'barangs.*.jumlah' => 'required|integer|min:1',
@@ -100,7 +99,7 @@ class CheckoutController extends Controller
                 $barangModel->save();
             }
         }
-        
+
 
         return response()->json(['message' => 'Transaksi berhasil disimpan.']);
     }

@@ -13,10 +13,10 @@
                             <div class="float-right">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Ciliwung Camp</a></li>
-                                    <li class="breadcrumb-item active">Data Barang</li>
+                                    <li class="breadcrumb-item active">Data Penyewaan</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Data Barang</h4>
+                            <h4 class="page-title">Data Penyewaan</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -29,30 +29,25 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="w-100 mb-3 d-flex align-items-center justify-content-between">
-                                    <h4 class="mt-0 header-title">Barang Tersedia</h4>
-                                    <button type="button" class="btn btn-sm btn-gradient-primary btn-lg"
-                                        data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-center"
-                                        title="Barang Baru">
-                                        <i class="fas fa-plus"></i> Barang Baru
-                                    </button>
+                                    <h4 class="mt-0 header-title">Orderan Masuk</h4>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                    Available all products.
-                                                </p> -->
+                                                                                                                                Available all products.
+                                                                                                                            </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="tableBarang" class="table                                 "
+                                            <table id="table-transaksi" class="table                                 "
                                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;"
                                                 role="grid" aria-describedby="datatable_info">
                                                 <thead>
                                                     <tr role="row">
                                                         <th>No</th>
+                                                        <th>Kode Transaksi</th>
                                                         <th>Nama</th>
-                                                        <th>Harga</th>
-                                                        <th>Jumlah</th>
-                                                        <th>Status</th>
+                                                        <th>Alamat</th>
+                                                        <th>Tanggal Masuk</th>
                                                         <th></th>
                                                     </tr>
                                                 </thead>
@@ -97,10 +92,10 @@
                                                 Tenda The North Face
                                             </h3>
                                             <!-- <h3 class="pro-titles" id="inline-usernames" style="width: 85%;"
-                                                                    name="namaBarang" data-type="text" data-pk="1"
-                                                                    data-title="Enter username">
-                                                                    Tenda The North Face
-                                                                </h3> -->
+                                                                                                                                                name="namaBarang" data-type="text" data-pk="1"
+                                                                                                                                                data-title="Enter username">
+                                                                                                                                                Tenda The North Face
+                                                                                                                                            </h3> -->
                                             <div class="d-flex align-items-center">
                                                 <h4 style="margin: 10px 0 0 0;">Rp. </h4>
                                                 <h2 class="pro-price hargaEditBarang" id="inline-price" name="hargaBarang"
@@ -121,12 +116,6 @@
                                                 name="kategoriBarang" data-type="select" data-pk="1" data-value="1"
                                                 data-title="Select sex">
                                             </h5>
-                                            {{-- <select name="kategori_id" id="kategori_id" required class="form-control">
-                                                <option value="Pilih Kategori" selected disabled></option>
-                                                @foreach ($kategori as $k)
-                                                    <option value="{{ $k->id }}">{{ $k->nama }}</option>
-                                                @endforeach
-                                            </select> --}}
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <h6 class="text-muted font-13">Jumlah :</h6>
@@ -196,10 +185,33 @@
                                 <label>Kategori Barang</label>
                                 <select name="kategori_id" id="kategori_id" required class="form-control">
                                     <option value="Pilih Kategori" selected disabled></option>
-                                    @foreach ($kategori as $k)
+                                    {{-- @foreach ($kategori as $k)
                                         <option value="{{ $k->id }}">{{ $k->nama }}</option>
-                                    @endforeach
+                                    @endforeach --}}
                                 </select>
+                                {{-- <select class="select-kategori mb-3" style="width: 100%" data-placeholder="Choose">
+                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI">Hawaii</option>
+                                    </optgroup>
+                                    <optgroup label="Pacific Time Zone">
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                                    </optgroup>
+                                    <optgroup label="Mountain Time Zone">
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="WY">Wyoming</option>
+                                    </optgroup>
+                                </select> --}}
                             </div>
                             <div class="col-6">
                                 <label class="mt-3">Jumlah Barang</label>
@@ -276,162 +288,76 @@
 
 @push('jsPage')
     <script type="text/javascript">
-        // init table barang
-        var table = $('#tableBarang').DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "iDisplayLength": 10,
-            'processing': true,
-            'serverSide': true,
-            'ajax': "/barang",
-            'columns': [{
-                    "data": null,
-                    "sortable": false,
-                    render: function(data, type, row, meta) {
-                        return meta.row + meta.settings._iDisplayStart + 1;
+        $(document).ready(function() {
+
+            $('#table-transaksi').DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "iDisplayLength": 10,
+                'processing': true,
+                'serverSide': true,
+                'ajax': {
+                    url: "/get-transaksi-new",
+                    dataSrc: function(response) {
+                        var filteredData = response.data.filter(function(transaksi) {
+                            return transaksi.tanggal_finish === null;
+                        });
+                        return filteredData;
                     }
                 },
-                {
-                    data: 'nama',
-                    name: 'nama'
-                },
-                {
-                    data: 'harga',
-                    name: 'harga'
-                },
-                {
-                    data: 'jumlah',
-                    name: 'jumlah'
-                },
-                {
-                    data: 'status',
-                    name: 'status'
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
-            ],
-            columnDefs: [{
-                targets: -1,
-                render: function(data, type, row, meta) {
-                    return `
-                    <div class="dropdown d-inline-block float-right">
-                        <a class="nav-link dropdown-toggle arrow-none"
-                            id="dLabel8" data-toggle="dropdown" href=""
-                            role="button" aria-haspopup="false"
-                            aria-expanded="false">
-                            <i class="fas fa-ellipsis-h font-20 text-muted"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right"
-                            aria-labelledby="dLabel8" x-placement="bottom-end"
-                            style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-120px, 39px, 0px);">
-                            <a class="dropdown-item link-edit" data-id="` + row.id + `">Edit</a>
-                            <a class="dropdown-item delete-barang" data-id="${row.id}">Hapus</a>
-                        </div>
-                    </div>
-                `;
-                }
-            }]
-        });
-
-        //add item
-        $('#submitFormItem').click(function(e) {
-            e.preventDefault();
-            var formData = $("#formBarang").serialize();
-            $.ajax({
-                url: '/barang',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(response) {
-                    console.log(response.message);
-                    $('#modalAddBarang').toggle();
-                    $("#formBarang")[0].reset();
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
-            });
-        });
-
-
-        //Open Edit
-        $('#tableBarang').on('click', '.link-edit', function() {
-            var id = $(this).data('id');
-            $.ajax({
-                url: 'barang/' + id,
-                type: "GET",
-                success: function(data) {
-                    $('.gambarEditBarang').attr('src', 'storage/' + data.foto);
-                    $('.namaEditBarang').text(data.nama);
-                    $('.hargaEditBarang').text(data.harga);
-                    $('.keteranganEditBarang').text(data.keterangan);
-                    $('.kategoriEditBarang').text(data.kategori.nama);
-                    $('.jumlahEditBarang').text(data.jumlah);
-                    $('.statusEditBarang').text(data.status);
-                    $('.table-row').hide();
-                    $('.edit-row').show();
-                    $('.page-title').text('Detail Barang');
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
+                columns: [{
+                        "data": null,
+                        "sortable": false,
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
+                        data: 'kode_transaksi'
+                    },
+                    {
+                        data: 'namaPeminjam'
+                    },
+                    {
+                        data: 'alamat'
+                    },
+                    {
+                        data: 'tanggal_start'
+                    },
+                    {
+                        data: null,
+                        orderable: false,
+                        searchable: false,
+                        render: function(data, type, row, meta) {
+                            return '<button class="btn btn-sm btn-selesai btn-gradient-primary" type="button" data-id="' +
+                                data.id + '">Terima</button>';
+                        }
+                    }
+                ]
             });
 
-        });
+            $('#table-transaksi tbody').on('click', '.btn-selesai', function() {
+                var transaksiId = $(this).data('id');
+                var status = 'Berlangsung';
 
-        // edit barang
-        // $('#tableBarang').on('click', '.edit-barang', function(e) {
-        //     e.preventDefault();
-        //     var itemId = $(this).data('id');
-
-        //     // Mengambil data item menggunakan permintaan Ajax
-        //     $.ajax({
-        //         url: `/items/${itemId}/edit`,
-        //         type: 'GET',
-        //         success: function(response) {
-        //             // Proses data yang diterima
-        //             // Tampilkan formulir edit item atau modifikasi tampilan sesuai kebutuhan Anda
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.log(xhr.responseText);
-        //             // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
-        //         }
-        //     });
-        // });
-
-        // hapus barang
-        $('#tableBarang').on('click', '.delete-barang', function(e) {
-            e.preventDefault();
-            var itemId = $(this).data('id');
-            // var url = route('barang.destroy', { barang: barangId });
-
-            // Konfirmasi penghapusan
-            if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
-                // Menghapus item menggunakan permintaan Ajax
+                // Mengirim permintaan Ajax untuk memperbarui tanggal_finish
                 $.ajax({
-                    url: '/barang_delete/' + itemId,
-                    type: 'DELETE',
+                    url: "/transaksi-proses/" + transaksiId,
+                    type: "POST",
                     data: {
-                        _token: $('meta[name="csrf-token"]').attr('content')
+                        status: status
                     },
                     success: function(response) {
-                        // Proses respon setelah item dihapus
-                        console.log(response.message);
-                        // Refresh tabel setelah penghapusan item
-                        table.ajax.reload();
+                        // Refresh atau perbarui tampilan tabel setelah berhasil memperbarui tanggal_finish
+                        $('#table-transaksi').DataTable().ajax.reload();
                     },
                     error: function(xhr, status, error) {
                         console.log(xhr.responseText);
-                        // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
                     }
                 });
-            }
+            });
+
         });
     </script>
 @endpush
