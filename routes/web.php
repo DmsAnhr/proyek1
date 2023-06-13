@@ -31,6 +31,8 @@ Route::get('/rental', [RentalController::class, 'index']);
 Route::get('/barangRental', [RentalController::class, 'getDataBarang']);
 Route::get('/barangShop', [ShopController::class, 'getDataBarang']);
 
+Route::get('/single-product/{id}', [ShopController::class, 'getProduct']);
+
 Route::get('/cartData', [RentalController::class, 'showCart']);
 Route::post('/add-to-cart', [RentalController::class, 'addToCart']);
 Route::post('/dec-item-cart', [RentalController::class, 'decCart']);

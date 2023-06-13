@@ -66,6 +66,13 @@ class ShopController extends Controller
         return response()->json(['data' => $transaksi]);
     }
 
+    public function getProduct($id)
+    {
+        $barang = BarangModel::find($id);
+
+        return response()->json($barang);
+    }
+
     public function getBarangId($id)
     {
         $kategori = KategoriModel::all();

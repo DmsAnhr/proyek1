@@ -455,7 +455,7 @@
             var lamaShop = $('#jumlahHari').val();
             var paymentShop = 'COD';
             var shippingShop = 'Pickup';
-            var statusShop = 'Proses';
+            var statusShop = 'Berlangsung';
 
             $('.items').each(function() {
                 var barangId = $(this).attr('data-idBarang');
