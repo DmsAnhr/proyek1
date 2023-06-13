@@ -61,7 +61,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-
         $request->validate([
             'username' => 'required',
             'password' => 'required',
@@ -70,8 +69,13 @@ class LoginController extends Controller
         // Logika otentikasi
         if (auth()->attempt($request->only('username', 'password'))) {
             // Autentikasi berhasil
+
+            $user = auth()->user();
+            $role = $user->role;
+
             return response()->json([
                 'success' => true,
+                'role' => $role,
             ]);
         } else {
             // Autentikasi gagal
@@ -81,5 +85,6 @@ class LoginController extends Controller
             ]);
         }
     }
+
     
 }

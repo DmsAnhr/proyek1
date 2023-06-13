@@ -18,7 +18,12 @@ $(document).ready(function () {
             success: function (response) {
                 // Login berhasil
                 if (response.success) {
-                    window.location.href = "/rental"; // Ganti dengan URL tujuan setelah login berhasil
+                    // Periksa peran pengguna
+                    if (response.role === "admin") {
+                        window.location.href = "/admin"; // Ganti dengan URL tujuan admin setelah login berhasil
+                    } else {
+                        window.location.href = "/"; // Ganti dengan URL tujuan user setelah login berhasil
+                    }
                 } else {
                     // Login gagal
                     if (response.errors) {
@@ -32,6 +37,7 @@ $(document).ready(function () {
                 }
             },
         });
+        
     });
 
     // Register
@@ -78,5 +84,4 @@ $(document).ready(function () {
             },
         });
     });
-
 });

@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\BarangModel;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
-use DataTables;
 use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\DataTables;
 
 class BarangController extends Controller
 {
