@@ -4,55 +4,51 @@
 <main class="bg_gray">
     <div class="container margin_60_35 add_bottom_30">
         <div class="main_title">
-            <h2>About Allaia</h2>
-            <p>Euismod phasellus ac lectus fusce parturient cubilia a nisi blandit sem cras nec tempor adipiscing rcu ullamcorper ligula.</p>
+            <a><img src="{{asset ('assets/user/img/LOGO-CILIWUNG-CAMP.png') }}" alt="" width="350" height="200"></a>
+            <h2>About Us</h2>
         </div>
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-5">
+            <div class="">
                 <div class="box_about">
-                    <h2>Top Products</h2>
-                    <p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
-                    <p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
-                    <img src="{{asset ('assets/userNew/img/arrow_about.png')}}" alt="" class="arrow_1">
+                    <p>PT. Ciliwungcamp Nusantara Group atau yang sering dikenal dengan nama Ciliwungcamp adalah perusahaan yang berfokus pada penyedia jasa, sarana dan prasarana yang mendukung aktivitas outdoor.</p>
+                    <p>Ciliwungcamp memiliki tujuan memberikan sarana bagi para pecinta kegiatan outdoor serta dedikasi tinggi untuk memberikan pelayanan demi kepuasan konsumen. Semua kemajuan yang dicapai tidak lepas dari nilai-nilai yang telah kami yakini sejak awal serta terjalinnya hubungan kekeluargaan yang dekat dengan konsumen, karyawan, pemilik, dan pihak-pihak lain yang terkait.</p>
+                    <p>Kehadiran kami adalah untuk selalu memenuhi kebutuhan konsumen. Oleh karena itu, kami terus berupaya untuk mengembangkan usaha dan menyempurnakan layanan serta kualitas produk-produk sesuai dengan kebutuhan konsumen, baik saat sekarang maupun akan datang.</p>
                 </div>
             </div>
-            <div class="col-lg-5 pl-lg-5 text-center d-none d-lg-block">
-                    <img src="{{asset ('assets/userNew/img/about_1.svg')}}" alt="" class="img-fluid" width="350" height="268">
-            </div>
+
         </div>
         <!-- /row -->
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-5 pr-lg-5 text-center d-none d-lg-block">
-                    <img src="{{asset ('assets/userNew/img/about_2.svg')}}" alt="" class="img-fluid" width="350" height="268">
-            </div>
-            <div class="col-lg-5">
+            <div class="">
                 <div class="box_about">
-                    <h2>Top Brands</h2>
-                    <p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
-                    <p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
-                    <img src="{{asset ('assets/userNew/img/arrow_about.png')}}" alt="" class="arrow_2">
+                    <h2>Visi</h2>
+                    <p>Menjadi perusahaan terkemuka di bidang pemberdayaan manusia yang mampu menciptakan sumber daya manusia yang makmur dan berkarakter.</p>
+                    <p>Become a leading company in the field of human empowerment which is able to create prosperous and characterized human resources.</p>
                 </div>
             </div>
         </div>
         <!-- /row -->
         <div class="row justify-content-center align-items-center ">
-            <div class="col-lg-5">
+            <div class="">
                 <div class="box_about">
-                    <h2>+5000 products</h2>
-                    <p class="lead">Est falli invenire interpretaris id, magna libris sensibus mel id.</p>
-                    <p>Per eu nostrud feugiat. Et quo molestiae persecuti neglegentur. At zril definitionem mei, vel ei choro volumus. An tota nulla soluta has, ei nec essent audiam, te nisl dignissim vel. Ex velit audire perfecto pro, ei mei doming vivendo legendos. Cu sit magna zril, an odio delectus constituto vis. Vis ludus omnesque ne, est veri quaeque ad.</p>
+                    <h2>Misi</h2>
+                    <ol>
+                        <li><p>Ciliwungcamp adalah orang-orang yang berkomitmen, berjiwa muda, berkarakter, berintegritas dan berinovasi.</p></li>
+                        <li><p>Kami bekerja berdasarkan SOP dan 10 point budaya untuk memastikan bahwa semua orang yang tersentuh ataupun menyentuh team Ciliwungcamp akan mendapatkan pengalaman yang melebihi ekspetasi mereka.</p></li>
+                        <li><p>KamiKami akan selalu menyelesaikan semua tugas dengan semangat kompetisi untuk mendapatkan 120% hasil melalui service di bidang persewaan alat outdoor, outbound service dan tour and travel.</p></li>
+                        <li><p>KamiProduk dan layanan kami berkualitas terbaik sebanding dengan effort yang anda berikan.</p></li>
+                        <li><p>KamiKlien Ciliwungcamp melingkupi perseorangan, grup, universitas, sekolah, BUMN, Corporate, EO, dan rekanan yang menginginkan kami untuk membantu mereka mencapai tujuan.</p></li>
+                        <li><p>KamiKlien kami akan dipilih berdasarkan sikap dan kebutuhan, bukan ukurannya.</p></li>
+                        <li><p>KamiKami dipilih bekerja sama dengan mereka karena kami memahami setiap klien adalah penting.</p></li>
+                    </ol>
                 </div>
-
-            </div>
-            <div class="col-lg-5 pl-lg-5 text-center d-none d-lg-block">
-                    <img src="{{asset ('assets/userNew/img/about_3.svg')}}" alt="" class="img-fluid" width="350" height="316">
             </div>
         </div>
         <!-- /row -->
     </div>
     <!-- /container -->
 
-    <div class="bg_white">
+    {{-- <div class="bg_white">
         <div class="container margin_60_35">
             <div class="main_title">
                 <h2>Why Choose Allaia</h2>
@@ -104,10 +100,10 @@
             </div>
             <!--/row-->
         </div>
-    </div>
+    </div> --}}
     <!-- /bg_white -->
 
-<div class="container margin_60">
+{{-- <div class="container margin_60">
     <div class="main_title">
         <h2>Meet Allaia Staff</h2>
         <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
@@ -150,7 +146,7 @@
         </div>
     </div>
     <!-- /carousel -->
-</div>
+</div> --}}
 <!-- /container -->
 </main>
 @endsection
