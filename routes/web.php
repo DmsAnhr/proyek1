@@ -61,14 +61,14 @@ Route::get('/product', function () {
 Route::get('/puncak-gunung-terbaik-di-jawa-timur', function () {
     return view('rental.blog.puncak-gunung-terbaik-di-jawa-timur');
 });;
-Route::get('/aboutRental', function () {
-    return view('rental.about');
+Route::get('/pantai-malang-selatan-surga-camping-anti-mainstream', function () {
+    return view('rental.blog.pantai-malang-selatan');
 });;
-Route::get('/aboutRental', function () {
-    return view('rental.about');
+Route::get('/mau-healing-gak-perlu-pusing', function () {
+    return view('rental.blog.mau-healing-gak-perlu-pusing');
 });;
-Route::get('/aboutRental', function () {
-    return view('rental.about');
+Route::get('/pecinta-paddling-wajib-tahu-tempat-ini', function () {
+    return view('rental.blog.pecinta-paddling-wajib-tahu-tempat-ini');
 });;
 
 

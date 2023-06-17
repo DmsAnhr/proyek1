@@ -12,10 +12,10 @@
         <div class="row justify-content-center align-items-center">
             <div class="">
                 <div class="box_about">
-                    <img src="{{asset ('assets/blog/img/puncak-gunung-terbaik-jatim.jpg') }}" alt="" width="auto" height="auto">
-                    <h2>Puncak Gunung Terbaik di Jawa Timur</h2>
-                    <h5>23 June 2023</h5> <br>
-                    <p>Malang merupakan salah satu kota pilihan favorit sewa tenda malang untuk wisata di Jawa Timur. Malang mempunyai banyak destinasi wisata alam yang menarik seperti pantai, coban atau air terjun, dan dari semua pilihan itu gunung trip bromo lah yang paling terkenal. Sebenarnya tidak hanya gunung bromo, Kota malang dikelilingi oleh banyak gunung yang mempunyai keindahan berbeda – beda di setiap puncaknya. Berikut ini adalah gunung-gunung disekitar kota malang yang wajib dan patut untuk kamu kunjungi sebagai destinasi liburan atau sebagai lokasi camping malang sewa tenda malang :</p>
+                    <img src="{{asset ('assets/blog/img/pecinta-paddling.jpg')}}" alt="" width="auto" height="auto">
+                    <h2>Pecinta Paddling Wajib Tahu Tempat Ini</h2>
+                    <h5>12 August 2022</h5> <br>
+                    <p>Paddling merupakan kegiatan mengayuh menggunakan paddle atau dayung yang tidak terhubung dengan perahu, Paddle dapat disertai satu atau dua bilah dayung yang dihubungkan tangkainya.Dulunya kegiatan Paddle ini dilakukan untuk membantu navigasi gelombang laut. Namun kini berkembang menjadi olahraga air yang bisa dilakukan di danau, sungai, bahkan laut. Olahraga Paddling ini mempunyai banyak manfaat lho sobat diantaranya melatih kekuatan, kardio, keseimbangan, dan fleksibilitas tubuh. Nah kali ini ciliwungcamp akan share informasi pantai dimalang selatan yang cocok banget buat kalian yang suka paddling.Penasaran pantai apa aja? Ini dia daftarnya</p>
                     <ul>
                         <li>Gunung Panderman</li>
                         <p>Memiliki ketinggian 2000 mdpl gunung ini termasuk dalam komplek gunung kawi. Gunung panderman bisa menjadi pilihan bagi para pemula dan bagi anda yang mempunyai waktu terbatas untuk liburan, waktu yang diperlukan untuk mendaki ke puncak gunung panderman ini yaitu sekitar 2-3 jam dimulai dari kota batu. Jika anda ingin menikmati pemandangan lereng gunung panderman lebih lama anda bisa mendirikan tenda di Latar Ombo tepatnya berada di pos satu pendakian yang merupakan satu-satunya shelter panderman atau anda bisa mendirikan tenda di puncak gunung ini. Jangan khawatir tidak bisa menemukan air bersih ketika anda menginap di gunung ini,karna disini sudah tersedia sumber air bersih.</p>

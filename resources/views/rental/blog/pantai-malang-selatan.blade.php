@@ -12,10 +12,10 @@
         <div class="row justify-content-center align-items-center">
             <div class="">
                 <div class="box_about">
-                    <img src="{{asset ('assets/blog/img/puncak-gunung-terbaik-jatim.jpg') }}" alt="" width="auto" height="auto">
-                    <h2>Puncak Gunung Terbaik di Jawa Timur</h2>
-                    <h5>23 June 2023</h5> <br>
-                    <p>Malang merupakan salah satu kota pilihan favorit sewa tenda malang untuk wisata di Jawa Timur. Malang mempunyai banyak destinasi wisata alam yang menarik seperti pantai, coban atau air terjun, dan dari semua pilihan itu gunung trip bromo lah yang paling terkenal. Sebenarnya tidak hanya gunung bromo, Kota malang dikelilingi oleh banyak gunung yang mempunyai keindahan berbeda – beda di setiap puncaknya. Berikut ini adalah gunung-gunung disekitar kota malang yang wajib dan patut untuk kamu kunjungi sebagai destinasi liburan atau sebagai lokasi camping malang sewa tenda malang :</p>
+                    <img src="{{asset ('assets/blog/img/ciliwungcamp-pantai-selatan.jpg')}}" alt="" width="auto" height="auto">
+                    <h2>Pantai Malang Selatan, Surga Camping Anti Mainstream</h2>
+                    <h5>19 August 2020</h5> <br>
+                    <p>Malang mempunyai banyak sekali surga yang tersembunyi yang bahkan belum terekspose sama sekali, salah satu tujuan wisata adalah untuk refreshing bukan?? Kali ini ciliwungcamp bakal share info lengkap beberapa pantai di malang selatan yang recommended banget buat liburan dan camping. Sembari menyambut pagi di pesisir pantai malang sambil menikmati secangkir kopi.</p>
                     <ul>
                         <li>Gunung Panderman</li>
                         <p>Memiliki ketinggian 2000 mdpl gunung ini termasuk dalam komplek gunung kawi. Gunung panderman bisa menjadi pilihan bagi para pemula dan bagi anda yang mempunyai waktu terbatas untuk liburan, waktu yang diperlukan untuk mendaki ke puncak gunung panderman ini yaitu sekitar 2-3 jam dimulai dari kota batu. Jika anda ingin menikmati pemandangan lereng gunung panderman lebih lama anda bisa mendirikan tenda di Latar Ombo tepatnya berada di pos satu pendakian yang merupakan satu-satunya shelter panderman atau anda bisa mendirikan tenda di puncak gunung ini. Jangan khawatir tidak bisa menemukan air bersih ketika anda menginap di gunung ini,karna disini sudah tersedia sumber air bersih.</p>
