@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{asset ('assets/userNew/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset ('assets/userNew/css/style.css')}}">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.css') }}">
+
     @stack('css')
 
     <!-- YOUR CUSTOM CSS -->

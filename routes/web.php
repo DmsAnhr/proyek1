@@ -58,6 +58,19 @@ Route::get('/product', function () {
 });;
 
 
+Route::get('/puncak-gunung-terbaik-di-jawa-timur', function () {
+    return view('rental.blog.puncak-gunung-terbaik-di-jawa-timur');
+});;
+Route::get('/aboutRental', function () {
+    return view('rental.about');
+});;
+Route::get('/aboutRental', function () {
+    return view('rental.about');
+});;
+Route::get('/aboutRental', function () {
+    return view('rental.about');
+});;
+
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/cart', function () {

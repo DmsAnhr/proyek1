@@ -11,7 +11,12 @@
                             <div class="slide-text white">
                                 <h3>Ciliwung<br>Camping Rental</h3>
                                 <p>Adventure with all your passion</p>
-                                <a class="btn_1" href="{{url ('shopRental')}}" role="button">Shop Now</a>
+                                @auth
+                                    <a class="btn_1" href="{{url ('shopRental')}}" role="button">Shop Now</a>
+                                @endauth
+                                @guest
+                                    <a class="btn_1" href="{{url ('login')}}" role="button">Shop Now</a>
+                                @endguest
                             </div>
                         </div>
                     </div>
@@ -30,7 +35,7 @@
                         <i class="ti-gift"></i>
                         <div class="justify-content-center">
                             <h3>Free Shipping</h3>
-                            <p>For all oders over 20k</p>
+                            <p>For all orders over 20k</p>
                         </div>
                     </div>
                 </li>
@@ -47,7 +52,7 @@
                     <div class="box">
                         <i class="ti-headphone-alt"></i>
                         <div class="justify-content-center">
-                            <h3>24/7 Support</h3>
+                            <h3>Fast Response</h3>
                             <p>Online top support</p>
                         </div>
                     </div>
