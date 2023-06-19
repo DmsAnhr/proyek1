@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset ('assets/user/img/new.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/user/img/new.png') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/lightpick/lightpick.css') }}" />
@@ -53,7 +53,62 @@
     <script src="{{ asset('assets/admin/js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/select2/select2.min.js') }}"></script>
 
-    
+    <script type="text/javascript">
+        function getCurrentTimestamp() {
+            var currentDate = new Date();
+            var year = currentDate.getFullYear();
+            var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+            var day = ('0' + currentDate.getDate()).slice(-2);
+            var hours = ('0' + currentDate.getHours()).slice(-2);
+            var minutes = ('0' + currentDate.getMinutes()).slice(-2);
+            var seconds = ('0' + currentDate.getSeconds()).slice(-2);
+
+            var timestamp = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+            return timestamp;
+        }
+
+        function formatRupiah(angka, prefix) {
+            var angkas = angka.toString();
+            var number_string = angkas.replace(/[^,\d]/g, '').toString(),
+                split = number_string.split(','),
+                sisa = split[0].length % 3,
+                rupiah = split[0].substr(0, sisa),
+                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+            // tambahkan titik jika yang di input sudah menjadi angka ribuan
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+
+        var userIdAll;
+        $.ajax({
+            url: '/get-user-id',
+            method: 'GET',
+            success: function(response) {
+                userIdAll = response.user_id;
+                $.ajax({
+                    url: '/user-detail/' + response.user_id,
+                    method: 'GET',
+                    success: function(data) {
+                        $('.top-bar-name').html(data.username +
+                            '<i class="mdi mdi-chevron-down"></i>');
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    </script>
+
     <!-- Plugins js -->
     @stack('js')
 

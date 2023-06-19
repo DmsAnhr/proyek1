@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BarangModel;
 use App\Models\KategoriModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,5 +31,11 @@ class HomeController extends Controller
         return view('user.home')
             ->with('home', $home)
             ->with('kategori', $kategori);
+    }
+
+    public function userData($id)
+    {
+        $user = User::find($id);
+        return response()->json($user);
     }
 }

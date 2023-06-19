@@ -4,10 +4,11 @@
     <div class="topbar-left">
         <a href="#" class="logo">
             <span>
-                <img src="{{asset ('assets/user/img/new.png') }}" alt="logo-small" class="logo-sm" style="height: 50px!important">
+                <img src="{{ asset('assets/user/img/new.png') }}" alt="logo-small" class="logo-sm"
+                    style="height: 50px!important">
             </span>
             <span>
-                <img src="{{asset ('assets/user/img/new.png') }}" alt="logo-large" class="logo-lg logo-light">
+                <img src="{{ asset('assets/user/img/new.png') }}" alt="logo-large" class="logo-lg logo-light">
             </span>
         </a>
     </div>
@@ -146,16 +147,18 @@
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                     href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{asset ('assets/admin/images/users/user-1.png')}}" alt="profile-user" class="rounded-circle" />
-                    <span class="ml-1 nav-user-name hidden-sm">Amelia <i class="mdi mdi-chevron-down"></i> </span>
+                    <img src="{{ asset('assets/admin/images/users/user-1.png') }}" alt="profile-user"
+                        class="rounded-circle" />
+                    <span class="ml-1 nav-user-name hidden-sm top-bar-name">
+                        <div style="width: 40px;height: 15px;background-color: #d6d6d6;border-radius: 3px"></div>
+                        <i class="mdi mdi-chevron-down"></i>
+                    </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
-                    <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Lock screen</a>
                     <div class="dropdown-divider mb-0"></div>
-                    <a class="dropdown-item" href="{{url('/logout')}}"><i class="ti-power-off text-muted mr-2"></i> Logout</a>
+                    <a class="dropdown-item" href="{{ url('/logout') }}"><i class="ti-power-off text-muted mr-2"></i>
+                        Logout</a>
                 </div>
             </li>
         </ul>

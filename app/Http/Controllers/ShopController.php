@@ -60,16 +60,57 @@ class ShopController extends Controller
         return response()->json(['data' => $transaksi]);
     }
 
-    public function getDataNew()
+    public function getDataNew($status)
     {
-        $transaksi = ShopModel::where('status', 'Proses')->get();
-        return response()->json(['data' => $transaksi]);
+        $transaksiData = ShopModel::with('barang')->where('status', $status)->get();
+        $barangData = BarangModel::all();
+
+        $response = [];
+        foreach ($transaksiData as $transaksi) {
+            $barangIds = $transaksi->barang ? $transaksi->barang->pluck('id')->toArray() : [];
+            $barangs = [];
+
+            foreach ($barangIds as $barangId) {
+                $barang = $barangData->where('id', $barangId)->first();
+                if ($barang) {
+                    $jumlahBarang = $transaksi->barang->where('id', $barangId)->count();
+                    $barangs[] = [
+                        'id' => $barang->id,
+                        'nama_barang' => $barang->nama,
+                        'harga_barang' => $barang->harga,
+                        'jumlah_barang' => $jumlahBarang,
+                        // tambahkan kolom data barang lainnya yang ingin ditampilkan
+                    ];
+                }
+            }
+
+            $response[] = [
+                'id' => $transaksi->id,
+                'kode_transaksi' => $transaksi->kode_transaksi,
+                'namaPeminjam' => $transaksi->namaPeminjam,
+                'alamat' => $transaksi->alamat,
+                'tanggal_start' => $transaksi->tanggal_start,
+                'tanggal_finish' => $transaksi->tanggal_finish,
+                'totalHarga' => $transaksi->totalHarga,
+                'status' => $transaksi->status,
+                'lama_sewa' => $transaksi->lama_sewa,
+                'shipping' => $transaksi->shipping,
+                'payment' => $transaksi->payment,
+                'denda' => $transaksi->denda,
+                'terlambat' => $transaksi->terlambat,
+                'barang' => $barangs,
+            ];
+        }
+
+        return response()->json(['data' => $response]);
     }
+
+
+
 
     public function getProduct($id)
     {
         $barang = BarangModel::find($id);
-
         return response()->json($barang);
     }
 
@@ -191,21 +232,13 @@ class ShopController extends Controller
     {
         $transaksi = ShopModel::find($id);
         if ($transaksi) {
-            $tanggalFinish = $request->input('tanggal_finish');
-            $transaksi->tanggal_finish = $tanggalFinish;
-            $transaksi->save();
-
-            return response()->json(['message' => 'Data updated successfully']);
-        }
-
-        return response()->json(['message' => 'Data not found'], 404);
-    }
-
-    public function updateStatus(Request $request, $id)
-    {
-        $transaksi = ShopModel::find($id);
-        if ($transaksi) {
+            $tanggal_finish = $request->input('tanggal_finish');
+            $denda = $request->input('denda');
+            $terlambat = $request->input('terlambat');
             $status = $request->input('status');
+            $transaksi->tanggal_finish = $tanggal_finish;
+            $transaksi->denda = $denda;
+            $transaksi->terlambat = $terlambat;
             $transaksi->status = $status;
             $transaksi->save();
 
@@ -214,6 +247,7 @@ class ShopController extends Controller
 
         return response()->json(['message' => 'Data not found'], 404);
     }
+
 
     /**
      * Remove the specified resource from storage.

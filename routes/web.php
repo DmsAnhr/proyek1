@@ -26,6 +26,9 @@ Route::get('/get-user-id', function () {
     return response()->json(['user_id' => $userId]);
 });
 
+Route::get('/user-detail/{id}', [HomeController::class, 'userData']);
+
+
 Route::get('/', [RentalController::class, 'index'])->name('home');
 Route::get('/rental', [RentalController::class, 'index']);
 Route::get('/barangRental', [RentalController::class, 'getDataBarang']);
@@ -143,10 +146,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });;
     Route::get('/riwayat', [ShopController::class, 'indexRiwayat']);
     Route::get('/get-transaksi', [ShopController::class, 'getData']);
-    Route::get('/get-transaksi-new', [ShopController::class, 'getDataNew']);
+    Route::get('/get-transaksi-history/{status}', [ShopController::class, 'getDataNew']);
     Route::get('/get-riwayat', [ShopController::class, 'getRiwayat']);
     Route::post('/transaksi-update/{id}', [ShopController::class, 'update']);
-    Route::post('/transaksi-proses/{id}', [ShopController::class, 'updateStatus']);
     Route::post('/checkout-kasir', [CheckoutController::class, 'store']);
 
     Route::get('/kategori', function () {

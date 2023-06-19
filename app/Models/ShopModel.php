@@ -15,7 +15,7 @@ class ShopModel extends Model
     //     return $this->hasMany(BarangModel::class);
     // }
 
-    public function barangs(): BelongsToMany
+    public function barang(): BelongsToMany
     {
         return $this->belongsToMany(BarangModel::class, 'transaksi_barang', 'transaksi_id', 'barang_id')
             ->withPivot('barang_id', 'jumlah')

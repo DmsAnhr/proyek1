@@ -32,22 +32,22 @@
                                     <h4 class="mt-0 header-title">Orderan Masuk</h4>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                Available all products.
-                                                                                                                            </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="table-transaksi" class="table                                 "
+                                            <table id="table-transaksi" class="table table-striped"
                                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;"
                                                 role="grid" aria-describedby="datatable_info">
                                                 <thead>
                                                     <tr role="row">
-                                                        <th>No</th>
+                                                        <th></th>
                                                         <th>Kode Transaksi</th>
                                                         <th>Nama</th>
-                                                        <th>Alamat</th>
-                                                        <th>Tanggal Masuk</th>
+                                                        <th>Tanggal</th>
+                                                        <th>Total Harga</th>
                                                         <th></th>
                                                     </tr>
                                                 </thead>
@@ -62,89 +62,6 @@
                         </div>
                     </div> <!-- end col -->
 
-                    <div class="col-12 edit-row">
-                        <div class="card">
-                            <div class="card-body">
-                                <button type="button" class="btn-back-table btn mb-2 btn-outline-info btn-round">
-                                    <i class="typcn typcn-chevron-left"></i>
-                                </button>
-                                <!-- <form action=""> -->
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <img src="{{ asset('assets/admin/images/products/img-7.png') }}" alt=""
-                                            class=" mx-auto  d-block gambarEditBarang"
-                                            style="max-width: 90%;object-fit: contain;">
-                                        <button type="button"
-                                            class="btn btn-img btn-secondary waves-effect mt-2 mx-auto d-block"
-                                            style="width: 70%;" con="upload">Ubah
-                                            Gambar</button>
-                                        <input type="file" class="inpt-img-upload"
-                                            style="visibility: hidden; position: absolute;">
-                                    </div>
-                                    <!--end col-->
-                                    <div class="col-lg-6">
-                                        <div class="single-pro-detail">
-                                            <p class="mb-1">Barang</p>
-                                            <div class="custom-border mb-3"></div>
-                                            <h3 class="pro-title namaEditBarang" id="inline-name" style="width: 85%;"
-                                                name="namaBarang" data-type="text" data-pk="1"
-                                                data-title="Enter username">
-                                                Tenda The North Face
-                                            </h3>
-                                            <!-- <h3 class="pro-titles" id="inline-usernames" style="width: 85%;"
-                                                                                                                                                name="namaBarang" data-type="text" data-pk="1"
-                                                                                                                                                data-title="Enter username">
-                                                                                                                                                Tenda The North Face
-                                                                                                                                            </h3> -->
-                                            <div class="d-flex align-items-center">
-                                                <h4 style="margin: 10px 0 0 0;">Rp. </h4>
-                                                <h2 class="pro-price hargaEditBarang" id="inline-price" name="hargaBarang"
-                                                    data-type="text" data-pk="1" data-title="Enter username"> 40.000
-                                                </h2>
-                                                <h4 style="margin: 10px 0 0 0;">/Hari</h4>
-                                            </div>
-                                            <h6 class="text-muted font-13">Keterangan :</h6>
-                                            <p id="inline-keterangan" class="keteranganEditBarang" style="width: 85%;"
-                                                name="ketBarang" data-type="textarea" data-pk="1"
-                                                data-placeholder="Your comments here..." data-title="Enter comments">
-                                                -Ukuran 4x4
-                                                -Muat 5 orang
-                                            </p>
-                                            <!-- <br> -->
-                                            <h6 class="text-muted font-13">Kategori :</h6>
-                                            <h5 id="inline-kategori" class="kategoriEditBarang" style="width: fit-content;"
-                                                name="kategoriBarang" data-type="select" data-pk="1" data-value="1"
-                                                data-title="Select sex">
-                                            </h5>
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Jumlah :</h6>
-                                                    <h3 class="pro-title jumlahEditBarang" id="inline-ready"
-                                                        name="stokTersedia" style="width: fit-content;" data-type="text"
-                                                        data-pk="1" data-title="Enter username">
-                                                        6
-                                                    </h3>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Status :</h6>
-                                                    <h3 class="pro-title" id="inline-rent" name="stokDisewa"
-                                                        style="width: fit-content;" data-type="text" data-pk="1"
-                                                        data-title="Enter username">
-                                                        tersedia
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end col-->
-                                </div>
-                                <!--end row-->
-                                <!-- </form> -->
-                            </div>
-                            <!--end card-body-->
-                        </div>
-                        <!--end card-->
-                    </div> <!-- end col -->
                 </div>
 
             </div><!-- container -->
@@ -223,8 +140,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Rp.</span>
                                     </div>
-                                    <input type="text" id="example-input3-group1" name="harga"
-                                        class="form-control">
+                                    <input type="text" id="example-input3-group1" name="harga" class="form-control">
                                     <div class="input-group-append">
                                         <span class="input-group-text">/hari</span>
                                     </div>
@@ -237,8 +153,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-sm btn-gradient-primary btn-lg ml-auto"
-                            id="submitFormItem">
+                        <button type="submit" class="btn btn-sm btn-gradient-primary btn-lg ml-auto" id="submitFormItem">
                             Simpan
                         </button>
                     </div>
@@ -290,28 +205,83 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-            $('#table-transaksi').DataTable({
+            function formatChildTable(data) {
+                var childTableData = '';
+                if (data.barang) {
+                    childTableData += '<div style="display:flex;justify-content:space-between;">';
+                    childTableData += '<table style="width:49%;height:fit-content;border:0!important">';
+                    childTableData += '<tr>';
+                    childTableData += '<td>Lama Sewa</td>';
+                    childTableData += '<td>:</td>';
+                    childTableData += '<td>' + data.lama_sewa + ' hari</td>';
+                    childTableData += '</tr>';
+
+                    childTableData += '<tr>';
+                    childTableData += '<td>Shipping</td>';
+                    childTableData += '<td>:</td>';
+                    childTableData += '<td>' + data.shipping + '</td>';
+                    childTableData += '</tr>';
+
+                    childTableData += '<tr>';
+                    childTableData += '<td>Pembayaran</td>';
+                    childTableData += '<td>:</td>';
+                    childTableData += '<td>' + data.payment + '</td>';
+                    childTableData += '</tr>';
+
+                    childTableData += '<tr>';
+                    childTableData += '<td>Alamat</td>';
+                    childTableData += '<td>:</td>';
+                    childTableData += '<td>' + data.alamat + '</td>';
+                    childTableData += '</tr>';
+                    childTableData += '</table>';
+
+                    childTableData += '<div style="width:2px;background:#256afd"></div>';
+
+                    childTableData +=
+                        '<table class="table-bordered" cellpadding="5" cellspacing="0" border="0" style="width:50%;height:fit-content">';
+                    childTableData += '<tr>';
+                    childTableData += '<th colspan=3 style="text-align:center">List Barang</th>';
+                    childTableData += '</tr>';
+                    childTableData += '<tr>';
+                    childTableData += '<th>Nama Barang</th>';
+                    childTableData += '<th>Jumlah Barang</th>';
+                    childTableData += '<th>Harga Barang</th>';
+                    childTableData += '</tr>';
+
+                    $.each(data.barang, function(index, barang) {
+                        childTableData += '<tr>';
+                        childTableData += '<td>' + barang.nama_barang + '</td>';
+                        childTableData += '<td>' + barang.jumlah_barang + '</td>';
+                        childTableData += '<td>' + formatRupiah(barang.harga_barang, 'Rp') + '</td>';
+                        childTableData += '</tr>';
+                    });
+
+                    childTableData += '</table>';
+                    childTableData += '</div>';
+                }
+
+                return childTableData;
+            }
+
+
+            var table = $('#table-transaksi').DataTable({
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
                 "iDisplayLength": 10,
                 'processing': true,
                 'serverSide': true,
+                'info': false,
+                'select': "single",
                 'ajax': {
-                    url: "/get-transaksi-new",
-                    dataSrc: function(response) {
-                        var filteredData = response.data.filter(function(transaksi) {
-                            return transaksi.tanggal_finish === null;
-                        });
-                        return filteredData;
-                    }
+                    url: "/get-transaksi-history/proses",
+                    dataSrc: 'data'
                 },
                 columns: [{
+                        "className": 'details-control',
+                        "orderable": false,
                         "data": null,
-                        "sortable": false,
-                        render: function(data, type, row, meta) {
-                            return meta.row + meta.settings._iDisplayStart + 1;
-                        }
+                        "defaultContent": ''
                     },
                     {
                         data: 'kode_transaksi'
@@ -320,32 +290,78 @@
                         data: 'namaPeminjam'
                     },
                     {
-                        data: 'alamat'
+                        data: 'tanggal_start'
                     },
                     {
-                        data: 'tanggal_start'
+                        data: 'totalHarga',
+                        render: function(data, type, row, meta) {
+                            return formatRupiah(data, 'Rp');
+                        }
                     },
                     {
                         data: null,
                         orderable: false,
                         searchable: false,
                         render: function(data, type, row, meta) {
-                            return '<button class="btn btn-sm btn-selesai btn-gradient-primary" type="button" data-id="' +
-                                data.id + '">Terima</button>';
+                            return '<button class="btn btn-sm btn-action btn-gradient-primary" type="button" data-hari="' +
+                                data.lama_sewa + '" data-start="' +
+                                data.tanggal_start + '" data-id="' + data.id +
+                                '">Proses <i class="fas fa-angle-double-right"></i></button>';
                         }
                     }
                 ]
             });
 
-            $('#table-transaksi tbody').on('click', '.btn-selesai', function() {
-                var transaksiId = $(this).data('id');
-                var status = 'Berlangsung';
+            // Add event listener for opening and closing details
+            $('#table-transaksi tbody').on('click', 'td.details-control', function() {
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
 
+                if (row.child.isShown()) {
+                    // This row is already open - close it
+                    row.child.hide();
+                    tr.removeClass('shown');
+                } else {
+                    // Open this row
+                    var rowData = row.data();
+                    row.child(formatChildTable(rowData)).show();
+                    tr.addClass('shown');
+                }
+            });
+
+
+            $('#table-transaksi tbody').on('click', '.btn-action', function() {
+                var transaksiId = $(this).data('id');
+                var lamaSewa = parseInt($(this).data('hari'));
+                var tglStart = $(this).data('start');
+                var denda = 0;
+                var terlambat = 0;
+
+                tglStart = new Date(tglStart);
+                var tglFinish = new Date(tglStart.getTime());
+                tglFinish.setDate(tglFinish.getDate() + lamaSewa);
+
+                // Mendapatkan tanggal, bulan, dan tahun dari tglStart
+                var tanggal = tglFinish.getDate();
+                var bulan = tglFinish.getMonth() + 1;
+                var tahun = tglFinish.getFullYear();
+
+                // Menggabungkan tanggal, bulan, dan tahun menjadi string tanggal_finish
+                var tanggal_finish = tahun + '-' + (bulan < 10 ? '0' + bulan : bulan) + '-' + (tanggal <
+                        10 ? '0' + tanggal : tanggal) + ' ' + tglStart.getHours() + ':' + tglStart
+                    .getMinutes() + ':' + tglStart.getSeconds();
+
+                console.log(tglStart);
+                console.log(tanggal_finish);
                 // Mengirim permintaan Ajax untuk memperbarui tanggal_finish
+                var status = 'Berlangsung';
                 $.ajax({
-                    url: "/transaksi-proses/" + transaksiId,
+                    url: "/transaksi-update/" + transaksiId,
                     type: "POST",
                     data: {
+                        tanggal_finish: tanggal_finish,
+                        denda: denda,
+                        terlambat: terlambat,
                         status: status
                     },
                     success: function(response) {
