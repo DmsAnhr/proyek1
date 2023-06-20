@@ -147,7 +147,8 @@
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                     href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{ asset('assets/admin/images/users/user-1.png') }}" alt="profile-user"
+                    <img src="{{ asset('assets/admin/images/spongebob.jpg') }}"
+                        style="width: 36px;height: 36px;object-fit: cover;object-position: center" alt="profile-user"
                         class="rounded-circle" />
                     <span class="ml-1 nav-user-name hidden-sm top-bar-name">
                         <div style="width: 40px;height: 15px;background-color: #d6d6d6;border-radius: 3px"></div>
@@ -155,7 +156,8 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
+                    <a class="dropdown-item" href="{{ url('/admin-profile') }}"><i
+                            class="ti-user text-muted mr-2"></i> Profile</a>
                     <div class="dropdown-divider mb-0"></div>
                     <a class="dropdown-item" href="{{ url('/logout') }}"><i class="ti-power-off text-muted mr-2"></i>
                         Logout</a>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BarangModel;
+use App\Models\ShopModel;
 use App\Models\CartModel;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class RentalController extends Controller
             ->with('kategori', $kategori)
             ->with('barang', $barang);
     }
-    
+
     public function getDataBarang()
     {
         $barang = BarangModel::with('kategori')->latest()->take(4)->get();
@@ -35,8 +36,54 @@ class RentalController extends Controller
     {
         $user = Auth::user();
         $cartItems = CartModel::with('barang')->where('user_id', $user->id)->get();
-        
+
         return response()->json($cartItems);
+    }
+
+    public function getOrderUser()
+    {
+        $user = Auth::user();
+        $transaksiData = ShopModel::with('barang')->where('id_user', $user->id)->get();
+        $barangData = BarangModel::all();
+
+        $response = [];
+        foreach ($transaksiData as $transaksi) {
+            $barangIds = $transaksi->barang ? $transaksi->barang->pluck('id')->toArray() : [];
+            $barangs = [];
+
+            foreach ($barangIds as $barangId) {
+                $barang = $barangData->where('id', $barangId)->first();
+                if ($barang) {
+                    $jumlahBarang = $transaksi->barang->where('id', $barangId)->count();
+                    $barangs[] = [
+                        'id' => $barang->id,
+                        'nama_barang' => $barang->nama,
+                        'harga_barang' => $barang->harga,
+                        'jumlah_barang' => $jumlahBarang,
+                        // tambahkan kolom data barang lainnya yang ingin ditampilkan
+                    ];
+                }
+            }
+
+            $response[] = [
+                'id' => $transaksi->id,
+                'kode_transaksi' => $transaksi->kode_transaksi,
+                'namaPeminjam' => $transaksi->namaPeminjam,
+                'alamat' => $transaksi->alamat,
+                'tanggal_start' => $transaksi->tanggal_start,
+                'tanggal_finish' => $transaksi->tanggal_finish,
+                'totalHarga' => $transaksi->totalHarga,
+                'status' => $transaksi->status,
+                'lama_sewa' => $transaksi->lama_sewa,
+                'shipping' => $transaksi->shipping,
+                'payment' => $transaksi->payment,
+                'denda' => $transaksi->denda,
+                'terlambat' => $transaksi->terlambat,
+                'barang' => $barangs,
+            ];
+        }
+
+        return response()->json(['data' => $response]);
     }
 
     public function addToCart(Request $request)
@@ -65,7 +112,8 @@ class RentalController extends Controller
         return response()->json(['message' => 'Barang berhasil ditambahkan ke cart.']);
     }
 
-    public function decCart(Request $request){
+    public function decCart(Request $request)
+    {
         $barangId = $request->input('barang_id');
         $userId = Auth::id();
 
@@ -74,7 +122,7 @@ class RentalController extends Controller
             ->where('barang_id', $barangId)
             ->first();
 
-            // Jika barang sudah ada di cart, tambahkan jumlahnya
+        // Jika barang sudah ada di cart, tambahkan jumlahnya
         $cartItem->jumlah -= 1;
         $cartItem->save();
 

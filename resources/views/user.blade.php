@@ -38,13 +38,13 @@
 
 <body>
 
-    @include('admin.template.topbar')
+    @include('user.template.topbar')
 
-    @include('admin.template.sidebar')
+    {{-- @include('user.template.sidebar') --}}
 
     @yield('content')
 
-    @include('admin.template.footer')
+    @include('user.template.footer')
 
 
     <!-- jQuery  -->

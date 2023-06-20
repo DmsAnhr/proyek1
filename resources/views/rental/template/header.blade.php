@@ -5,7 +5,8 @@
             <div class="row small-gutters">
                 <div class="col-xl-3 col-lg-3 d-lg-flex align-items-center">
                     <div id="logo">
-                        <a href="rental"><img src="{{asset ('assets/user/img/new.png') }}" alt="" width="100" height="35"></a>
+                        <a href="rental"><img src="{{ asset('assets/user/img/new.png') }}" alt="" width="100"
+                                height="35"></a>
                     </div>
                 </div>
                 <nav class="col-xl-6 col-lg-7">
@@ -19,7 +20,8 @@
                     <!-- Mobile menu button -->
                     <div class="main-menu d-flex justify-content-center">
                         <div id="header_menu">
-                            <a><img src="{{asset ('assets/user/img/new.png')}}" alt="" width="100" height="35"></a>
+                            <a><img src="{{ asset('assets/user/img/new.png') }}" alt="" width="100"
+                                    height="35"></a>
                             <a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
                         </div>
                         <ul>
@@ -101,21 +103,21 @@
                                     <li><a href="modal-newsletter.html">Modal Newsletter</a></li>
                                 </ul>
                             </li> --}}
-                            
+
                             <li>
-                                <a href="{{url('rental')}}">HOME</a>
+                                <a href="{{ url('rental') }}">HOME</a>
                             </li>
                             <li>
-                                <a href="{{url('aboutRental')}}">ABOUT</a>
+                                <a href="{{ url('aboutRental') }}">ABOUT</a>
                             </li>
                             <li>
-                                <a href="{{url('shopRental')}}">SHOP</a>
+                                <a href="{{ url('shopRental') }}">SHOP</a>
                             </li>
                             <li>
-                                <a href="{{url('blogRental')}}">Blog</a>
+                                <a href="{{ url('blogRental') }}">Blog</a>
                             </li>
                             <li>
-                                <a href="{{url('contactRental')}}">Contact</a>
+                                <a href="{{ url('contactRental') }}">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -126,7 +128,7 @@
                         <li>
                             <div class="dropdown dropdown-cart">
                                 @auth
-                                    <a href="{{url('cart')}}" class="cart_bt">
+                                    <a href="{{ url('cart') }}" class="cart_bt">
                                         <strong class="totalBarangCart">0</strong>
                                     </a>
                                 @endauth
@@ -139,14 +141,15 @@
                                             {{-- isi cart --}}
                                         </ul>
                                         <div class="total_drop">
-                                            <div class="clearfix"><strong>Total</strong><span class="totalHargaCart">Rp. 0</span></div>
+                                            <div class="clearfix"><strong>Total</strong><span class="totalHargaCart">Rp.
+                                                    0</span></div>
                                             {{-- <a href="cart.html" class="btn_1 outline">View Cart</a> --}}
-                                            <a href="{{url('cart')}}" class="btn_1">Lihat Keranjang</a>
+                                            <a href="{{ url('cart') }}" class="btn_1">Lihat Keranjang</a>
                                         </div>
                                     @endauth
                                     @guest
                                         <div class="total_drop">
-                                            <a href="{{url('/login')}}" class="btn_1">Login or Register</a>
+                                            <a href="{{ url('/login') }}" class="btn_1">Login or Register</a>
                                         </div>
                                     @endguest
                                 </div>
@@ -161,23 +164,24 @@
                                 <a class="access_link"><span>Account</span></a>
                                 <div class="dropdown-menu">
                                     @guest
-                                        <a href="{{url ('/login')}}" class="btn_1">Login or Register</a>
+                                        <a href="{{ url('/login') }}" class="btn_1">Login or Register</a>
                                     @endguest
                                     @auth
-                                    <ul>
-                                        <li>
-                                            <a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
-                                        </li>
-                                        <li>
-                                            <a href="account.html"><i class="ti-package"></i>My Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="account.html"><i class="ti-user"></i>My Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url ('/logout')}}"><i class="ti-na"></i>Logout</a>
-                                        </li>
-                                    </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ url('/user-track') }}"><i class="ti-truck"></i>Track your
+                                                    Order</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/user-order') }}"><i class="ti-package"></i>My Orders</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/user-profile') }}"><i class="ti-user"></i>My Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/logout') }}"><i class="ti-na"></i>Logout</a>
+                                            </li>
+                                        </ul>
                                     @endauth
                                 </div>
                             </div>
@@ -186,7 +190,7 @@
                         <li>
                             <a href="javascript:void(0);" class="search_panel"><span>Search</span></a>
                         </li>
-                    
+
                     </ul>
                 </div>
             </div>
@@ -203,12 +207,12 @@
         <small>What are you looking for?</small>
     </div>
     <!-- /header_panel -->
-    
+
     <div class="container">
         <div class="search-input">
-                <input type="text" placeholder="Search over 10.000 products...">
-                <button type="submit"><i class="ti-search"></i></button>
-            </div>
+            <input type="text" placeholder="Search over 10.000 products...">
+            <button type="submit"><i class="ti-search"></i></button>
+        </div>
     </div>
     <!-- /related -->
 </div>

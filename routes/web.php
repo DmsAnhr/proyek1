@@ -26,7 +26,8 @@ Route::get('/get-user-id', function () {
     return response()->json(['user_id' => $userId]);
 });
 
-Route::get('/user-detail/{id}', [HomeController::class, 'userData']);
+Route::get('/user-detail', [HomeController::class, 'userData']);
+Route::post('/user-update', [HomeController::class, 'updateUser']);
 
 
 Route::get('/', [RentalController::class, 'index'])->name('home');
@@ -91,6 +92,16 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
     Route::get('/checkoutData', [CheckoutController::class, 'index']);
     Route::post('/checkout-pay', [CheckoutController::class, 'store']);
+    Route::get('/user-profile', function () {
+        return view('user.profile');
+    });
+    Route::get('/user-order', function () {
+        return view('user.orderList');
+    });
+    Route::get('/user-track', function () {
+        return view('user.track');
+    });
+    Route::get('/get-orderlist', [RentalController::class, 'getOrderUser']);
 });
 
 
@@ -156,4 +167,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
     Route::post('/make_kategori', [KategoriController::class, 'store']);
     Route::get('/get_kategori', [KategoriController::class, 'index']);
+    Route::get('/admin-profile', function () {
+        return view('admin.profile');
+    });
 });

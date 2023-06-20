@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\BarangModel;
 use App\Models\KategoriModel;
 use App\Models\User;
@@ -33,9 +34,39 @@ class HomeController extends Controller
             ->with('kategori', $kategori);
     }
 
-    public function userData($id)
+    public function userData()
     {
-        $user = User::find($id);
+        $user = Auth::user();
+        $user = User::find($user->id);
         return response()->json($user);
+    }
+
+    public function updateUser(Request $request,)
+    {
+        $user = Auth::user();
+        // Mengambil data dari request
+        $name = $request->input('name');
+        $username = $request->input('username');
+        $email = $request->input('email');
+        $noTelp = $request->input('noTelp');
+        $alamat = $request->input('alamat');
+        $kecamatan = $request->input('kecamatan');
+        $kodepos = $request->input('kodepos');
+
+        // Lakukan validasi input di sini (sesuai kebutuhan)
+
+        // Lakukan update data user ke dalam database
+        $user = User::find($user->id); // Ganti $userId dengan ID user yang ingin diupdate
+        $user->name = $name;
+        $user->username = $username;
+        $user->email = $email;
+        $user->noTelp = $noTelp;
+        $user->alamat = $alamat;
+        $user->kecamatan = $kecamatan;
+        $user->kodepos = $kodepos;
+        $user->save();
+
+        // Mengirim respon ke client
+        return response()->json(['message' => 'User data updated successfully']);
     }
 }
