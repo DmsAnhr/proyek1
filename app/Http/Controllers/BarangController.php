@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\BarangModel;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class BarangController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $barang = BarangModel::query();
+            $barang = BarangModel::with('kategori');
             return DataTables::of($barang)->toJson();
         }
         $barang = BarangModel::all();
@@ -25,7 +26,8 @@ class BarangController extends Controller
             ->with('kategori', KategoriModel::all());
     }
 
-    public function rentalIndex(){
+    public function rentalIndex()
+    {
         $barang = BarangModel::all();
         return view('rental.home', compact('barang'));
     }
@@ -116,9 +118,44 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BarangModel $barang)
+    public function update(Request $request, $id)
     {
-        //
+        // Validasi request jika diperlukan
+        $request->validate([
+            'kategori_id' => 'required',
+            'nama' => 'required',
+            'harga' => 'required',
+            'status' => 'required',
+            'keterangan' => 'required',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif' // Validasi jenis file dan ukuran gambar
+        ]);
+
+        // Mengambil data barang berdasarkan ID
+        $barang = BarangModel::findOrFail($id);
+
+        // Mengupdate data barang dengan nilai-nilai baru
+        $barang->kategori_id = $request->kategori_id;
+        $barang->nama = $request->nama;
+        $barang->harga = $request->harga;
+        $barang->status = $request->status;
+        $barang->keterangan = $request->keterangan;
+
+        // Menghandle unggah gambar jika ada
+        if ($request->hasFile('foto')) {
+            // Menghapus gambar lama jika ada
+            if ($barang->foto) {
+                Storage::delete($barang->foto);
+            }
+
+            // Menyimpan gambar baru
+            $fotoPath = $request->foto->store('images', 'public');
+            $barang->foto = $fotoPath;
+        }
+        // Menyimpan perubahan pada data barang
+        $barang->save();
+
+        // Mengirimkan respon atau melakukan redirect sesuai kebutuhan
+        return response()->json(['message' => 'Barang updated successfully']);
     }
 
     /**

@@ -169,8 +169,7 @@
             </div><!-- container -->
         </div>
         <!-- end page content -->
-        <div class="wraps-loading"
-            style="width: 100%;height: 100%;display: flex;justify-content:center;align-items: center">
+        <div class="wraps-loading">
             <div id="loading-circles"></div>
         </div>
     </div>

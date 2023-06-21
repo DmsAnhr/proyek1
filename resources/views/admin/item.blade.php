@@ -37,8 +37,8 @@
                                     </button>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                    Available all products.
-                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                    Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -51,7 +51,7 @@
                                                         <th>No</th>
                                                         <th>Nama</th>
                                                         <th>Harga</th>
-                                                        <th>Jumlah</th>
+                                                        <th>Kategori</th>
                                                         <th>Status</th>
                                                         <th></th>
                                                     </tr>
@@ -67,7 +67,7 @@
                         </div>
                     </div> <!-- end col -->
 
-                    <div class="col-12 edit-row">
+                    <div class="col-12 edit-row" style="display: none">
                         <div class="card">
                             <div class="card-body">
                                 <button type="button" class="btn-back-table btn mb-2 btn-outline-info btn-round">
@@ -76,76 +76,68 @@
                                 <!-- <form action=""> -->
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <img src="{{ asset('assets/admin/images/products/img-7.png') }}" alt=""
+                                        <img style="max-height:350px;width: auto"
+                                            src="{{ asset('assets/admin/images/products/img-7.png') }}" alt=""
                                             class=" mx-auto  d-block gambarEditBarang"
                                             style="max-width: 90%;object-fit: contain;">
                                         <button type="button"
                                             class="btn btn-img btn-secondary waves-effect mt-2 mx-auto d-block"
                                             style="width: 70%;" con="upload">Ubah
                                             Gambar</button>
-                                        <input type="file" class="inpt-img-upload"
+                                        <input type="file" class="inpt-img-upload" id="imgBarangEdit"
                                             style="visibility: hidden; position: absolute;">
                                     </div>
                                     <!--end col-->
                                     <div class="col-lg-6">
-                                        <div class="single-pro-detail">
-                                            <p class="mb-1">Barang</p>
-                                            <div class="custom-border mb-3"></div>
-                                            <h3 class="pro-title namaEditBarang" id="inline-name" style="width: 85%;"
-                                                name="namaBarang" data-type="text" data-pk="1"
-                                                data-title="Enter username">
-                                                Tenda The North Face
-                                            </h3>
-                                            <!-- <h3 class="pro-titles" id="inline-usernames" style="width: 85%;"
-                                                                    name="namaBarang" data-type="text" data-pk="1"
-                                                                    data-title="Enter username">
-                                                                    Tenda The North Face
-                                                                </h3> -->
-                                            <div class="d-flex align-items-center">
-                                                <h4 style="margin: 10px 0 0 0;">Rp. </h4>
-                                                <h2 class="pro-price hargaEditBarang" id="inline-price" name="hargaBarang"
-                                                    data-type="text" data-pk="1" data-title="Enter username"> 40.000
-                                                </h2>
-                                                <h4 style="margin: 10px 0 0 0;">/Hari</h4>
+                                        <div class="row row-edit-barang">
+                                            <div class="col-12">
+                                                <h4>Barang</h4>
                                             </div>
-                                            <h6 class="text-muted font-13">Keterangan :</h6>
-                                            <p id="inline-keterangan" class="keteranganEditBarang" style="width: 85%;"
-                                                name="ketBarang" data-type="textarea" data-pk="1"
-                                                data-placeholder="Your comments here..." data-title="Enter comments">
-                                                -Ukuran 4x4
-                                                -Muat 5 orang
-                                            </p>
-                                            <!-- <br> -->
-                                            <h6 class="text-muted font-13">Kategori :</h6>
-                                            <h5 id="inline-kategori" class="kategoriEditBarang" style="width: fit-content;"
-                                                name="kategoriBarang" data-type="select" data-pk="1" data-value="1"
-                                                data-title="Select sex">
-                                            </h5>
-                                            {{-- <select name="kategori_id" id="kategori_id" required class="form-control">
-                                                <option value="Pilih Kategori" selected disabled></option>
-                                                @foreach ($kategori as $k)
-                                                    <option value="{{ $k->id }}">{{ $k->nama }}</option>
-                                                @endforeach
-                                            </select> --}}
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Jumlah :</h6>
-                                                    <h3 class="pro-title jumlahEditBarang" id="inline-ready"
-                                                        name="stokTersedia" style="width: fit-content;" data-type="text"
-                                                        data-pk="1" data-title="Enter username">
-                                                        6
-                                                    </h3>
+                                            <div class="col-12">
+                                                <label>Nama Barang</label>
+                                                <input class="form-control" type="text" id="namaBarang_edit"
+                                                    name="nama">
+                                            </div>
+                                            <div class="col-8 mt-3">
+                                                <label>Harga Sewa</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Rp.</span>
+                                                    </div>
+                                                    <input type="text" id="harga_edit" name="harga_edit"
+                                                        class="form-control">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">/hari</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <h6 class="text-muted font-13">Status :</h6>
-                                                    <h3 class="pro-title" id="inline-rent" name="stokDisewa"
-                                                        style="width: fit-content;" data-type="text" data-pk="1"
-                                                        data-title="Enter username">
-                                                        tersedia
-                                                    </h3>
-                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 mt-3">
+                                                <label>Kategori Barang</label>
+                                                <select name="kategori_edit" id="kategori_edit" required
+                                                    class="form-control">
+                                                    @foreach ($kategori as $k)
+                                                        <option value="{{ $k->id }}">{{ $k->nama }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-12 col-sm-6 mt-3">
+                                                <label>Status Barang</label>
+                                                <select name="edit_status" id="status_edit" required class="form-control">
+                                                    <option value="tersedia">Tersedia</option>
+                                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="mt-3">Keterangan</label>
+                                                <textarea class="form-control" id="keterangan_edit" rows="3" name="keterangan_edit"></textarea>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" idUpdate=""
+                                            class="btn btn-lg btn-edit-barang btn-warning waves-effect mt-5 mx-auto d-block w-100">
+                                            Update Barang
+                                        </button>
                                     </div>
                                     <!--end col-->
                                 </div>
@@ -233,6 +225,9 @@
                 </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
+        <div class="wraps-loading">
+            <div id="loading-circles"></div>
+        </div>
     </div><!-- /.modal -->
 @endsection
 
@@ -246,6 +241,39 @@
         type="text/css"href="{{ asset('assets/admin/plugins/x-editable/css/bootstrap-editable.css') }}" />
     <link rel="stylesheet"
         type="text/css"href="{{ asset('assets/admin/plugins/datatables/responsive.bootstrap4.min.css') }}" />
+    <style>
+        .wraps-loading {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: #0000007a
+        }
+
+        #loading-circles {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            animation: spin 1s infinite linear;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 @endpush
 
 @push('js')
@@ -283,7 +311,7 @@
             "autoWidth": false,
             "iDisplayLength": 10,
             'processing': true,
-            'serverSide': true,
+            // 'serverSide': true,
             'ajax': "/barang",
             'columns': [{
                     "data": null,
@@ -301,8 +329,10 @@
                     name: 'harga'
                 },
                 {
-                    data: 'jumlah',
-                    name: 'jumlah'
+                    data: 'nama',
+                    render: function(data, type, row, meta) {
+                        return row.kategori.nama;
+                    }
                 },
                 {
                     data: 'status',
@@ -359,6 +389,47 @@
             });
         });
 
+        function convertSrcToFile(src, callback) {
+            var img = new Image();
+            img.onload = function() {
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                var dataURL = canvas.toDataURL('image/png');
+                var blob = dataURLToBlob(dataURL);
+                var file = new File([blob], 'image.png');
+                callback(file);
+            };
+            img.src = src;
+        }
+
+        function dataURLToBlob(dataURL) {
+            var parts = dataURL.split(';base64,');
+            var contentType = parts[0].split(':')[1];
+            var byteString = atob(parts[1]);
+            var arrayBuffer = new ArrayBuffer(byteString.length);
+            var uint8Array = new Uint8Array(arrayBuffer);
+            for (var i = 0; i < byteString.length; i++) {
+                uint8Array[i] = byteString.charCodeAt(i);
+            }
+            return new Blob([arrayBuffer], {
+                type: contentType
+            });
+        }
+
+        function fillFileInputValue(src) {
+            convertSrcToFile(src, function(file) {
+                var fileInput = $(
+                    '<input type="file" class="inpt-img-upload" id="imgBarangEdit" name="foto" style="visibility: hidden; position: absolute;">'
+                );
+                var dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                fileInput[0].files = dataTransfer.files;
+                $('#imgBarangEdit').replaceWith(fileInput);
+            });
+        }
 
         //Open Edit
         $('#tableBarang').on('click', '.link-edit', function() {
@@ -368,15 +439,22 @@
                 type: "GET",
                 success: function(data) {
                     $('.gambarEditBarang').attr('src', 'storage/' + data.foto);
-                    $('.namaEditBarang').text(data.nama);
-                    $('.hargaEditBarang').text(data.harga);
-                    $('.keteranganEditBarang').text(data.keterangan);
-                    $('.kategoriEditBarang').text(data.kategori.nama);
-                    $('.jumlahEditBarang').text(data.jumlah);
-                    $('.statusEditBarang').text(data.status);
+                    var src = $('.gambarEditBarang').attr('src');
+                    // Panggil fungsi untuk mengisi nilai input file
+                    fillFileInputValue(src);
+                    $('#namaBarang_edit').val(data.nama);
+                    $('#harga_edit').val(data.harga);
+                    $('#kategori_edit option[value="' + data.kategori.id + '"]').attr('selected',
+                        'selected').siblings().removeAttr('selected');
+                    $('#status_edit option[value="' + data.status + '"]').attr('selected', 'selected')
+                        .siblings().removeAttr('selected');
+                    $('#keterangan_edit').val(data.keterangan);
+                    $('.btn-edit-barang').attr('idUpdate', data.id);
+                    // $('#jumlahEditBarang').text(data.jumlah);
+                    // $('#statusEditBarang').text(data.status);
                     $('.table-row').hide();
                     $('.edit-row').show();
-                    $('.page-title').text('Detail Barang');
+                    $('.page-title').text('Detail & Edit Barang');
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
@@ -385,25 +463,60 @@
 
         });
 
-        // edit barang
-        // $('#tableBarang').on('click', '.edit-barang', function(e) {
-        //     e.preventDefault();
-        //     var itemId = $(this).data('id');
+        // update barang
+        $('.btn-edit-barang').click(function() {
+            $('.wraps-loading').css('display', 'flex');
+            console.log($('#imgBarangEdit').val());
 
-        //     // Mengambil data item menggunakan permintaan Ajax
-        //     $.ajax({
-        //         url: `/items/${itemId}/edit`,
-        //         type: 'GET',
-        //         success: function(response) {
-        //             // Proses data yang diterima
-        //             // Tampilkan formulir edit item atau modifikasi tampilan sesuai kebutuhan Anda
-        //         },
-        //         error: function(xhr, status, error) {
-        //             console.log(xhr.responseText);
-        //             // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
-        //         }
-        //     });
-        // });
+            var barangId = $(this).attr('idUpdate');
+            var kategoriId = $('#kategori_edit').val();
+            var nama = $('#namaBarang_edit').val();
+            var harga = $('#harga_edit').val();
+            var status = $('#status_edit').val();
+            var keterangan = $('#keterangan_edit').val();
+
+            // Membuat objek FormData untuk mengirim data gambar
+            var formData = new FormData();
+            formData.append('kategori_id', kategoriId);
+            formData.append('nama', nama);
+            formData.append('harga', harga);
+            formData.append('status', status);
+            formData.append('keterangan', keterangan);
+            formData.append('foto', $('#imgBarangEdit')[0].files[0]);
+
+            // Mengirim permintaan Ajax untuk mengupdate data barang
+            $.ajax({
+                url: "/barang/" + barangId,
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    $('.wraps-loading').css('display', 'none');
+                    Swal.fire({
+                        title: 'Sukses!',
+                        text: 'Data Barang diupdate!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        console.log(response);
+                        $('.table-row').show();
+                        $('.edit-row').hide();
+                        $('#tableBarang').DataTable().ajax.reload();
+                    });
+                },
+                error: function(xhr, status, error) {
+                    $('.wraps-loading').css('display', 'none');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: xhr.responseText,
+                    })
+                    // Menampilkan pesan error atau melakukan aksi lainnya jika terjadi kesalahan saat mengupdate barang
+                    console.log(xhr.responseText);
+                }
+            });
+        });
 
         // hapus barang
         $('#tableBarang').on('click', '.delete-barang', function(e) {

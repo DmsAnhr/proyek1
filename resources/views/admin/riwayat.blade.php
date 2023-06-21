@@ -32,8 +32,8 @@
                                     <h4 class="mt-0 header-title">Riwayat Penyewaan</h4>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -280,16 +280,21 @@
 
             var table = $('#table-transaksi').DataTable({
                 "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
                 "iDisplayLength": 10,
                 'processing': true,
-                'serverSide': true,
+                // 'serverSide': true,
                 'info': false,
-                'select': "single",
+                'dom': 'Bfrtip',
+                'searching': true,
+                'buttons': [
+                    'copy',
+                    'excel',
+                    'pdf',
+                    'print'
+                ],
                 'ajax': {
                     url: "/get-transaksi-history/selesai",
-                    dataSrc: 'data'
+                    dataSrc: 'data',
                 },
                 columns: [{
                         "className": 'details-control',
