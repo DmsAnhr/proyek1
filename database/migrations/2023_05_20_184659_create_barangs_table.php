@@ -13,9 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('barang', function (Blueprint $table) {
+        Schema::create('barang', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('kategori_id')->nullable()->after('id');
-            
+            $table->string('nama');
+            $table->integer('harga');
+            $table->integer('jumlah');
+            $table->string('status')->default('tersedia');
+            $table->text('keterangan')->nullable();
+            $table->string('foto');
+            $table->timestamps();
+
             $table->foreign('kategori_id')->references('id')->on('kategori');
         });
     }
@@ -27,9 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('barang', function (Blueprint $table) {
-            $table->dropColumn('kategori_id');
-            $table->dropForeign(['kategori_id']);
-        });
+        Schema::dropIfExists('barang');
     }
 };

@@ -15,12 +15,19 @@ return new class extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kode_transaksi');
             $table->integer('id_user')->nullable();
+            $table->string('kode_transaksi');
+            $table->string('namaPeminjam')->nullable();
             $table->string('alamat');
             $table->integer('totalHarga');
+            $table->integer('lama_sewa')->nullable();
+            $table->string('payment')->nullable();
+            $table->string('shipping')->nullable();
             $table->timestamp('tanggal_start')->useCurrent();
-            $table->date('tanggal_finish');
+            $table->date('tanggal_finish')->nullable();
+            $table->string('status')->default('proses');
+            $table->integer('terlambat')->nullable();
+            $table->integer('denda')->nullable();
             $table->timestamps();
         });
     }

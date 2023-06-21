@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('noTelp')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kodepos')->nullable();
             $table->string('role')->default('user');
             $table->string('password');
             $table->rememberToken();
