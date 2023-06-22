@@ -1,0 +1,22 @@
+.product-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 0;
+    text-align: left !important;
+}
+
+.nf-item{
+    border: 0.1px solid #6262ff;
+}
+
+.nf-item .item-container{
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+.nf-item .item-mask{
+    cursor: pointer;
+}
