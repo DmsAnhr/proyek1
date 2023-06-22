@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-wrapper">
         <!-- Page Content-->
-        <div class="page-content">
+        <div class="page-content" style="background-color: #f5fbff">
 
             <div class="container-fluid">
                 <!-- Page-Title -->
@@ -26,11 +26,11 @@
 
                 <div class="row">
                     <div class="col-12 table-row">
-                        <div class="card">
+                        <div class="card" style="box-shadow: none;">
                             <div class="card-body">
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">

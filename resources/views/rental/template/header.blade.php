@@ -169,14 +169,14 @@
                                     @auth
                                         <ul>
                                             <li>
+                                                <a href="{{ url('/user-profile') }}"><i class="ti-user"></i>My Profile</a>
+                                            </li>
+                                            <li>
                                                 <a href="{{ url('/user-track') }}"><i class="ti-truck"></i>Track your
                                                     Order</a>
                                             </li>
                                             <li>
                                                 <a href="{{ url('/user-order') }}"><i class="ti-package"></i>My Orders</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('/user-profile') }}"><i class="ti-user"></i>My Profile</a>
                                             </li>
                                             <li>
                                                 <a href="{{ url('/logout') }}"><i class="ti-na"></i>Logout</a>

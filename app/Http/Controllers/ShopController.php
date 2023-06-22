@@ -242,7 +242,7 @@ class ShopController extends Controller
             $transaksi->status = $status;
             $transaksi->save();
 
-            return response()->json(['message' => 'Pesanan Dikirim']);
+            return response()->json(['message' => 'Penyewaan Selesai']);
         }
 
         return response()->json(['message' => 'Data not found'], 404);

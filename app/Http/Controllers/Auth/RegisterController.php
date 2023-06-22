@@ -71,6 +71,10 @@ class RegisterController extends Controller
             'name' => 'required',
             'username' => 'required|unique:users',
             'email' => 'required|email|unique:users',
+            'noTelp' => 'required',
+            'alamat' => 'required',
+            'kecamatan' => 'required',
+            'kodepos' => 'required',
             'password' => 'required|min:3',
         ]);
 
@@ -79,6 +83,10 @@ class RegisterController extends Controller
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
+        $user->noTelp = $request->input('noTelp');
+        $user->alamat = $request->input('alamat');
+        $user->kecamatan = $request->input('kecamatan');
+        $user->kodepos = $request->input('kodepos');
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
@@ -87,6 +95,5 @@ class RegisterController extends Controller
             'success' => true,
             'message' => 'Registrasi berhasil.',
         ]);
-
     }
 }

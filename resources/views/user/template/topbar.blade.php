@@ -2,7 +2,7 @@
 
     <!-- LOGO -->
     <div class="topbar-left">
-        <a href="#" class="logo">
+        <a href="{{ url('/rental') }}" class="logo">
             <span>
                 <img src="{{ asset('assets/user/img/new.png') }}" alt="logo-small" class="logo-sm"
                     style="height: 50px!important">

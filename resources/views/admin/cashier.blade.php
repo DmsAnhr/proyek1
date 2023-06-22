@@ -486,10 +486,15 @@
                 data: JSON.stringify(dataShop),
                 contentType: 'application/json',
                 success: function(response) {
-                    alert(response.message);
-                    // Lakukan aksi tambahan setelah berhasil menyimpan transaksi
-                    $('.items').remove();
-                    $('.totalHarga').val('0').html('Rp. 0');
+                    Swal.fire({
+                        title: 'Success!',
+                        text: response.message,
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        $('.items').remove();
+                        $('.totalHarga').val('0').html('Rp. 0');
+                    });
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
