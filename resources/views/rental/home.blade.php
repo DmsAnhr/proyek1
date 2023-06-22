@@ -127,7 +127,7 @@
                     <a href="#0"><img src="{{asset ('assets/userNew/img/brands/placeholder_brands.png')}}" data-src="{{('assets/userNew/img/brands/logo_5.png')}}" alt="" class="owl-"></a>
                 </div><!-- /item -->
                 <div class="item">
-                    <a href="#0"><img src="{{asset ('assets/userNew/img/brands/placeholder_brands.png')}}" data-src="{{('assets/userNew/img/brands/logo_6.png')}}" alt="" class="owl-"></a>
+                    <a href="#0"><img src="{{asset ('assets/userNew/img/brands/pl`aceholder_brands.png')}}" data-src="{{('assets/userNew/img/brands/logo_6.png')}}" alt="" class="owl-"></a>
                 </div><!-- /item --> 
             </div><!-- /carousel -->
         </div><!-- /container -->
@@ -138,66 +138,62 @@
         <div class="main_title">
             <h2>Latest News</h2>
             <span>Blog</span>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+            <p>Cari Tahu Info Wisata Terbaru</p>
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <a class="box_news" href="blog.html">
+                <a class="box_news" href="{{url ('/pecinta-paddling-wajib-tahu-tempat-ini')}}">
                     <figure>
-                        <img src="{{asset ('assets/userNew/img/blog-thumb-placeholder.jpg')}}" data-src="assets/userNew/img/blog-thumb-1.jpg" alt="" width="400" height="266" class="">
-                        <figcaption><strong>28</strong>Dec</figcaption>
+                        <img src="{{asset ('assets/blog/img/pecinta-paddling.jpg')}}" data-src="assets/userNew/img/blog-thumb-1.jpg" alt="" width="400" height="266" class="">
+                        {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                     </figure>
                     <ul>
-                        <li>by Mark Twain</li>
-                        <li>20.11.2017</li>
+                        <li>12.08.2022</li>
                     </ul>
-                    <h4>Pri oportere scribentur eu</h4>
-                    <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
+                    <h4>Pecinta Paddling Wajib Tahu Tempat Ini</h4>
+                    <p>Pantai dimalang selatan yang cocok banget buat kalian yang suka paddling.Penasaran pantai apa aja? Ini dia daftarnya</p>
                 </a>
             </div>
             <!-- /box_news -->
             <div class="col-lg-6">
-                <a class="box_news" href="blog.html">
+                <a class="box_news" href="{{url ('/mau-healing-gak-perlu-pusing')}}">
                     <figure>
-                        <img src="{{asset ('assets/userNew/img/blog-thumb-placeholder.jpg')}}" data-src="assets/userNew/img/blog-thumb-2.jpg" alt="" width="400" height="266" class="">
-                        <figcaption><strong>28</strong>Dec</figcaption>
+                        <img src="{{asset ('assets/blog/img/mau-healing-gak-pusing.jpg')}}" data-src="assets/userNew/img/blog-thumb-2.jpg" alt="" width="400" height="266" class="">
+                        {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                     </figure>
                     <ul>
-                        <li>By Jhon Doe</li>
-                        <li>20.11.2017</li>
+                        <li>08.08.2022</li>
                     </ul>
-                    <h4>Duo eius postea suscipit ad</h4>
-                    <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
+                    <h4>Mau Healing? Gak Perlu Pusing</h4>
+                    <p>Rekomendasi wisata alam di malang yang cocok buat kamu berwisata sekaligus healing</p>
                 </a>
             </div>
             <!-- /box_news -->
             <div class="col-lg-6">
-                <a class="box_news" href="blog.html">
+                <a class="box_news" href="{{url ('/pantai-malang-selatan-surga-camping-anti-mainstream')}}">
                     <figure>
-                        <img src="{{asset ('assets/userNew/img/blog-thumb-placeholder.jpg')}}" data-src="assets/userNew/img/blog-thumb-3.jpg" alt="" width="400" height="266" class="">
-                        <figcaption><strong>28</strong>Dec</figcaption>
+                        <img src="{{asset ('assets/blog/img/ciliwungcamp-pantai-selatan.jpg')}}" data-src="assets/userNew/img/blog-thumb-3.jpg" alt="" width="400" height="266" class="">
+                        {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                     </figure>
                     <ul>
-                        <li>By Luca Robinson</li>
-                        <li>20.11.2017</li>
+                        <li>19.08.2020</li>
                     </ul>
-                    <h4>Elitr mandamus cu has</h4>
-                    <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
+                    <h4>Pantai Malang Selatan, Surga Camping Anti Mainstream</h4>
+                    <p>Beberapa pantai di malang selatan yang recommended banget buat liburan dan camping</p>
                 </a>
             </div>
             <!-- /box_news -->
             <div class="col-lg-6">
-                <a class="box_news" href="blog.html">
+                <a class="box_news" href="{{url ('/puncak-gunung-terbaik-di-jawa-timur')}}">
                     <figure>
-                        <img src="{{asset ('assets/userNew/img/blog-thumb-placeholder.jpg')}}" data-src="assets/userNew/img/blog-thumb-4.jpg" alt="" width="400" height="266" class="">
-                        <figcaption><strong>28</strong>Dec</figcaption>
+                        <img src="{{asset ('assets/blog/img/puncak-gunung-terbaik-jatim.jpg')}}" data-src="assets/userNew/img/blog-thumb-4.jpg" alt="" width="400" height="266" class="">
+                        {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                     </figure>
                     <ul>
-                        <li>By Paula Rodrigez</li>
-                        <li>20.11.2017</li>
+                        <li>23.11.2020</li>
                     </ul>
-                    <h4>Id est adhuc ignota delenit</h4>
-                    <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
+                    <h4>Puncak Gunung Terbaik di Jawa Timur</h4>
+                    <p>Berikut ini adalah gunung-gunung disekitar kota malang yang wajib dan patut untuk kamu kunjungi sebagai destinasi liburan atau sebagai lokasi camping malang</p>
                 </a>
             </div>
             <!-- /box_news -->
