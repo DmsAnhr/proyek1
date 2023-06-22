@@ -177,4 +177,5 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
     Route::post('/make_user', [UserController::class, 'store']);
     Route::get('/get_user', [UserController::class, 'index']);
+    
 });
