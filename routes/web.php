@@ -171,4 +171,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin-profile', function () {
         return view('admin.profile');
     });
+    Route::get('/user', function () {
+        return view('admin.user');
+    });
+    Route::post('/make_user', [KategoriController::class, 'store']);
+    Route::get('/get_user', [KategoriController::class, 'index']);
 });
