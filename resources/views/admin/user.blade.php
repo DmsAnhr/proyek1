@@ -36,16 +36,11 @@
                                         <i class="fas fa-plus"></i> User Baru
                                     </button>
                                 </div>
-                                <!-- <p class="text-muted mb-4 font-13">
-                                    Available all products.
-                                </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="table-user" class="table                                 "
-                                                style="border-collapse: collapse; border-spacing: 0; width: 100%;"
-                                                role="grid" aria-describedby="datatable_info">
+                                            <table id="table-user" class="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;" role="grid" aria-describedby="datatable_info">
                                                 <thead>
                                                     <tr role="row">
                                                         <th>No</th>
@@ -53,6 +48,7 @@
                                                         <th>Email</th>
                                                         <th>No. Telp</th>
                                                         <th>Role</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -83,10 +79,12 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form id="formUser" method="POST" action="{{url('make_user')}}">
+                <form id="formUser" method="POST" action="{{url('make_user')}}">
+                    <div class="modal-body">
+                        <div id="user-success-message"></div>
                         @csrf
                         <div class="row">
+                            <p id="user-success-message"></p>
                             <div class="col-6">
                                 <label>Full Name</label>
                                 <input class="form-control" name="name" id="name_user" type="text">
@@ -107,7 +105,7 @@
                                 <label>Alamat</label>
                                 <textarea class="form-control" name="alamat" id="alamat_user"></textarea>
                             </div>
-                            
+
                             <div class="col-4">
                                 <label>No. Telp</label>
                                 <input class="form-control" name="notelp" id="notelp_user" type="number">
@@ -133,55 +131,132 @@
                                 Simpan
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 @endsection
 
 @push('jsPage')
-    <script>
+<script>
+    function loadUserTable() {
         $.ajax({
-            url: "/get_user", // Ganti dengan URL endpoint yang sesuai untuk mengambil data user
+            url: "/get_user",
             type: "GET",
             dataType: "json",
             success: function(data) {
-                var userTable = $("#table-user tbody"); // Ganti dengan ID atau selektor yang sesuai untuk tabel user
-
-                // Hapus data user sebelumnya, jika ada
+                var userTable = $("#table-user tbody");
                 userTable.empty();
 
-                // Variabel untuk menyimpan nomor
                 var nomor = 1;
 
-                // Iterasi data user dan tambahkan baris ke tabel
                 $.each(data, function(index, user) {
                     var row = $("<tr></tr>");
-
-                    // Tambahkan kolom dengan nomor
                     row.append("<td>" + nomor + "</td>");
-
-                    // Tambahkan kolom dengan nilai user
                     row.append("<td>" + user.name + "</td>");
-
-                    // Tambahkan kolom dengan nilai user
                     row.append("<td>" + user.email + "</td>");
-
-                    // Tambahkan kolom dengan nilai user
                     row.append("<td>" + user.notelp + "</td>");
-
-                    // Tambahkan kolom dengan nilai user
                     row.append("<td>" + user.role + "</td>");
 
-                    // Tambahkan baris ke tabel
+                    var actionButtons = $("<td></td>");
+                    var editButton = $('<button type="button" class="btn btn-sm btn-gradient-primary btn-lg edit-user-btn" data-toggle="modal" data-target=".bs-example-modal-center" title="Edit User"><i class="fas fa-pencil-alt"></i></button>');
+                    var deleteButton = $('<button type="button" class="btn btn-sm btn-gradient-danger btn-lg delete-user-btn" title="Delete User"><i class="fas fa-trash"></i></button>');
+
+                    editButton.data('user', user);
+                    deleteButton.data('user', user);
+
+                    actionButtons.append(editButton);
+                    actionButtons.append(deleteButton);
+                    row.append(actionButtons);
+
                     userTable.append(row);
 
-                    // Tambahkan 1 ke nomor setiap kali iterasi
                     nomor++;
                 });
             },
         });
+    }
 
-    </script>
+    function clearUserForm() {
+        $("#formUser")[0].reset();
+        $("#user-success-message").empty();
+    }
+
+    $(document).ready(function() {
+        loadUserTable();
+
+        $(".bs-example-modal-center").on('shown.bs.modal', function() {
+            clearUserForm();
+        });
+
+        // Edit User Button
+        $(document).on('click', '.edit-user-btn', function() {
+            var user = $(this).data('user');
+
+            $("#name_user").val(user.name);
+            $("#email_user").val(user.email);
+            $("#username_user").val(user.username);
+            $("#password_user").val(user.password);
+            $("#alamat_user").val(user.alamat);
+            $("#notelp_user").val(user.notelp);
+            $("#kecamatan_user").val(user.kecamatan);
+            $("#kodepos_user").val(user.kodepos);
+            $("#role_user").val(user.role);
+
+            // Change form action to update_user route with user id
+            var form = $("#formUser");
+            form.attr('action', "{{url('user')}}/" + user.id);
+        });
+
+        // Delete User Button
+        $(document).on('click', '.delete-user-btn', function() {
+            var user = $(this).data('user');
+            var confirmation = confirm('Are you sure you want to delete this user?');
+
+            if (confirmation) {
+                $.ajax({
+                    url: "{{url('user_delete')}}/" + user.id,
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        id: user.id
+                    },
+                    success: function(data) {
+                        alert(data.message);
+                        loadUserTable();
+                    }
+                });
+            }
+        });
+
+        // Submit User Form
+        $("#formUser").submit(function(event) {
+            event.preventDefault();
+
+            var form = $(this);
+            var url = form.attr('action');
+            var method = "POST";
+
+            $.ajax({
+                url: url,
+                type: method,
+                dataType: "json",
+                data: form.serialize(),
+                success: function(data) {
+                    var message = "localhost says: " + data.message;
+                    $("#user-success-message").text(message);
+
+                    clearUserForm();
+                    loadUserTable();
+                    $(".bs-example-modal-center").modal("hide");
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
 @endpush

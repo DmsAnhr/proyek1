@@ -54,7 +54,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return response()->json(['message' => 'Kategori berhasil ditambahkan']);
+        return response()->json(['message' => 'User berhasil ditambahkan']);
     }
 
     /**
@@ -88,7 +88,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = UserModel::findOrFail($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->username = $request->username;
+        $user->alamat = $request->alamat;
+        $user->notelp = $request->notelp;
+        $user->kecamatan = $request->kecamatan;
+        $user->kodepos = $request->kodepos;
+        $user->role = $request->role;
+
+        if (!empty($request->password)) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        return response()->json(['message' => 'User berhasil diupdate']);
     }
 
     /**
@@ -99,6 +116,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = UserModel::findOrFail($id);
+        $user->delete();
+
+        return response()->json(['message' => 'User berhasil dihapus']);
     }
 }

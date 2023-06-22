@@ -177,5 +177,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
     Route::post('/make_user', [UserController::class, 'store']);
     Route::get('/get_user', [UserController::class, 'index']);
-    
+    Route::post('/user/{id}', [UserController::class, 'update']);
+    Route::delete('/user_delete/{id}', [UserController::class, 'destroy']);
 });
