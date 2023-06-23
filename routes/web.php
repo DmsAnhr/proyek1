@@ -103,6 +103,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         return view('user.track');
     });
     Route::get('/get-orderlist', [RentalController::class, 'getOrderUser']);
+    Route::get('/track-order/{kode}', [RentalController::class, 'getTrackData']);
 });
 
 
@@ -141,6 +142,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     // Route::get('/', [AdminController::class, 'index']);
     Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/dashboard-data', [AdminController::class, 'dashboard']);
 
     Route::get('/kasir', function () {
         return view('admin.cashier');
@@ -168,7 +170,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         return view('admin.category');
     });
     Route::post('/make_kategori', [KategoriController::class, 'store']);
-    Route::get('/get_kategori', [KategoriController::class, 'index']);
     Route::get('/admin-profile', function () {
         return view('admin.profile');
     });
@@ -180,3 +181,4 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/user/{id}', [UserController::class, 'update']);
     Route::delete('/user_delete/{id}', [UserController::class, 'destroy']);
 });
+Route::get('/get_kategori', [KategoriController::class, 'index']);

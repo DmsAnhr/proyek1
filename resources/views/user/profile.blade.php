@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-wrapper">
         <!-- Page Content-->
-        <div class="page-content" style="padding: 0 0 60px 0;">
+        <div class="page-content" style="padding: 0 0 60px 0;background-color: #f5fbff">
 
             <div class="container-fluid">
                 <div class="row">

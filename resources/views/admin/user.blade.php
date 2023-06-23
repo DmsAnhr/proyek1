@@ -16,7 +16,7 @@
                                     <li class="breadcrumb-item active">Data User</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Kumpulan User</h4>
+                            <h4 class="page-title">Manage User</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -30,7 +30,7 @@
                             <div class="card-body">
                                 <div class="w-100 mb-3 d-flex align-items-center justify-content-between">
                                     <h4 class="mt-0 header-title">List User</h4>
-                                    <button type="button" class="btn btn-sm btn-gradient-primary btn-lg"
+                                    <button type="button" class="btn btn-sm btn-gradient-primary btn-lg btn-new-user"
                                         data-toggle="modal" data-animation="bounce" data-target=".bs-example-modal-center"
                                         title="User Baru">
                                         <i class="fas fa-plus"></i> User Baru
@@ -40,7 +40,9 @@
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <table id="table-user" class="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;" role="grid" aria-describedby="datatable_info">
+                                            <table id="table-user" class="table"
+                                                style="border-collapse: collapse; border-spacing: 0; width: 100%;"
+                                                role="grid" aria-describedby="datatable_info">
                                                 <thead>
                                                     <tr role="row">
                                                         <th>No</th>
@@ -79,7 +81,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="formUser" method="POST" action="{{url('make_user')}}">
+                <form id="formUser" method="POST" action="{{ url('make_user') }}">
                     <div class="modal-body">
                         <div id="user-success-message"></div>
                         @csrf
@@ -127,7 +129,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" id="submitFormUser" class="btn btn-sm btn-gradient-primary btn-lg ml-auto">
+                            <button type="submit" id="submitFormUser"
+                                class="btn btn-sm btn-gradient-primary btn-lg ml-auto">
                                 Simpan
                             </button>
                         </div>
@@ -139,124 +142,149 @@
 @endsection
 
 @push('jsPage')
-<script>
-    function loadUserTable() {
-        $.ajax({
-            url: "/get_user",
-            type: "GET",
-            dataType: "json",
-            success: function(data) {
-                var userTable = $("#table-user tbody");
-                userTable.empty();
+    <script>
+        function loadUserTable() {
+            $.ajax({
+                url: "/get_user",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    var userTable = $("#table-user tbody");
+                    userTable.empty();
 
-                var nomor = 1;
+                    var nomor = 1;
 
-                $.each(data, function(index, user) {
-                    var row = $("<tr></tr>");
-                    row.append("<td>" + nomor + "</td>");
-                    row.append("<td>" + user.name + "</td>");
-                    row.append("<td>" + user.email + "</td>");
-                    row.append("<td>" + user.notelp + "</td>");
-                    row.append("<td>" + user.role + "</td>");
+                    $.each(data, function(index, user) {
+                        var row = $("<tr></tr>");
+                        row.append("<td>" + nomor + "</td>");
+                        row.append("<td>" + user.name + "</td>");
+                        row.append("<td>" + user.email + "</td>");
+                        row.append("<td>" + user.notelp + "</td>");
+                        row.append("<td>" + user.role + "</td>");
 
-                    var actionButtons = $("<td></td>");
-                    var editButton = $('<button type="button" class="btn btn-sm btn-gradient-primary btn-lg edit-user-btn" data-toggle="modal" data-target=".bs-example-modal-center" title="Edit User"><i class="fas fa-pencil-alt"></i></button>');
-                    var deleteButton = $('<button type="button" class="btn btn-sm btn-gradient-danger btn-lg delete-user-btn" title="Delete User"><i class="fas fa-trash"></i></button>');
+                        var actionButtons = $("<td></td>");
+                        var editButton = $(
+                            '<button type="button" class="btn btn-sm btn-gradient-primary btn-lg edit-user-btn" data-toggle="modal" data-target=".bs-example-modal-center" title="Edit User"><i class="fas fa-pencil-alt"></i></button>'
+                        );
+                        var deleteButton = $(
+                            '<button type="button" class="btn btn-sm btn-gradient-danger btn-lg delete-user-btn" title="Delete User"><i class="fas fa-trash"></i></button>'
+                        );
 
-                    editButton.data('user', user);
-                    deleteButton.data('user', user);
+                        editButton.data('user', user);
+                        deleteButton.data('user', user);
 
-                    actionButtons.append(editButton);
-                    actionButtons.append(deleteButton);
-                    row.append(actionButtons);
+                        actionButtons.append(editButton);
+                        actionButtons.append(deleteButton);
+                        row.append(actionButtons);
 
-                    userTable.append(row);
+                        userTable.append(row);
 
-                    nomor++;
+                        nomor++;
+                    });
+                },
+            });
+        }
+
+        function clearUserForm() {
+            $("#formUser")[0].reset();
+            $("#user-success-message").empty();
+        }
+
+        $(document).ready(function() {
+            loadUserTable();
+
+            $(".btn-new-user").click(function() {
+                clearUserForm();
+                var form = $("#formUser");
+                form.attr('action', "{{ url('make_user') }}");
+            });
+
+            // Edit User Button
+            $(document).on('click', '.edit-user-btn', function() {
+                var user = $(this).data('user');
+
+                $("#name_user").val(user.name);
+                $("#email_user").val(user.email);
+                $("#username_user").val(user.username);
+                $("#password_user").val(user.password);
+                $("#alamat_user").val(user.alamat);
+                $("#notelp_user").val(user.notelp);
+                $("#kecamatan_user").val(user.kecamatan);
+                $("#kodepos_user").val(user.kodepos);
+                $("#role_user").val(user.role);
+
+                // Change form action to update_user route with user id
+                var form = $("#formUser");
+                form.attr('action', "{{ url('user') }}/" + user.id);
+            });
+
+            // Delete User Button
+            $(document).on('click', '.delete-user-btn', function() {
+                var user = $(this).data('user');
+                // var confirmation = confirm('Are you sure you want to delete this user?');
+
+                Swal.fire({
+                    title: 'Confirmation!',
+                    text: 'Are you sure you want to delete this user?',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then(function() {
+                    $.ajax({
+                        url: "/user_delete/" + user.id,
+                        type: "delete",
+                        dataType: "json",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            id: user.id
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                title: 'Success!',
+                                text: 'User has ben deleted!',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then(function() {
+                                loadUserTable();
+                            });
+                        }
+                    });
                 });
-            },
-        });
-    }
 
-    function clearUserForm() {
-        $("#formUser")[0].reset();
-        $("#user-success-message").empty();
-    }
+            });
 
-    $(document).ready(function() {
-        loadUserTable();
+            // Submit User Form
+            $("#formUser").submit(function(event) {
+                event.preventDefault();
 
-        $(".bs-example-modal-center").on('shown.bs.modal', function() {
-            clearUserForm();
-        });
+                var form = $(this);
+                var url = form.attr('action');
+                var method = "POST";
 
-        // Edit User Button
-        $(document).on('click', '.edit-user-btn', function() {
-            var user = $(this).data('user');
-
-            $("#name_user").val(user.name);
-            $("#email_user").val(user.email);
-            $("#username_user").val(user.username);
-            $("#password_user").val(user.password);
-            $("#alamat_user").val(user.alamat);
-            $("#notelp_user").val(user.notelp);
-            $("#kecamatan_user").val(user.kecamatan);
-            $("#kodepos_user").val(user.kodepos);
-            $("#role_user").val(user.role);
-
-            // Change form action to update_user route with user id
-            var form = $("#formUser");
-            form.attr('action', "{{url('user')}}/" + user.id);
-        });
-
-        // Delete User Button
-        $(document).on('click', '.delete-user-btn', function() {
-            var user = $(this).data('user');
-            var confirmation = confirm('Are you sure you want to delete this user?');
-
-            if (confirmation) {
                 $.ajax({
-                    url: "{{url('user_delete')}}/" + user.id,
-                    type: "POST",
+                    url: url,
+                    type: method,
                     dataType: "json",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        id: user.id
-                    },
+                    data: form.serialize(),
                     success: function(data) {
-                        alert(data.message);
-                        loadUserTable();
+                        // var message = "localhost says: " + data.message;
+                        console.log(response);
+                        $("#user-success-message").text(response);
+                        Swal.fire({
+                            title: 'Success!',
+                            text: response,
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            clearUserForm();
+                            loadUserTable();
+                            $(".bs-example-modal-center").modal("hide");
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
                     }
                 });
-            }
-        });
-
-        // Submit User Form
-        $("#formUser").submit(function(event) {
-            event.preventDefault();
-
-            var form = $(this);
-            var url = form.attr('action');
-            var method = "POST";
-
-            $.ajax({
-                url: url,
-                type: method,
-                dataType: "json",
-                data: form.serialize(),
-                success: function(data) {
-                    var message = "localhost says: " + data.message;
-                    $("#user-success-message").text(message);
-
-                    clearUserForm();
-                    loadUserTable();
-                    $(".bs-example-modal-center").modal("hide");
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
             });
         });
-    });
-</script>
+    </script>
 @endpush

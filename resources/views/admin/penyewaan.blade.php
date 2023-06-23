@@ -32,8 +32,8 @@
                                     <h4 class="mt-0 header-title">Penyewaan Berlangsung</h4>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -363,6 +363,7 @@
                 var tanggal_finish = getCurrentTimestamp();
                 var denda = 0;
                 var terlambat = 0;
+                var textMessage = "";
 
                 var currentDate = new Date();
                 var tglFinish = new Date(tglStart);
@@ -384,8 +385,10 @@
                         terlambat = 1;
                     }
                     denda = (totalHarga / lamaSewa) * terlambat;
+                    textMessage = 'Terlambat ' + terlambat + ' hari, denda ' + formatRupiah(denda, 'Rp');
                 } else {
                     console.log('false');
+                    textMessage = "penyewaan sudah selesai?";
                 }
 
                 console.log(terlambat);
@@ -393,22 +396,37 @@
 
                 var status = 'Selesai';
                 // Mengirim permintaan Ajax untuk memperbarui tanggal_finish
-                $.ajax({
-                    url: "/transaksi-update/" + transaksiId,
-                    type: "POST",
-                    data: {
-                        tanggal_finish: tanggal_finish,
-                        denda: denda,
-                        terlambat: terlambat,
-                        status: status
-                    },
-                    success: function(response) {
-                        // Refresh atau perbarui tampilan tabel setelah berhasil memperbarui tanggal_finish
-                        $('#table-transaksi').DataTable().ajax.reload();
-                    },
-                    error: function(xhr, status, error) {
-                        console.log(xhr.responseText);
-                    }
+
+                Swal.fire({
+                    title: 'Yakin?',
+                    text: textMessage,
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then(function() {
+                    $.ajax({
+                        url: "/transaksi-update/" + transaksiId,
+                        type: "POST",
+                        data: {
+                            tanggal_finish: tanggal_finish,
+                            denda: denda,
+                            terlambat: terlambat,
+                            status: status
+                        },
+                        success: function(response) {
+                            // Refresh atau perbarui tampilan tabel setelah berhasil memperbarui tanggal_finish
+                            Swal.fire({
+                                title: 'Success!',
+                                text: response.message,
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then(function() {
+                                $('#table-transaksi').DataTable().ajax.reload();
+                            });
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr.responseText);
+                        }
+                    });
                 });
             });
 

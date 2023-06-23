@@ -86,6 +86,50 @@ class RentalController extends Controller
         return response()->json(['data' => $response]);
     }
 
+    public function getTrackData($kode)
+    {
+        $transaksiData = ShopModel::with('barang')->where('kode_transaksi', $kode)->get();
+        $barangData = BarangModel::all();
+
+        $response = [];
+        foreach ($transaksiData as $transaksi) {
+            $barangIds = $transaksi->barang ? $transaksi->barang->pluck('id')->toArray() : [];
+            $barangs = [];
+
+            foreach ($barangIds as $barangId) {
+                $barang = $barangData->where('id', $barangId)->first();
+                if ($barang) {
+                    $jumlahBarang = $transaksi->barang->where('id', $barangId)->count();
+                    $barangs[] = [
+                        'id' => $barang->id,
+                        'nama_barang' => $barang->nama,
+                        'harga_barang' => $barang->harga,
+                        'jumlah_barang' => $jumlahBarang,
+                        // tambahkan kolom data barang lainnya yang ingin ditampilkan
+                    ];
+                }
+            }
+
+            $response[] = [
+                'id' => $transaksi->id,
+                'kode_transaksi' => $transaksi->kode_transaksi,
+                'namaPeminjam' => $transaksi->namaPeminjam,
+                'alamat' => $transaksi->alamat,
+                'tanggal_start' => $transaksi->tanggal_start,
+                'tanggal_finish' => $transaksi->tanggal_finish,
+                'totalHarga' => $transaksi->totalHarga,
+                'status' => $transaksi->status,
+                'lama_sewa' => $transaksi->lama_sewa,
+                'shipping' => $transaksi->shipping,
+                'payment' => $transaksi->payment,
+                'denda' => $transaksi->denda,
+                'terlambat' => $transaksi->terlambat,
+                'barang' => $barangs,
+            ];
+        }
+
+        return response()->json(['data' => $response]);
+    }
     public function addToCart(Request $request)
     {
         $barangId = $request->input('barang_id');

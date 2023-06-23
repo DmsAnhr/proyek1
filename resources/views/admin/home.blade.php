@@ -1,551 +1,275 @@
 @extends('admin')
 
 @section('content')
-<div class="page-wrapper">
+    <div class="page-wrapper">
 
-    <!-- Page Content-->
-    <div class="page-content">
+        <!-- Page Content-->
+        <div class="page-content">
 
-        <div class="container-fluid">
-            <!-- Page-Title -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-title-box">
-                        <div class="float-right">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Ciliwung Camp</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
-                            </ol>
-                        </div>
-                        <h4 class="page-title">Dashboard</h4>
-                    </div>
-                    <!--end page-title-box-->
-                </div>
-                <!--end col-->
-            </div>
-            <!-- end page title end breadcrumb -->
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="card card-eco">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <h4 class="title-text mt-0">Visits</h4>
-                                    <h3 class="font-weight-semibold mb-1">23</h3>
-                                    <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
-                                                class="mdi mdi-trending-up"></i>8.5%</span>Up From Yesterday</p>
-                                </div>
-                                <!--end col-->
-                                <div class="col-4 text-center align-self-center">
-                                    <!-- <span class="card-eco-icon">👳🏻</span> -->
-                                    <i class="dripicons-user-group card-eco-icon  align-self-center"></i>
-                                </div>
-                                <!--end col-->
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <div class="float-right">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Ciliwung Camp</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
                             </div>
-                            <!--end row-->
-                            <div class="bg-pattern"></div>
+                            <h4 class="page-title">Dashboard</h4>
                         </div>
-                        <!--end card-body-->
+                        <!--end page-title-box-->
                     </div>
-                    <!--end card-->
+                    <!--end col-->
                 </div>
-                <!--end col-->
-                <div class="col-lg-3">
-                    <div class="card card-eco">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <h4 class="title-text mt-0">New Orders</h4>
-                                    <h3 class="font-weight-semibold mb-1">8</h3>
-                                    <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
-                                                class="mdi mdi-trending-up"></i>1.5%</span> Up From Last Week</p>
-                                </div>
-                                <!--end col-->
-                                <div class="col-4 text-center align-self-center">
-                                    <!-- <span class="card-eco-icon">🛒</span> -->
-                                    <i class="dripicons-cart card-eco-icon  align-self-center"></i>
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                            <div class="bg-pattern"></div>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-3">
-                    <div class="card card-eco">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <h4 class="title-text mt-0">Orders Done</h4>
-                                    <h3 class="font-weight-semibold mb-1">19</h3>
-                                    <p class="mb-0 text-muted text-truncate"><span class="text-danger"><i
-                                                class="mdi mdi-trending-down"></i>3%</span> Down From Last Month</p>
-                                </div>
-                                <!--end col-->
-                                <div class="col-4 text-center align-self-center">
-                                    <!-- <span class="card-eco-icon">🎲</span> -->
-                                    <i class="dripicons-jewel card-eco-icon  align-self-center"></i>
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                            <div class="bg-pattern"></div>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-3">
-                    <div class="card card-eco">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <h4 class="title-text mt-0">Revenue</h4>
-                                    <h3 class="font-weight-semibold mb-1">200k</h3>
-                                    <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
-                                                class="mdi mdi-trending-up"></i>10.5%</span> Up From Yesterday</p>
-                                </div>
-                                <!--end col-->
-                                <div class="col-4 text-center align-self-center">
-                                    <!-- <span class="card-eco-icon">💰</span> -->
-                                    <i class="dripicons-wallet card-eco-icon  align-self-center"></i>
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                            <div class="bg-pattern"></div>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-            </div>
-            <!--end row-->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body text-right pb-0">
-                            <button type="button" class="btn btn-sm btn-gradient-primary float-right"
-                                onclick="update()">Update<i class="dripicons-clockwise ml-2"></i></button>
-                        </div>
-                        <!--end card-body-->
-                        <div class="card-body pt-0">
-                            <div class="d-flex mb-0 h-100 dash-info-box">
-                                <div class="w-100">
-                                    <div class="apexchart-wrapper">
-                                        <div id="sales-radar" class="chart-gutters"></div>
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card card-eco">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h4 class="title-text mt-0">Visits</h4>
+                                        <h3 class="font-weight-semibold mb-1" id="userCount">0</h3>
+                                        <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
+                                                    class="mdi mdi-trending-up"></i>8.5%</span>Up From Yesterday</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end card-body-->
-                        <div class="card-body bg-black">
-                            <div class="row">
-                                <div class="col-8 align-self-center">
-                                    <div class="">
-                                        <h4 class="mt-0 header-title text-white">This Month Revenue</h4>
-                                        <h2 class="mt-0 font-weight-semibold text-white">$57k</h2>
-                                        <p class="mb-0 text-muted"><span class="text-success"><i
-                                                    class="mdi mdi-arrow-up"></i>14.5%</span> Up From Last Month</p>
+                                    <!--end col-->
+                                    <div class="col-4 text-center align-self-center">
+                                        <!-- <span class="card-eco-icon">👳🏻</span> -->
+                                        <i class="dripicons-user-group card-eco-icon  align-self-center"></i>
                                     </div>
+                                    <!--end col-->
                                 </div>
-                                <!--end col-->
-                                <div class="col-4 align-self-center">
-                                    <div class="icon-info float-right">
-                                        <i class="dripicons-wallet bg-soft-info"></i>
-                                    </div>
-                                </div>
-                                <!--end col-->
+                                <!--end row-->
+                                <div class="bg-pattern"></div>
                             </div>
-                            <!--end row-->
+                            <!--end card-body-->
                         </div>
-                        <!--end card-body-->
+                        <!--end card-->
                     </div>
-                    <!--end card-->
+                    <!--end col-->
+                    <div class="col-lg-3">
+                        <div class="card card-eco">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h4 class="title-text mt-0">New Orders</h4>
+                                        <h3 class="font-weight-semibold mb-1" id="prosesCount">0</h3>
+                                        <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
+                                                    class="mdi mdi-trending-up"></i>1.5%</span> Up From Last Week</p>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-4 text-center align-self-center">
+                                        <!-- <span class="card-eco-icon">🛒</span> -->
+                                        <i class="dripicons-cart card-eco-icon  align-self-center"></i>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                                <div class="bg-pattern"></div>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end col-->
+                    <div class="col-lg-3">
+                        <div class="card card-eco">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h4 class="title-text mt-0">Orders Done</h4>
+                                        <h3 class="font-weight-semibold mb-1" id="selesaiCount">0</h3>
+                                        <p class="mb-0 text-muted text-truncate"><span class="text-danger"><i
+                                                    class="mdi mdi-trending-down"></i>3%</span> Down From Last Month</p>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-4 text-center align-self-center">
+                                        <!-- <span class="card-eco-icon">🎲</span> -->
+                                        <i class="dripicons-jewel card-eco-icon  align-self-center"></i>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                                <div class="bg-pattern"></div>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end col-->
+                    <div class="col-lg-3">
+                        <div class="card card-eco">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8 pr-0">
+                                        <h4 class="title-text mt-0">Revenue</h4>
+                                        <h3 class="font-weight-semibold mb-1" style="font-size: 150%;"
+                                            id="totalHargaSelesai">Rp. 0</h3>
+                                        <p class="mb-0 text-muted text-truncate"><span class="text-success"><i
+                                                    class="mdi mdi-trending-up"></i>10.5%</span> Up From Yesterday</p>
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-4 text-center align-self-center">
+                                        <!-- <span class="card-eco-icon">💰</span> -->
+                                        <i class="dripicons-wallet card-eco-icon  align-self-center"></i>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                                <div class="bg-pattern"></div>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end col-->
                 </div>
-                <!--end col-->
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="float-lg-right float-none eco-revene-history justify-content-end">
-                                <ul class="nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#">This Week</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Last Week</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Last Month</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4 class="header-title mt-0">Revenue</h4>
-                            <canvas id="bar" class="drop-shadow w-100" height="350"></canvas>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="media">
-                                        <img src="{{asset ('assets/admin/images/logo-sm.png')}}" height="40"
-                                            class="mr-4 align-self-center" alt="...">
-                                        <div class="media-body align-self-center">
-                                            <h6 class="mt-0 font-15 mb-1">Download your earnings report</h6>
-                                            <p class="mb-0 text-muted font-14">There are many variations of passages
-                                                of Lorem Ipsum available, Lorem Ipsum available but the majority
-                                                have.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4 align-self-center text-center">
-                                    <button class="btn btn-sm btn-warning">Download Report</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-            </div>
-            <!--end row-->
+                <!--end row-->
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="mt-0 header-title mb-3">Populer Product</h4>
-                            <div class="table-responsive">
-                                <table class="table table-hover mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td class="border-top-0">
-                                                <div class="media">
-                                                    <img src="{{asset ('assets/admin/images/products/img-7.png')}}" height="80"
-                                                        class="mr-4" alt="...">
-                                                    <div class="media-body align-self-center">
-                                                        <span class="badge badge-soft-warning p-2 font-12 mb-2">354
-                                                            sold</span>
-                                                        <h4 class="mt-0 title-text mb-0">Unique Watch</h4>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="text-right border-top-0">
-                                                <h5 class="">$99.00</h5>
-                                            </td>
-                                        </tr>
-                                        <!--/tr-->
-                                        <tr>
-                                            <td>
-                                                <div class="media">
-                                                    <img src="{{asset ('assets/admin/images/products/img-3.png')}}" height="80"
-                                                        class="mr-4" alt="...">
-                                                    <div class="media-body align-self-center">
-                                                        <span class="badge badge-soft-pink p-2 font-12 mb-2">654
-                                                            sold</span>
-                                                        <h4 class="mt-0 title-text mb-0">Wireless Headphone</h4>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="text-right">
-                                                <h5 class="">$49.00</h5>
-                                            </td>
-                                        </tr>
-                                        <!--/tr-->
-                                        <tr>
-                                            <td>
-                                                <div class="media">
-                                                    <img src="{{asset ('assets/admin/images/products/img-1.png')}}" height="80"
-                                                        class="mr-4" alt="...">
-                                                    <div class="media-body align-self-center">
-                                                        <span class="badge badge-soft-success p-2 font-12 mb-2">551
-                                                            sold</span>
-                                                        <h4 class="mt-0 title-text mb-0">Sport Shoe</h4>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="text-right">
-                                                <h5 class="">$59.00</h5>
-                                            </td>
-                                        </tr>
-                                        <!--/tr-->
-                                    </tbody>
-                                </table>
-                                <a href="#" class="text-right d-block">View All<i
-                                        class="dripicons-arrow-thin-right ml-2"></i></a>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="w-100 mb-3 d-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mt-0">Populer Product</h4>
+                                    <a href="{{ url('barang') }}" class="text-right d-block">View All<i
+                                            class="dripicons-arrow-thin-right ml-2"></i></a>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <tbody id="barangData">
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+                            <!--end card-body-->
                         </div>
-                        <!--end card-body-->
+                        <!--end card-->
                     </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body order-list">
-                            <h4 class="header-title mt-0 mb-3">Order List</h4>
-                            <div class="table-responsive">
-                                <table class="table table-hover mb-0">
-                                    <thead class="thead-light">
-                                        <tr>
-                                            <th class="border-top-0">Product</th>
-                                            <th class="border-top-0">Pro Name</th>
-                                            <th class="border-top-0">Country</th>
-                                            <th class="border-top-0">Order Date/Time</th>
-                                            <th class="border-top-0">Pcs.</th>
-                                            <th class="border-top-0">Amount ($)</th>
-                                            <th class="border-top-0">Status</th>
-                                        </tr>
-                                        <!--end tr-->
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <img class="" src="{{asset ('assets/admin/images/products/img-1.png')}}" alt="user">
-                                            </td>
-                                            <td>
-                                                Beg
-                                            </td>
-                                            <td>
-                                                <img src="{{asset ('assets/admin/images/flags/us_flag.jpg')}}" alt=""
-                                                    class="img-flag thumb-xxs rounded-circle">
-                                            </td>
-                                            <td>3/03/2019 4:29 PM</td>
-                                            <td>200</td>
-                                            <td> $750</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-md badge-boxed  badge-soft-success">Shipped</span>
-                                            </td>
-                                        </tr>
-                                        <!--end tr-->
-                                        <tr>
-                                            <td>
-                                                <img class="" src="{{asset ('assets/admin/images/products/img-2.png')}}" alt="user">
-                                            </td>
-                                            <td>
-                                                Watch
-                                            </td>
-                                            <td>
-                                                <img src="{{asset ('assets/admin/images/flags/french_flag.jpg')}}" alt=""
-                                                    class="img-flag thumb-xxs rounded-circle">
-                                            </td>
-                                            <td>13/03/2019 1:09 PM</td>
-                                            <td>180</td>
-                                            <td> $970</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-md badge-boxed  badge-soft-danger">Delivered</span>
-                                            </td>
-                                        </tr>
-                                        <!--end tr-->
-                                        <tr>
-                                            <td>
-                                                <img class="" src="{{asset ('assets/admin/images/products/img-3.png')}}" alt="user">
-                                            </td>
-                                            <td>
-                                                Headphone
-                                            </td>
-                                            <td>
-                                                <img src="{{asset ('assets/admin/images/flags/spain_flag.jpg')}}" alt=""
-                                                    class="img-flag thumb-xxs rounded-circle">
-                                            </td>
-                                            <td>22/03/2019 12:09 PM</td>
-                                            <td>30</td>
-                                            <td> $2800</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-md badge-boxed badge-soft-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <!--end tr-->
-                                        <tr>
-                                            <td>
-                                                <img class="" src="{{asset ('assets/admin/images/products/img-4.png')}}" alt="user">
-                                            </td>
-                                            <td>
-                                                Purse
-                                            </td>
-                                            <td>
-                                                <img src="{{asset ('assets/admin/images/flags/russia_flag.jpg')}}" alt=""
-                                                    class="img-flag thumb-xxs rounded-circle">
-                                            </td>
-                                            <td>14/03/2019 8:27 PM</td>
-                                            <td>100</td>
-                                            <td> $520</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-md badge-boxed  badge-soft-success">Shipped</span>
-                                            </td>
-                                        </tr>
-                                        <!--end tr-->
-                                        <tr>
-                                            <td>
-                                                <img class="" src="{{asset ('assets/admin/images/products/img-5.png')}}" alt="user">
-                                            </td>
-                                            <td>
-                                                Shoe
-                                            </td>
-                                            <td>
-                                                <img src="{{asset ('assets/admin/images/flags/italy_flag.jpg')}}" alt=""
-                                                    class="img-flag thumb-xxs rounded-circle">
-                                            </td>
-                                            <td>18/03/2019 5:09 PM</td>
-                                            <td>100</td>
-                                            <td> $1150</td>
-                                            <td>
-                                                <span
-                                                    class="badge badge-md badge-boxed badge-soft-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <!--end tr-->
-                                    </tbody>
-                                </table>
-                                <!--end table-->
+                    <!--end col-->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body order-list">
+                                <div class="w-100 mb-3 d-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mt-0">Penyewaan Berlangsung</h4>
+                                    <a href="{{ url('penyewaan') }}" class="text-right d-block">View All<i
+                                            class="dripicons-arrow-thin-right ml-2"></i></a>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th class="border-top-0">Code</th>
+                                                <th class="border-top-0">Order Date / Time</th>
+                                                <th class="border-top-0">Amount</th>
+                                            </tr>
+                                            <!--end tr-->
+                                        </thead>
+                                        <tbody id="berlangsungData">
+                                        </tbody>
+                                    </table>
+                                    <!--end table-->
+                                </div>
+                                <!--end /div-->
                             </div>
-                            <!--end /div-->
+                            <!--end card-body-->
                         </div>
-                        <!--end card-body-->
+                        <!--end card-->
                     </div>
-                    <!--end card-->
+                    <!--end col-->
                 </div>
-                <!--end col-->
-            </div>
-            <!--end row-->
-            <div class="row">
-                <div class="col-lg-4">
+                <!--end row-->
+                <div class="row">
+                    <div class="col-lg-4">
+
+                    </div>
+                    <!--end col-->
+
 
                 </div>
-                <!--end col-->
+                <!--end row-->
 
+            </div><!-- container -->
 
-            </div>
-            <!--end row-->
-
-            {{-- <div class="row">
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-7 align-self-center">
-                                    <div class="timer-data">
-                                        <div class="icon-info mt-1 mb-4">
-                                            <i class="mdi mdi-bullseye bg-soft-dark"></i>
-                                        </div>
-                                        <h3 class="mt-0 text-dark">45k <span class="font-14">of 70k</span></h3>
-                                        <h4 class="mt-0 header-title text-truncate mb-1">Monthly Goal</h4>
-                                        <p class="text-muted mb-0 text-truncate">It is a long established fact that
-                                            a reader.</p>
-
-                                    </div>
-                                </div>
-                                <!--end col-->
-                                <div class="col-5 align-self-center">
-                                    <div class="mt-4">
-                                        <span class="text-info">Complate</span>
-                                        <small class="float-right text-muted ml-3 font-14">62%</small>
-                                        <div class="progress mt-2" style="height:5px;">
-                                            <div class="progress-bar bg-success" role="progressbar"
-                                                style="width: 62%; border-radius:5px;" aria-valuenow="62"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-7 align-self-center">
-                                    <div class="timer-data">
-                                        <div class="icon-info mt-1 mb-4">
-                                            <i class="mdi mdi-bullseye-arrow bg-soft-dark"></i>
-                                        </div>
-                                        <h3 class="mt-0 text-dark">26m <span class="font-14">of 30m</span></h3>
-                                        <h4 class="mt-0 header-title text-truncate mb-1">Yearly Goal</h4>
-                                        <p class="text-muted mb-0 text-truncate">It is a long established fact that
-                                            a reader.</p>
-                                    </div>
-                                </div>
-                                <!--end col-->
-                                <div class="col-5 align-self-center">
-                                    <div class="mt-4">
-                                        <span class="text-info">Complate</span>
-                                        <small class="float-right text-muted ml-3 font-14">81%</small>
-                                        <div class="progress mt-2" style="height:5px;">
-                                            <div class="progress-bar bg-pink" role="progressbar"
-                                                style="width: 81%; border-radius:5px;" aria-valuenow="81"
-                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end col-->
-                            </div>
-                            <!--end row-->
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="dash-datepick">
-                                <input type="hidden" id="light_datepick" />
-                            </div>
-                            <div class="d-flex justify-content-between p-3 bg-light">
-                                <div class="media">
-                                    <img src="../images/users/user-2.jpg"
-                                        class="mr-3 thumb-md rounded-circle" alt="...">
-                                    <div class="media-body align-self-center">
-                                        <h5 class="mt-0 text-dark mb-1">Harry McCall</h5>
-                                        <p class="mb-0">Dealer USA <span class="text-muted">Today Harry's Birth
-                                                Day</span></p>
-                                    </div>
-                                </div>
-                                <span class="font-24 align-self-center">🎂</span>
-                            </div>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div>
-                <!--end col-->
-
-            </div> --}}
-            <!--end row-->
-
-        </div><!-- container -->
-
-        <!--end footer-->
+            <!--end footer-->
+        </div>
+        <!-- end page content -->
     </div>
-    <!-- end page content -->
-</div>
 @endsection
 @push('js')
-<script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/chartjs/chart.min.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/chartjs/roundedBar.min.js') }}"></script>
-<script src="{{ asset('assets/admin/plugins/lightpick/lightpick.js') }}"></script>
-<script src="{{ asset('assets/admin/pages/jquery.sales_dashboard.init.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/chartjs/chart.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/chartjs/roundedBar.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/lightpick/lightpick.js') }}"></script>
+    <script src="{{ asset('assets/admin/pages/jquery.sales_dashboard.init.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '/dashboard-data',
+                type: 'GET',
+                success: function(response) {
+                    // Menggunakan response untuk menampilkan data
+                    $('#userCount').text(response.userCount);
+                    $('#prosesCount').text(response.prosesCount);
+                    $('#selesaiCount').text(response.selesaiCount);
+                    $('#totalHargaSelesai').text(formatRupiah(response.totalHargaSelesai, 'Rp'));
+
+                    // Menampilkan data barang
+                    var barangData = response.barangData;
+                    var barangHtml = '';
+                    for (var i = 0; i < barangData.length; i++) {
+                        var dataFotoBarang = 'storage/' + barangData[i].foto;
+                        var dataKategoriBarang = barangData[i].kategori.nama;
+                        var dataNamaBarang = barangData[i].nama;
+                        var dataHargaBarang = barangData[i].harga;
+
+                        barangHtml += '<tr>';
+                        barangHtml += '<td class="border-top-0">';
+                        barangHtml += '<div class="media">';
+                        barangHtml += '<img src="' + dataFotoBarang +
+                            '" height="80" class="mr-4" alt="...">';
+                        barangHtml += '<div class="media-body align-self-center">';
+                        barangHtml += '<span class="badge badge-soft-success p-2 font-12 mb-2">' +
+                            dataKategoriBarang + '</span>';
+                        barangHtml += '<h4 class="mt-0 title-text mb-0">' + dataNamaBarang + '</h4>';
+                        barangHtml += '</div>';
+                        barangHtml += '</div>';
+                        barangHtml += '</td>';
+                        barangHtml += '<td class="text-right border-top-0">';
+                        barangHtml += '<h5 class="">' + formatRupiah(dataHargaBarang, 'Rp') + '</h5>';
+                        barangHtml += '</td>';
+                        barangHtml += '</tr>';
+                    }
+                    $('#barangData').html(barangHtml);
+
+                    // Menampilkan data transaksi berlangsung
+                    var berlangsungData = response.berlangsungData;
+                    var berlangsungHtml = '';
+                    for (var j = 0; j < berlangsungData.length; j++) {
+                        var kodeTransaksi = berlangsungData[j].kode_transaksi;
+                        var tanggalStart = berlangsungData[j].tanggal_start;
+                        var totalHarga = berlangsungData[j].totalHarga;
+
+                        berlangsungHtml += '<tr>';
+                        berlangsungHtml += '<td>' + kodeTransaksi + '</td>';
+                        berlangsungHtml += '<td>' + tanggalStart + '</td>';
+                        berlangsungHtml += '<td>' + formatRupiah(totalHarga, 'Rp') + '</td>';
+                        berlangsungHtml += '</tr>';
+                    }
+                    $('#berlangsungData').html(berlangsungHtml);
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+
+        })
+    </script>
 @endpush
