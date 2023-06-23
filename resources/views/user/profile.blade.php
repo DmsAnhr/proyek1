@@ -18,9 +18,9 @@
                                                     <img src="{{ asset('assets/admin/images/userAvatar.jpg') }}"
                                                         style="width: 128px;height: 128px;object-fit: cover;object-position: center"
                                                         alt="" class="rounded-circle">
-                                                    <span class="fro-profile_main-pic-change">
+                                                    {{-- <span class="fro-profile_main-pic-change">
                                                         <i class="fas fa-camera"></i>
-                                                    </span>
+                                                    </span> --}}
                                                 </div>
                                                 <div class="met-profile_user-detail">
                                                     <h5 class="met-user-name full-name">Fullname</h5>
@@ -49,7 +49,7 @@
                                                     <b>Alamat </b> : Admin
                                                 </li>
                                             </ul>
-                                            <div class="button-list btn-social-icon">
+                                            {{-- <div class="button-list btn-social-icon">
                                                 <button type="button" class="btn btn-blue btn-circle">
                                                     <i class="fab fa-facebook-f"></i>
                                                 </button>
@@ -61,7 +61,7 @@
                                                 <button type="button" class="btn btn-pink btn-circle  ml-2">
                                                     <i class="fab fa-dribbble"></i>
                                                 </button>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -128,9 +128,7 @@
                                                                     class="form-control" name="email" id="form-email">
                                                             </div>
                                                             <div class="col-md-4">
-                                                                <label style="margin-bottom: 0" for="">
-                                                                    Nomor HP
-                                                                </label>
+                                                                <label style="margin-bottom: 0" for="">Nomor HP</label>
                                                                 <input type="text" placeholder="Nomor HP"
                                                                     class="form-control" name="phone" id="form-phone">
                                                             </div>
@@ -232,7 +230,8 @@
 
                 $('.user-name').text(data.username);
                 $('.full-name').text(data.name);
-                $('.phone-profile').html('<b> HP </b> : ' + data.noTelp);
+                $('.phone-profile').html('<b> HP </b> : ' + data.notelp);
+                // console.log(data.noTelp)
                 $('.email-profile').html('<b> Email </b> : ' + data.email);
                 $('.alamat-profile').html(
                     '<i class="dripicons-home text-info font-18 mr-2"></i><b style="margin-right:5px;margin-left: 3px;">Alamat </b> : ' +
@@ -241,7 +240,7 @@
                 $('#form-fullname').val(data.name);
                 $('#form-uname').val(data.username);
                 $('#form-email').val(data.email);
-                $('#form-phone').val(data.noTelp);
+                $('#form-phone').val(data.notelp);
                 $('#form-pass').val('');
                 $('#form-repass').val('');
                 $('#form-alamat').val(data.alamat);
