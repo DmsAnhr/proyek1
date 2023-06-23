@@ -153,6 +153,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/barang/{id}', [BarangController::class, 'update']);
     Route::post('/make_barang', [BarangController::class, 'store']);
     Route::delete('/barang_delete/{id}', [BarangController::class, 'destroy']);
+    Route::post('/update-status-barang', [BarangController::class, 'updateStatus']);
 
     Route::get('/get-data', [BarangController::class, 'getData']);
 

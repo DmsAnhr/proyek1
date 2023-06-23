@@ -27,7 +27,7 @@ class RentalController extends Controller
 
     public function getDataBarang()
     {
-        $barang = BarangModel::with('kategori')->latest()->take(4)->get();
+        $barang = BarangModel::where('status', 'tersedia')->with('kategori')->latest()->take(4)->get();
         $kategori = KategoriModel::all();
         return response()->json(['barang' => $barang, 'kategori' => $kategori]);
     }

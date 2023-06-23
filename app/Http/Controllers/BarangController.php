@@ -34,7 +34,7 @@ class BarangController extends Controller
 
     public function getData()
     {
-        $barang = BarangModel::with('kategori')->get();
+        $barang = BarangModel::where('status', 'tersedia')->with('kategori')->get();
         $kategori = KategoriModel::all();
         return response()->json(['barang' => $barang, 'kategori' => $kategori]);
     }
@@ -164,6 +164,21 @@ class BarangController extends Controller
      * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
+    public function updateStatus(Request $request)
+    {
+        $barangId = $request->input('id');
+        $newStatus = $request->input('status');
+
+        // Lakukan validasi data jika diperlukan
+
+        // Update status barang berdasarkan ID
+        $barang = BarangModel::find($barangId);
+        $barang->status = $newStatus;
+        $barang->save();
+
+        return response()->json(['message' => 'Status barang berhasil diperbarui']);
+    }
+
     public function destroy(Request $request, $id)
     {
         $barang = BarangModel::findOrFail($id);

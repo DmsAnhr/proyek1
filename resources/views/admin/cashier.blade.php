@@ -165,22 +165,6 @@
                                 </div>
                                 <!--end col--> --}}
 
-                                    <div class="col-lg-3 col-md-6 p-0 nf-item photo spacing">
-                                        <div class="item-box">
-                                            <a class="cbox-gallary1 items-rent" title="Sed fringilla mauris">
-                                                <img class="item-container"
-                                                    src="{{ asset('assets/admin/images/small/img-6.jpg') }}"
-                                                    alt="1" />
-                                                <div class="item-mask">
-                                                    <div class="item-caption">
-                                                        <h6 class="text-light">Sed fringilla mauris</h6>
-                                                        <p class="text-light">Photo</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!--end item-box-->
-                                    </div>
                                     <!--end col-->
                                 </div>
                                 <!--end row-->
@@ -268,7 +252,7 @@
         var hargaSehari = 0;
         var $container = $('.projects-wrapper');
         $('.invoice-item-box').css('max-height', ($('.page-content').innerHeight() - 200));
-        
+
         //get barang on cashier
         $.ajax({
             url: "/get-data",
@@ -281,7 +265,8 @@
                 var kategori = data.kategori;
                 var kategoriSelect = $(".containerFilterKat");
                 $.each(kategori, function(index, kat) {
-                    kategoriSelect.append('<li><a class="categories" data-filter=".' + kat.nama + '">' +
+                    kategoriSelect.append('<li><a class="categories" data-filter=".kat-' + kat.id +
+                        '">' +
                         kat.nama + '</a></li>');
                 });
 
@@ -289,7 +274,7 @@
                 var html = "";
                 $.each(data.barang, function(index, item) {
 
-                    html += '<div class="col-lg-3 col-md-6 p-0 nf-item ' + item.kategori.nama + '">';
+                    html += '<div class="col-lg-3 col-md-6 p-0 nf-item kat-' + item.kategori.id + '">';
                     html += '<div class="item-box">';
                     html += '<a class="cbox-gallary1 items-rent" title="' + item.nama +
                         '" data-idBarang="' + item.id + '">';
@@ -310,15 +295,6 @@
                 $(".barang-wrapper-kasir").append(html);
 
                 // Inisialisasi Isotope setelah menambahkan daftar barang
-                var $container = $(".barang-wrapper-kasir");
-                $container.isotope({
-                    itemSelector: '.nf-item',
-                    layoutMode: 'masonry',
-                    animationOptions: {
-                        duration: 750,
-                        easing: 'linear'
-                    }
-                });
 
                 // Filter items when filter link is clicked
                 var $filter = $('#filter');
@@ -335,6 +311,15 @@
                         }
                     });
                     return false;
+                });
+                var $container = $(".barang-wrapper-kasir");
+                $container.isotope({
+                    itemSelector: '.nf-item',
+                    layoutMode: 'masonry',
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear'
+                    }
                 });
             }
         });

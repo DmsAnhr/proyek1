@@ -37,8 +37,8 @@
                                     </button>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -365,7 +365,25 @@
                     </div>
                 `;
                 }
-            }]
+            }],
+            "drawCallback": function(settings) {
+                // Mendapatkan waktu sekarang
+                var currentTime = new Date();
+
+                $('#tableBarang tbody tr').each(function() {
+                    var row = $(this);
+                    var status = row.find('td:eq(4)').text();
+                    // console.log(row.find('td:eq(6) span').attr('status-badge'));
+                    console.log(status);
+
+                    if (status !== 'tersedia') {
+                        row.css('background-color', '#ff3636');
+                        row.find('td').css('color', '#fff');
+                    }
+                });
+
+                // Loop melalui setiap baris dalam tabel
+            }
         });
 
         //add item
@@ -530,32 +548,67 @@
         });
 
         // hapus barang
+        // $('#tableBarang').on('click', '.delete-barang', function(e) {
+        //     e.preventDefault();
+        //     var itemId = $(this).data('id');
+        //     if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
+        //         $.ajax({
+        //             url: '/barang_delete/' + itemId,
+        //             type: 'DELETE',
+        //             data: {
+        //                 _token: $('meta[name="csrf-token"]').attr('content')
+        //             },
+        //             success: function(response) {
+        //                 console.log(response.message);
+        //                 table.ajax.reload();
+        //             },
+        //             error: function(xhr, status, error) {
+        //                 console.log(xhr.responseText);
+        //             }
+        //         });
+        //     }
+        // });
+
         $('#tableBarang').on('click', '.delete-barang', function(e) {
             e.preventDefault();
-            var itemId = $(this).data('id');
-            // var url = route('barang.destroy', { barang: barangId });
+            var barangId = $(this).data('id');
+            var newStatus = "Tidak Tampil";
 
-            // Konfirmasi penghapusan
-            if (confirm('Apakah Anda yakin ingin menghapus item ini?')) {
-                // Menghapus item menggunakan permintaan Ajax
+            // Membuat objek data yang berisi ID barang dan status baru
+            var data = {
+                id: barangId,
+                status: newStatus
+            };
+
+            Swal.fire({
+                title: 'Confirmation!',
+                text: 'Are you sure you want to delete this item?',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            }).then(function() {
                 $.ajax({
-                    url: '/barang_delete/' + itemId,
-                    type: 'DELETE',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content')
-                    },
+                    url: '/update-status-barang',
+                    type: 'POST',
+                    data: data,
                     success: function(response) {
-                        // Proses respon setelah item dihapus
                         console.log(response.message);
-                        // Refresh tabel setelah penghapusan item
-                        table.ajax.reload();
+                        // Refresh atau perbarui tampilan tabel barang setelah berhasil mengupdate
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Item has ben deleted!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(function() {
+                            table.ajax.reload();
+                        });
                     },
                     error: function(xhr, status, error) {
                         console.log(xhr.responseText);
-                        // Tambahkan logika lainnya (misalnya menampilkan notifikasi error)
                     }
                 });
-            }
+            });
+
+
         });
     </script>
 @endpush
