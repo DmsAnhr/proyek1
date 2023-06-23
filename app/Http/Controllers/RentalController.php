@@ -43,7 +43,7 @@ class RentalController extends Controller
     public function getOrderUser()
     {
         $user = Auth::user();
-        $transaksiData = ShopModel::with('barang')->where('id_user', $user->id)->get();
+        $transaksiData = ShopModel::where('id_user', $user->id)->with('barang')->get();
         $barangData = BarangModel::all();
 
         $response = [];

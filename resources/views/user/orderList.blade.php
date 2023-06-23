@@ -29,8 +29,8 @@
                         <div class="card" style="box-shadow: none;">
                             <div class="card-body">
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -313,7 +313,8 @@
                             } else if (data.status === "Berlangsung") {
                                 bedge = "badge-primary";
                             }
-                            return '<span class="badge ' + bedge + ' p-2">' +
+                            return '<span status-badge="' + data.status + '" class="badge ' +
+                                bedge + ' p-2">' +
                                 data.status +
                                 '</span>';
                         }
@@ -323,20 +324,22 @@
                     // Mendapatkan waktu sekarang
                     var currentTime = new Date();
 
-                    // Loop melalui setiap baris dalam tabel
                     $('#table-transaksi tbody tr').each(function() {
                         var row = $(this);
                         var tanggalFinish = row.find('td:eq(3)').text();
-
+                        console.log(row.find('td:eq(6) span').attr('status-badge'));
                         // Menghitung tanggal deadline
                         var deadline = new Date(tanggalFinish);
 
-                        // Membandingkan tanggal deadline dengan waktu sekarang
-                        if (deadline < currentTime) {
-                            row.css('background-color', '#ff3636');
-                            row.find('td').css('color', '#fff');
+                        if (row.find('td:eq(6) span').attr('status-badge') !== "Proses") {
+                            if (deadline < currentTime) {
+                                row.css('background-color', '#ff3636');
+                                row.find('td').css('color', '#fff');
+                            }
                         }
                     });
+
+                    // Loop melalui setiap baris dalam tabel
                 }
             });
 

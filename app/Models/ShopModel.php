@@ -21,4 +21,11 @@ class ShopModel extends Model
             ->withPivot('barang_id', 'jumlah')
             ->withTimestamps();
     }
+
+    public function barangs(): BelongsToMany
+    {
+        return $this->belongsToMany(BarangModel::class, 'transaksi_barang', 'transaksi_id', 'barang_id')
+            ->withPivot('barang_id', 'jumlah')
+            ->withTimestamps();
+    }
 }

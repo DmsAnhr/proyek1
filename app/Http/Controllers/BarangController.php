@@ -61,14 +61,14 @@ class BarangController extends Controller
         // if ($request->ajax()) {
         //     return "True request!";
         // }
-        $validatedData = $request->validate([
-            'foto' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048', // Maksimum ukuran gambar 2MB
-            'nama' => 'required|string',
-            'kategori_id' => 'required',
-            'jumlah' => 'required',
-            'harga' => 'required',
-            'keterangan' => 'required',
-        ]);
+        // $validatedData = $request->validate([
+        //     'foto' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048', // Maksimum ukuran gambar 2MB
+        //     'nama' => 'required|string',
+        //     'kategori_id' => 'required',
+        //     'jumlah' => 'required',
+        //     'harga' => 'required',
+        //     'keterangan' => 'required',
+        // ]);
 
         // Mengunggah gambar dan mendapatkan path-nya
 

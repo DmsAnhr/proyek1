@@ -149,6 +149,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
     Route::resource('barang', BarangController::class);
+    Route::post('/barang-add', [BarangController::class, 'store']);
     Route::post('/barang/{id}', [BarangController::class, 'update']);
     Route::post('/make_barang', [BarangController::class, 'store']);
     Route::delete('/barang_delete/{id}', [BarangController::class, 'destroy']);

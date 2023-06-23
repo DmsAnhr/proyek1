@@ -32,8 +32,8 @@
                                     <h4 class="mt-0 header-title">Penyewaan Berlangsung</h4>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -49,7 +49,7 @@
                                                         <th>Tanggal Mulai</th>
                                                         <th>Tanggal Selesai</th>
                                                         <th>Total Harga</th>
-                                                        <th></th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -324,7 +324,7 @@
                     // Loop melalui setiap baris dalam tabel
                     $('#table-transaksi tbody tr').each(function() {
                         var row = $(this);
-                        var tanggalFinish = row.find('td:eq(3)').text();
+                        var tanggalFinish = row.find('td:eq(4)').text();
 
                         // Menghitung tanggal deadline
                         var deadline = new Date(tanggalFinish);

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('kategori_id')->nullable()->after('id');
+            $table->unsignedBigInteger('kategori_id')->nullable();
             $table->string('nama');
             $table->integer('harga');
             $table->integer('jumlah');

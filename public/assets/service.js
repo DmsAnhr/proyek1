@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $.ajaxSetup({
         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
     });
 
     // Login
@@ -37,7 +37,6 @@ $(document).ready(function () {
                 }
             },
         });
-        
     });
 
     // Register
@@ -68,16 +67,24 @@ $(document).ready(function () {
     });
 
     // add category
-    $('#submitFormKategori').click(function () {
+    $("#submitFormKategori").click(function () {
         var formData = $("#formKategori").serialize();
-        var url = $("#formKategori").attr('action');
+        var url = $("#formKategori").attr("action");
         $.ajax({
             url: url,
             type: "POST",
             data: formData,
             success: function (response) {
-                alert(response.message); // Menampilkan pesan sukses
+                $(".modal").hide();
                 // Lakukan tindakan lain setelah berhasil menambahkan data
+                Swal.fire({
+                    title: "Success!",
+                    text: "Profile data is update!",
+                    icon: "success",
+                    confirmButtonText: "OK",
+                }).then(function () {
+                    location.reload();
+                });
             },
             error: function (xhr) {
                 alert("Terjadi kesalahan. Silakan coba lagi."); // Menampilkan pesan kesalahan

@@ -446,7 +446,7 @@
         // checkout
         $('.btn-checkout').click(function() {
             var idShop = generateId(10);
-            var idUserShop = 2;
+            var idUserShop = 1;
             var alamatShop = alamat;
             var namaShop = nama;
             var hargaShop = $('.totalHarga').attr('value');

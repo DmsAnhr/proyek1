@@ -86,7 +86,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6">
-                                <div class="btn_add_to_cart"><a href="#0" class="btn_1">Add to Cart</a></div>
+                                <div class="btn_add_to_cart"><a type="button" class="btn_1 btn-add-cart">Add to Cart</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -439,6 +440,15 @@
         <!--/feat-->
 
     </main>
+    <div class="alert alert-success d-none align-items-center"
+        role="alert"style="position: fixed;bottom: 20px;z-index: 99;right: 20px;">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div>
+            Barang Berhasil Ditambah ke cart
+        </div>
+    </div>
 @endsection
 @push('css')
     <!-- SPECIFIC CSS -->
@@ -467,6 +477,30 @@
                 $('.prod_info p').html('<small>SKU: MTKRY-001</small><br>' + barang.keterangan);
                 $('.new_price').text(formatRupiah(barang.harga, 'Rp. '))
             }
+        });
+
+        $('.btn-add-cart').click(function() {
+            var barangId = idBarang;
+
+            $.ajax({
+                url: "/add-to-cart",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    barang_id: barangId
+                },
+                success: function(response) {
+                    // window.history.back();
+                    reloadCart();
+                    $('.alert-success').removeClass('d-none').addClass('d-flex');
+                    setTimeout(() => {
+                        $('.alert-success').removeClass('d-flex').addClass('d-none');
+                    }, 2000);
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
         });
     </script>
 @endpush

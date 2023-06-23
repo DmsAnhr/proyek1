@@ -195,10 +195,10 @@
                     html += '<span class="new_price">' + formatRupiah(item.harga, 'Rp. ') + '</span>';
                     html += '</div>';
                     html += '<ul>';
+                    // html +=
+                    //     '<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>';
                     html +=
-                        '<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>';
-                    html +=
-                        '<li><a type="button" class="tooltip-1 btn-add-cart" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart" barang-id="' +
+                        '<li><a type="button" class="tooltip-1 btn-add-cart" data-bs-toggle="tooltip" style="z-index:99" data-bs-placement="left" title="Add to cart" barang-id="' +
                         item.id + '"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>';
                     html += '</ul>';
                     html += '</div>';

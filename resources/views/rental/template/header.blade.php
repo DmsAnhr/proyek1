@@ -1,5 +1,5 @@
 <header class="version_1">
-    <div class="layer"></div><!-- Mobile menu overlay mask -->
+    {{-- <div class="layer"></div><!-- Mobile menu overlay mask --> --}}
     <div class="main_header Sticky">
         <div class="container">
             <div class="row small-gutters">
@@ -201,7 +201,7 @@
 </header>
 <!-- /header -->
 
-<div class="top_panel">
+{{-- <div class="top_panel">
     <div class="container header_panel">
         <a href="#0" class="btn_close_top_panel"><i class="ti-close"></i></a>
         <small>What are you looking for?</small>
@@ -215,5 +215,5 @@
         </div>
     </div>
     <!-- /related -->
-</div>
+</div> --}}
 <!-- /search_panel -->

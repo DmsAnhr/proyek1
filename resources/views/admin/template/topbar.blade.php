@@ -41,7 +41,7 @@
                 </div>
             </li> -->
 
-            <li class="dropdown notification-list">
+            {{-- <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
                     href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="ti-bell noti-icon"></i>
@@ -142,7 +142,7 @@
                         View all <i class="fi-arrow-right"></i>
                     </a>
                 </div>
-            </li>
+            </li> --}}
 
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
@@ -156,8 +156,8 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="{{ url('/admin-profile') }}"><i
-                            class="ti-user text-muted mr-2"></i> Profile</a>
+                    <a class="dropdown-item" href="{{ url('/admin-profile') }}"><i class="ti-user text-muted mr-2"></i>
+                        Profile</a>
                     <div class="dropdown-divider mb-0"></div>
                     <a class="dropdown-item" href="{{ url('/logout') }}"><i class="ti-power-off text-muted mr-2"></i>
                         Logout</a>

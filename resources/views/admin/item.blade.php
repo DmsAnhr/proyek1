@@ -37,8 +37,8 @@
                                     </button>
                                 </div>
                                 <!-- <p class="text-muted mb-4 font-13">
-                                                                                                                                                                                                                                                                                                                                                                                    Available all products.
-                                                                                                                                                                                                                                                                                                                                                                                </p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    Available all products.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                </p> -->
 
                                 <div id="datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                     <div class="row">
@@ -371,17 +371,28 @@
         //add item
         $('#submitFormItem').click(function(e) {
             e.preventDefault();
-            var formData = $("#formBarang").serialize();
+            // var formData = $("#formBarang").serialize();
+            var formData = new FormData($("#formBarang")[0]);
             $.ajax({
-                url: '/barang',
+                url: '/barang-add',
                 type: 'POST',
                 data: formData,
                 processData: false,
                 contentType: false,
                 success: function(response) {
                     console.log(response.message);
-                    $('#modalAddBarang').toggle();
+                    $('#modalAddBarang').modal('hide');
                     $("#formBarang")[0].reset();
+                    $("#formBarang img").attr('src', '');
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Barang Ditambahkan!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        table.ajax.reload();
+                        // location.reload();
+                    });
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
