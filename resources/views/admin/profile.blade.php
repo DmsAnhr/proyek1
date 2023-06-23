@@ -18,9 +18,9 @@
                                                     <img src="{{ asset('assets/admin/images/spongebob.jpg') }}"
                                                         style="width: 128px;height: 128px;object-fit: cover;object-position: center"
                                                         alt="" class="rounded-circle">
-                                                    <span class="fro-profile_main-pic-change">
+                                                    {{-- <span class="fro-profile_main-pic-change">
                                                         <i class="fas fa-camera"></i>
-                                                    </span>
+                                                    </span> --}}
                                                 </div>
                                                 <div class="met-profile_user-detail">
                                                     <h5 class="met-user-name user-name">Username</h5>
@@ -48,7 +48,7 @@
                                                     <b>Role</b> : Admin
                                                 </li>
                                             </ul>
-                                            <div class="button-list btn-social-icon">
+                                            {{-- <div class="button-list btn-social-icon">
                                                 <button type="button" class="btn btn-blue btn-circle">
                                                     <i class="fab fa-facebook-f"></i>
                                                 </button>
@@ -60,7 +60,7 @@
                                                 <button type="button" class="btn btn-pink btn-circle  ml-2">
                                                     <i class="fab fa-dribbble"></i>
                                                 </button>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <!--end col-->
                                     </div>
@@ -218,13 +218,13 @@
 
                 $('.user-name').text(data.username);
                 $('.full-name').text(data.name);
-                $('.phone-admin').html('<b> Phone </b> : ' + data.noTelp);
+                $('.phone-admin').html('<b> Phone </b> : ' + data.notelp);
                 $('.email-admin').html('<b> Email </b> : ' + data.email);
 
                 $('#form-fullname').val(data.name);
                 $('#form-uname').val(data.username);
                 $('#form-email').val(data.email);
-                $('#form-phone').val(data.noTelp);
+                $('#form-phone').val(data.notelp);
                 $('#form-pass').val('');
                 $('#form-repass').val('');
                 $('#form-alamat').val(data.alamat);
