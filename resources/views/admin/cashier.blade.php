@@ -268,6 +268,7 @@
         var hargaSehari = 0;
         var $container = $('.projects-wrapper');
         $('.invoice-item-box').css('max-height', ($('.page-content').innerHeight() - 200));
+        
         //get barang on cashier
         $.ajax({
             url: "/get-data",
@@ -280,7 +281,6 @@
                 var kategori = data.kategori;
                 var kategoriSelect = $(".containerFilterKat");
                 $.each(kategori, function(index, kat) {
-                    // kategoriSelect.append('<option value="' + kat.id + '">' + kat.nama + '</option>');
                     kategoriSelect.append('<li><a class="categories" data-filter=".' + kat.nama + '">' +
                         kat.nama + '</a></li>');
                 });
@@ -304,39 +304,40 @@
                     html += '</a>';
                     html += '</div>';
                     html += '</div>';
-
-                    // Initialize isotope 
-                    $container.isotope({
-                        filter: '*',
-                        layoutMode: 'masonry',
-                        animationOptions: {
-                            duration: 750,
-                            easing: 'linear'
-                        }
-                    });
                 });
 
+                // Tampilkan daftar barang awal
                 $(".barang-wrapper-kasir").append(html);
+
+                // Inisialisasi Isotope setelah menambahkan daftar barang
+                var $container = $(".barang-wrapper-kasir");
+                $container.isotope({
+                    itemSelector: '.nf-item',
+                    layoutMode: 'masonry',
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear'
+                    }
+                });
+
+                // Filter items when filter link is clicked
+                var $filter = $('#filter');
+                $filter.on('click', 'a', function() {
+                    var selector = $(this).attr('data-filter');
+                    $filter.find('a').removeClass('active');
+                    $(this).addClass('active');
+                    $container.isotope({
+                        filter: selector,
+                        animationOptions: {
+                            duration: 750,
+                            easing: 'linear',
+                            queue: false,
+                        }
+                    });
+                    return false;
+                });
             }
         });
-
-        // Filter items when filter link is clicked
-        var $filter = $('#filter');
-        $('#filter').on('click', 'a', function() {
-            var selector = $(this).attr('data-filter');
-            $filter.find('a').removeClass('active');
-            $(this).addClass('active');
-            $container.isotope({
-                filter: selector,
-                animationOptions: {
-                    animationDuration: 750,
-                    easing: 'linear',
-                    queue: false,
-                }
-            });
-            return false;
-        });
-
 
         function addZeroPrefix(number) {
             return number < 10 ? '0' + number : number;
